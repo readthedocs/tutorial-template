@@ -1,10 +1,8 @@
-Welcome to Lumache's documentation!
+Welcome to Traxsense's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**Traxsense** is an item tracking solution for asset management, retail and automation
+It makes use of RFID, Mobile, BLE, IoT to help you track and maintain your items
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
