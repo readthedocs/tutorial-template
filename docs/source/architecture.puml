@@ -1,0 +1,43 @@
+@startuml
+
+skinparam interface {
+  backgroundColor Grey
+  borderColor black
+}
+
+skinparam component {
+  BackgroundColor white
+}
+
+skinparam database {
+  BackgroundColor white
+}
+
+package Site {
+database "Site Database (MSSQL Express)"
+[Acquisition Service] <-right- [Site Database (MSSQL Express)] : Configuration
+IoT_Probe <-down-> [Acquisition Service] : Ethernet
+Reader <-down-> [Acquisition Service] : LLRP
+[BLE Gateway]
+}
+
+package "Cloud / Hosted" {
+[BLE Gateway] <-up-> [Event Bridge] : MQTT (QoS 2)
+[Acquisition Service] <-down-> [Event Bridge] : MQTT (QoS 2)
+database "Traxsense Database (MSSQL)"
+[Event Bridge] <-> [Traxsense Database (MSSQL)] : Event Data
+[Traxsense API] <-right-> [Metabase]
+[Traxsense API] <-up-> [Traxsense Database (MSSQL)] : Reports, Data
+}
+
+Networked_IoT_Device <-down-> [Event Bridge] : TCP, \nMQTT (QoS 2)
+Sigfox_Device <-down-> [Sigfox] : Sigfox Network
+[Sigfox] <-down-> [Event Bridge] : HTTPS,\nREST
+User <-up-> Browser
+User <-up-> Handheld
+
+Handheld <-up-> [Traxsense API] : HTTPS,\nREST,\nWebSockets
+Browser <-up-> [Traxsense API] : HTTPS,\nREST,\nWebSockets
+Browser <-up-> [Metabase] : HTTPS,\niFrame
+
+@enduml
