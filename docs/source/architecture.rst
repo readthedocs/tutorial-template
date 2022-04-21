@@ -6,7 +6,7 @@ Usage
 Architecture
 ----------------
 
-.. image:: source/architecture.png
+.. image:: architecture.png
   :width: 400
   :alt: Alternative text
 
