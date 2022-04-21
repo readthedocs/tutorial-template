@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65fc1205-e5a1-4090-8665-3364beb1f9a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/source/architecture.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/source/architecture.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
-    </list>
+    <list default="true" id="65fc1205-e5a1-4090-8665-3364beb1f9a3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
