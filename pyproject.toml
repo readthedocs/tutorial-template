@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "Win32编程学习笔记"
+name = "Win32编程学习笔记"
 authors = [{name = "钱钧陶", email = "jancing#outlook.com"}]
 dynamic = ["version", "description"]
