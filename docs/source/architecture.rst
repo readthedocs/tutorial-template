@@ -1,9 +1,9 @@
-Usage
+Architecture
 =====
 
 .. _architecture:
 
-Architecture
+Diagram
 ----------------
 
 .. image:: architecture.png
