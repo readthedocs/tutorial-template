@@ -1,9 +1,8 @@
-Welcome to Lumache's documentation!
+Welcome to ProtestaScience's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
+**ProtestaScience** ProtestaScience is a Python library for scientists, with tools to study the impact on a road network of a given activist strategy.
+It pulls data from the `Open Street Map database <https://openstreetmap.org/>`_
 and offers a *simple* and *intuitive* API.
 
 Check out the :doc:`usage` section for further information, including
