@@ -6,11 +6,11 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+To use Protest'Action, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install protestaction
 
 Creating recipes
 ----------------
