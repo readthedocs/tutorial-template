@@ -12,6 +12,7 @@ how to :ref:`installation` the project.
 .. note::
 
    This project is under active development.
+   Since Aug.16 2022
 
 Contents
 --------
@@ -20,3 +21,4 @@ Contents
 
    usage
    api
+   examples
