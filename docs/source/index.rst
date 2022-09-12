@@ -1,13 +1,29 @@
-Welcome to Lumache's documentation!
-===================================
+libKriging
+==========
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+libKriging is a C++ library for Kriging/Gaussian process regression.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Main features of libKriging are:
+
+    Standard implementation of most common kriging:
+        ordinary/universal kriging
+        nugget (homoskedastic) or noise (heteroskedastic)
+        optimization of hyper-parameters (range, nugget, variance, ...) based on log-likelihood, leave-one-out, log-marginal-posterior
+        (pre-)normalization of conditional data
+    Comparison/testing against some standarad kriging libraries:
+        https://CRAN.R-project.org/package=DiceKriging
+        https://CRAN.R-project.org/package=RobustGaSP
+    Compatibility with commons OS:
+        Windows
+        Linux
+        OSX (intel & ARM)
+    (Almost) full wrapper availables for:
+        Python: https://pypi.org/project/pylibkriging/
+        R: https://github.com/libKriging/rlibkriging
+        Octave
+        Matlab
+
+Check out the :doc:`usage` section for further information, and how to :ref:`install` the project.
 
 .. note::
 
@@ -18,5 +34,8 @@ Contents
 
 .. toctree::
 
+   install
    usage
    api
+   math
+
