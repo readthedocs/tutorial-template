@@ -10,10 +10,11 @@ Main features of libKriging are:
     * nugget (homoskedastic) or noise (heteroskedastic)
     * optimization of hyper-parameters (range, nugget, variance, ...) based on log-likelihood, leave-one-out, log-marginal-posterior
     * (pre-)normalization of conditional data
-* Comparison/testing against some standarad kriging libraries:
+* Port from and comparison/testing with some standard kriging libraries:
     * https://CRAN.R-project.org/package=DiceKriging
     * https://CRAN.R-project.org/package=RobustGaSP
-* Compatibility with commons OS:
+    * https://github.com/stk-kriging
+* Compatibility with commons OS/arch:
     * Windows
     * Linux
     * OSX (intel & ARM)
