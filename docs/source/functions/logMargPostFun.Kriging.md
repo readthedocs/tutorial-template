@@ -1,7 +1,4 @@
-# `logMargPostFun.Kriging`
-
-Compute Log-Marginal-Posterior of Kriging Model
-
+# `Kriging::logMargPostFun`
 
 ## Description
 
@@ -11,40 +8,35 @@ Compute the log-marginal posterior of a kriging model, using the
 
 ## Usage
 
-```r
-list(list("logMargPostFun"), list("Kriging"))(object, theta, grad = FALSE, ...)
-```
+* Python
+    ```python
+    # k = Kriging(...)
+    k.logMargPostFun(theta, grad = FALSE)
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$logMargPostFun(theta, grad = FALSE)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.logMargPostFun(theta, grad = FALSE)
+    ```
 
 
 ## Arguments
 
 Argument      |Description
 ------------- |----------------
-`object`     |     S3 Kriging object.
 `theta`     |     Numeric vector of correlation range parameters at which the function is to be evaluated.
 `grad`     |     Logical. Should the function return the gradient (w.r.t theta)?
-`...`     |     Not used.
 
 
 ## Value
 
 The value of the log-marginal posterior computed for the
- given vector theta.
-
-
-## Seealso
-
-[`rgasp`](#rgasp) in the RobustGaSP package.
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
-
-
-## References
-
-XXXY A reference describing the model (prior, ...)
+ given vector $\theta$.
 
 
 ## Examples
@@ -56,10 +48,16 @@ X <- as.matrix(runif(5))
 y <- f(X)
 r <- Kriging(y, X, "gauss")
 print(r)
-lmp <- function(theta) logMargPostFun(r, theta)$logMargPost
+lmp <- function(theta) r$logMargPostFun(theta)$logMargPost
 t <- seq(from = 0.0001, to = 2, length.out = 101)
 plot(t, lmp(t), type = "l")
 abline(v = as.list(r)$theta, col = "blue")
 ```
+
+### Results
+```{literalinclude} ../examples/logMargPostFun.Kriging.md.Rout
+:language: bash
+```
+![](../examples/logMargPostFun.Kriging.md.png)
 
 

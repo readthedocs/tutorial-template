@@ -1,6 +1,4 @@
-# `predict.Kriging`
-
-Prediction Method  for a `Kriging` Object
+# `Kriging::predict`
 
 
 ## Description
@@ -10,21 +8,30 @@ Predict from a `Kriging` object.
 
 ## Usage
 
-```r
-list(list("predict"), list("Kriging"))(object, x, stdev = TRUE, cov = FALSE, deriv = FALSE, ...)
-```
-
+* Python
+    ```python
+    # k = Kriging(...)
+    k.predict(x, stdev = True, cov = False, deriv = False)
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$predict(x, stdev = TRUE, cov = FALSE, deriv = FALSE)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.predict(x, stdev = true, cov = false, deriv = false)
+    ```
 
 ## Arguments
 
 Argument      |Description
 ------------- |----------------
-`object`     |     S3 Kriging object.
 `x`     |     Input points where the prediction must be computed.
 `stdev`     |     `Logical` . If `TRUE` the standard deviation is returned.
 `cov`     |     `Logical` . If `TRUE` the covariance matrix of the predictions is returned.
 `deriv`     |     `Logical` . If `TRUE` the derivatives of mean and sd of the predictions are returned.
-`...`     |     Ignored.
 
 
 ## Details
@@ -39,21 +46,6 @@ Given "new" input points, the method compute the expectation,
 
 A list containing the element `mean` and possibly
   `stdev` and `cov` .
-
-
-## Note
-
-The names of the formal arguments differ from those of the
-  `predict` methods for the S4 classes `"km"` and
-  `"KM"` . The formal `x` corresponds to
-  `newdata` , `stdev` corresponds to `se.compute` 
- and `cov` to `cov.compute` . These names are chosen
-  Python and Octave interfaces to libKriging .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
 
 
 ## Examples
@@ -73,4 +65,14 @@ lines(x, p_x$mean - 2 * p_x$stdev, col = "blue")
 lines(x, p_x$mean + 2 * p_x$stdev, col = "blue")
 ```
 
+### Results
+```{literalinclude} ../examples/predict.Kriging.md.Rout
+:language: bash
+```
+![](../examples/predict.Kriging.md.png)
+
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/Kriging.cpp#L1326>
 

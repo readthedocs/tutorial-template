@@ -13,19 +13,10 @@ libKriging may be used through:
 
 All these syntax are almost identical, just diverging through basic language elements.
 
+
 Basic demo
 ----------
 
 .. include:: demo.md
    :parser: myst_parser.sphinx_
 
-
-Functions
----------
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Functions
-
-   functions/Kriging.md
-   functions/predict.Kriging.md

@@ -1,0 +1,13 @@
+Kriging model:
+
+* data: 5x[0.287578,0.940467] -> 5x[0.194057,1.00912]
+* trend constant (est.): 0.523892
+* variance (est.): 0.0988318
+* covariance:
+  * kernel: gauss
+  * range (est.): 0.114748
+  * fit:
+    * objective: LL
+    * optim: BFGS
+
+[1] 2.202

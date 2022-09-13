@@ -1,0 +1,13 @@
+NoiseKriging model:
+
+* data: 5x[0.287578,0.940467] -> 5x[0.212365,0.998222]
+* trend constant (est.): 0.582904
+* variance (est.): 0.0719757
+* covariance:
+  * kernel: gauss
+  * range (est.): 0.112784
+  * noise: 0.01, 0.01, 0.01, 0.01, 0.01
+  * fit:
+    * objective: LL
+    * optim: BFGS
+

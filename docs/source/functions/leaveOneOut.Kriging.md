@@ -1,37 +1,33 @@
-# `leaveOneOut.Kriging`
-
-Get leaveOneOut of Kriging Model
+# `Kriging::leaveOneOut`
 
 
 ## Description
 
-Get leaveOneOut of Kriging Model
+Get Leave-One-Out of a Kriging Model
 
 
 ## Usage
 
-```r
-list(list("leaveOneOut"), list("Kriging"))(object, ...)
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`object`     |     An S3 Kriging object.
-`...`     |     Not used.
+* Python
+    ```python
+    # k = Kriging(...)
+    k.leaveOneOut()
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$leaveOneOut()
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.leaveOneOut()
+    ```
 
 
 ## Value
 
-The leaveOneOut computed for fitted
-  $\boldsymbol{theta}$ .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
+The leaveOneOut computed for fitted range: $\theta$.
 
 
 ## Examples
@@ -43,7 +39,16 @@ X <- as.matrix(runif(5))
 y <- f(X)
 r <- Kriging(y, X, kernel = "gauss")
 print(r)
-leaveOneOut(r)
+r$leaveOneOut()
 ```
 
+### Results
+```{literalinclude} ../examples/leaveOneOut.Kriging.md.Rout
+:language: bash
+```
+![](../examples/leaveOneOut.Kriging.md.png)
 
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/Kriging.cpp#L350>

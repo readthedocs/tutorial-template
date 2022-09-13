@@ -1,11 +1,9 @@
 # `Kriging`
 
-Create a `Kriging` Object using libKriging
-
 
 ## Description
 
-Create an object with S3 class `"Kriging"` using
+Create an object `"Kriging"` using
  the libKriging library.
 
 
@@ -16,10 +14,10 @@ Kriging(
   y,
   X,
   kernel,
-  regmodel = c("constant", "linear", "interactive"),
+  regmodel = "constant",
   normalize = FALSE,
-  optim = c("BFGS", "Newton", "none"),
-  objective = c("LL", "LOO", "LMP"),
+  optim = "BFGS",
+  objective = "LL",
   parameters = NULL
 )
 ```
@@ -48,14 +46,9 @@ The hyper-parameters (variance and vector of correlation ranges)
 
 ## Value
 
-An object with S3 class `"Kriging"` . Should be used
+An object `"Kriging"` . Should be used
  with its `predict` , `simulate` , `update` 
  methods.
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
 
 
 ## Examples
@@ -65,7 +58,7 @@ X <- as.matrix(c(0.0, 0.25, 0.5, 0.75, 1.0))
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 y <- f(X)
 ## fit and print
-(k_R <- Kriging(y, X, kernel = "gauss"))
+k_R <- Kriging(y, X, kernel = "gauss")
 
 x <- as.matrix(seq(from = 0, to = 1, length.out = 100))
 p <- predict(k_R, x = x, stdev = TRUE, cov = FALSE)
@@ -80,4 +73,8 @@ points(X, y, pch = 16)
 matlines(x, s, col = rgb(0, 0, 1, 0.2), type = "l", lty = 1)
 ```
 
-
+### Results
+```{literalinclude} ../examples/Kriging.md.Rout
+:language: bash
+```
+![](../examples/Kriging.md.png)

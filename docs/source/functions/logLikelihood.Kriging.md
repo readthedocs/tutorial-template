@@ -1,6 +1,4 @@
-# `logLikelihood.Kriging`
-
-Get Log-Likelihood of Kriging Model
+# `Kriging::logLikelihood`
 
 
 ## Description
@@ -10,28 +8,26 @@ Get Log-Likelihood of Kriging Model
 
 ## Usage
 
-```r
-list(list("logLikelihood"), list("Kriging"))(object, ...)
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`object`     |     An S3 Kriging object.
-`...`     |     Not used.
+* Python
+    ```python
+    # k = Kriging(...)
+    k.logLikelihood()
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$logLikelihood()
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.logLikelihood()
+    ```
 
 
 ## Value
 
-The log-Likelihood computed for fitted
-  $\boldsymbol{theta}$ .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
+The log-Likelihood computed for fitted $\theta$.
 
 
 ## Examples
@@ -46,4 +42,13 @@ print(r)
 logLikelihood(r)
 ```
 
+### Results
+```{literalinclude} ../examples/logLikelihood.Kriging.md.Rout
+:language: bash
+```
+![](../examples/logLikelihood.Kriging.md.png)
 
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/Kriging.cpp#L94>

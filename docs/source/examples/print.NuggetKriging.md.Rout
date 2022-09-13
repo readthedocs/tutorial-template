@@ -1,0 +1,26 @@
+NuggetKriging model:
+
+* data: 5x[0.287578,0.940467] -> 5x[0.195888,1.00803]
+* trend constant (est.): 0.553611
+* variance (est.): 8.4445e-05
+* covariance:
+  * kernel: gauss
+  * range (est.): 4.21925
+  * nugget (est.): 0.0843605
+  * fit:
+    * objective: LL
+    * optim: BFGS
+
+NuggetKriging model:
+
+* data: 5x[0.287578,0.940467] -> 5x[0.195888,1.00803]
+* trend constant (est.): 0.553611
+* variance (est.): 8.4445e-05
+* covariance:
+  * kernel: gauss
+  * range (est.): 4.21925
+  * nugget (est.): 0.0843605
+  * fit:
+    * objective: LL
+    * optim: BFGS
+

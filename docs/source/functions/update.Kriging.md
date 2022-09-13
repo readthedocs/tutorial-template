@@ -1,6 +1,4 @@
-# `update.Kriging`
-
-Update a `Kriging` Object with New Points
+# `Kriging::update`
 
 
 ## Description
@@ -10,24 +8,29 @@ Update a `Kriging` model object with new points
 
 ## Usage
 
-```r
-list(list("update"), list("Kriging"))(object, newy, newX, ...)
-```
+* Python
+    ```python
+    # k = Kriging(...)
+    k.update(newy, newX)
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$update(newy, newX)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.update(newy, newX)
+    ```
 
 
 ## Arguments
 
 Argument      |Description
 ------------- |----------------
-`object`     |     S3 Kriging object.
 `newy`     |     Numeric vector of new responses (output).
 `newX`     |     Numeric matrix of new input points.
-`...`     |     Ignored.
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
 
 
 ## Examples
@@ -58,4 +61,8 @@ lines(x, p2_x$mean - 2 * p2_x$stdev, col = "red")
 lines(x, p2_x$mean + 2 * p2_x$stdev, col = "red")
 ```
 
-
+### Results
+```{literalinclude} ../examples/update.Kriging.md.Rout
+:language: bash
+```
+![](../examples/update.Kriging.md.png)

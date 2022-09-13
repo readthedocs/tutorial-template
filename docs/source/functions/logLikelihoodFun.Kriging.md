@@ -1,40 +1,43 @@
-# `logLikelihoodFun.Kriging`
-
-Compute Log-Likelihood of Kriging Model
+# `Kriging::logLikelihoodFun`
 
 
 ## Description
 
-Compute Log-Likelihood of Kriging Model
+Compute Log-Likelihood of Kriging Model for given $\theta$
 
 
 ## Usage
 
-```r
-list(list("logLikelihoodFun"), list("Kriging"))(object, theta, grad = FALSE, hess = FALSE, ...)
-```
+* Python
+    ```python
+    # k = Kriging(...)
+    k.logLikelihoodFun(theta)
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$logLikelihoodFun(theta)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.logLikelihoodFun(theta)
+    ```
 
 
 ## Arguments
 
 Argument      |Description
 ------------- |----------------
-`object`     |     An S3 Kriging object.
 `theta`     |     A numeric vector of (positive) range parameters at which the log-likelihood will be evaluated.
 `grad`     |     Logical. Should the function return the gradient?
 `hess`     |     Logical. Should the function return Hessian?
-`...`     |     Not used.
 
 
 ## Value
 
 The log-Likelihood computed for given
-  $\boldsymbol{theta}$ .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
+  $\theta$ .
 
 
 ## Examples
@@ -46,10 +49,14 @@ X <- as.matrix(runif(5))
 y <- f(X)
 r <- Kriging(y, X, kernel = "gauss")
 print(r)
-ll <- function(theta) logLikelihoodFun(r, theta)$logLikelihood
+ll <- function(theta) r$logLikelihoodFun(theta)$logLikelihood
 t <- seq(from = 0.0001, to = 2, length.out = 101)
 plot(t, ll(t), type = 'l')
 abline(v = as.list(r)$theta, col = "blue")
 ```
 
-
+### Results
+```{literalinclude} ../examples/logLikelihoodFun.Kriging.md.Rout
+:language: bash
+```
+![](../examples/logLikelihoodFun.Kriging.md.png)

@@ -1,6 +1,4 @@
-# `logLikelihood.NuggetKriging`
-
-Get logLikelihood of NuggetKriging Model
+# `NuggetKriging::logLikelihood`
 
 
 ## Description
@@ -10,28 +8,26 @@ Get logLikelihood of NuggetKriging Model
 
 ## Usage
 
-```r
-list(list("logLikelihood"), list("NuggetKriging"))(object, ...)
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`object`     |     An S3 NuggetKriging object.
-`...`     |     Not used.
+* Python
+    ```python
+    # k = NuggetKriging(...)
+    k.logLikelihood()
+    ```
+* R
+    ```rlibKriging
+    k$logLikelihood()
+    ```
+* Matlab/Octave
+    ```octave
+    % k = NuggetKriging(...)
+    k.logLikelihood()
+    ```
 
 
 ## Value
 
 The logLikelihood computed for fitted
-  $\boldsymbol{theta}$ .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
+  $theta$.
 
 
 ## Examples
@@ -46,4 +42,13 @@ print(r)
 logLikelihood(r)
 ```
 
+### Results
+```{literalinclude} ../examples/logLikelihood.NuggetKriging.md.Rout
+:language: bash
+```
+![](../examples/logLikelihood.NuggetKriging.md.png)
 
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/NuggetKriging.cpp#L94>

@@ -1,6 +1,4 @@
-# `simulate.NuggetKriging`
-
-Simulation from a `NuggetKriging` Object
+# `NuggetKriging::simulate`
 
 
 ## Description
@@ -10,20 +8,30 @@ Simulation from a `NuggetKriging` model object.
 
 ## Usage
 
-```r
-list(list("simulate"), list("NuggetKriging"))(object, nsim = 1, seed = 123, x, ...)
-```
+* Python
+    ```python
+    # k = NuggetKriging(...)
+    k.predict(nsim = 1, seed = 123, x)
+    ```
+* R
+    ```r
+    # k = NuggetKriging(...)
+    k$predict(nsim = 1, seed = 123, x)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = NuggetKriging(...)
+    k.predict(nsim = 1, seed = 123, x)
+    ```
 
 
 ## Arguments
 
 Argument      |Description
 ------------- |----------------
-`object`     |     S3 NuggetKriging object.
 `nsim`     |     Number of simulations to perform.
 `seed`     |     Random seed used.
 `x`     |     Points in model input space where to simulate.
-`...`     |     Ignored.
 
 
 ## Details
@@ -40,20 +48,6 @@ a matrix with `length(x)` rows and `nsim`
  given in `x` .
 
 
-## Note
-
-The names of the formal arguments differ from those of the
-  `simulate` methods for the S4 classes `"km"` and
-  `"KM"` . The formal `x` corresponds to
-  `newdata` . These names are chosen Python and
-  Octave interfaces to libKriging .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
-
-
 ## Examples
 
 ```r
@@ -61,7 +55,7 @@ f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7
 plot(f)
 set.seed(123)
 X <- as.matrix(runif(5))
-y <- f(X) + 0.01*rnorm(nrow(X))
+y <- f(X) + 0.1*rnorm(nrow(X))
 points(X, y, col = "blue")
 r <- NuggetKriging(y, X, kernel = "gauss")
 x <- seq(from = 0, to = 1, length.out = 101)
@@ -70,5 +64,16 @@ lines(x, s_x[ , 1], col = "blue")
 lines(x, s_x[ , 2], col = "blue")
 lines(x, s_x[ , 3], col = "blue")
 ```
+
+### Results
+```{literalinclude} ../examples/simulate.NuggetKriging.md.Rout
+:language: bash
+```
+![](../examples/simulate.NuggetKriging.md.png)
+
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/NuggetKriging.cpp#L1501>
 
 

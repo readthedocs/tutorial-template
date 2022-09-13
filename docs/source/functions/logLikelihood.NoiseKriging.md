@@ -1,6 +1,4 @@
-# `logLikelihood.NoiseKriging`
-
-Get logLikelihood of NoiseKriging Model
+# `NoiseKriging::logLikelihood`
 
 
 ## Description
@@ -10,28 +8,27 @@ Get logLikelihood of NoiseKriging Model
 
 ## Usage
 
-```r
-list(list("logLikelihood"), list("NoiseKriging"))(object, ...)
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`object`     |     An S3 NoiseKriging object.
-`...`     |     Not used.
+* Python
+    ```python
+    # k = NoiseKriging(...)
+    k.logLikelihood()
+    ```
+* R
+    ```r
+    # k = NoiseKriging(...)
+    k$logLikelihood()
+    ```
+* Matlab/Octave
+    ```octave
+    % k = NoiseKriging(...)
+    k.logLikelihood()
+    ```
 
 
 ## Value
 
 The logLikelihood computed for fitted
-  $\boldsymbol{theta}$ .
-
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
+  $theta$.
 
 
 ## Examples
@@ -46,4 +43,13 @@ print(r)
 logLikelihood(r)
 ```
 
+### Results
+```{literalinclude} ../examples/logLikelihood.NoiseKriging.md.Rout
+:language: bash
+```
+![](../examples/logLikelihood.NoiseKriging.md.png)
 
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/NoiseKriging.cpp#L94>

@@ -1,37 +1,33 @@
-# `logMargPost.Kriging`
-
-Get logMargPost of Kriging Model
-
+# `Kriging::logMargPost`
 
 ## Description
 
-Get logMargPost of Kriging Model
+Get Log-Marginal Posterior of Kriging Model
 
 
 ## Usage
 
-```r
-list(list("logMargPost"), list("Kriging"))(object, ...)
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`object`     |     An S3 Kriging object.
-`...`     |     Not used.
+* Python
+    ```python
+    # k = Kriging(...)
+    k.logMargPost()
+    ```
+* R
+    ```r
+    # k = Kriging(...)
+    k$logMargPost()
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(...)
+    k.logMargPost()
+    ```
 
 
 ## Value
 
-The logMargPost computed for fitted
-  $\boldsymbol{theta}$ .
+The logMargPost computed for fitted $\theta$.
 
-
-## Author
-
-Yann Richet yann.richet@irsn.fr
 
 
 ## Examples
@@ -46,4 +42,15 @@ print(r)
 logMargPost(r)
 ```
 
+### Results
+```{literalinclude} ../examples/logMargPost.Kriging.md.Rout
+:language: bash
+```
+![](../examples/logMargPost.Kriging.md.png)
+
+
+## Reference
+
+* Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/Kriging.cpp#L494>
+* RobustGaSP R package
 
