@@ -54,15 +54,18 @@ a matrix with `length(x)` rows and `nsim`
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 plot(f)
 set.seed(123)
-X <- as.matrix(runif(5))
+X <- as.matrix(runif(10))
 y <- f(X)
 points(X, y, col = "blue")
-r <- Kriging(y, X, kernel = "gauss")
+
+k <- Kriging(y, X, kernel = "matern3_2")
+
 x <- seq(from = 0, to = 1, length.out = 101)
-s_x <- simulate(r, nsim = 3, x = x)
-lines(x, s_x[ , 1], col = "blue")
-lines(x, s_x[ , 2], col = "blue")
-lines(x, s_x[ , 3], col = "blue")
+s <- k$simulate(nsim = 3, x = x)
+
+lines(x, s[ , 1], col = "blue")
+lines(x, s[ , 2], col = "blue")
+lines(x, s[ , 3], col = "blue")
 ```
 
 ### Results

@@ -1,13 +1,13 @@
 NuggetKriging model:
 
-* data: 5x[0.287578,0.940467] -> 5x[0.212365,0.998222]
-* trend constant (est.): 0.544733
-* variance (est.): 7.16563e-05
+* data: 10x[0.0455565,0.940467] -> 10x[0.149491,0.940566]
+* trend constant (est.): 0.562823
+* variance (est.): 0.0222342
 * covariance:
-  * kernel: gauss
-  * range (est.): 4.32672
-  * nugget (est.): 0.0715846
+  * kernel: matern3_2
+  * range (est.): 0.220019
+  * nugget (est.): 0.0259127
   * fit:
-    * objective: LL
+    * objective: LMP
     * optim: BFGS
 

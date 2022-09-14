@@ -54,15 +54,18 @@ A list containing the element `mean` and possibly
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 plot(f)
 set.seed(123)
-X <- as.matrix(runif(5))
+X <- as.matrix(runif(10))
 y <- f(X)
 points(X, y, col = "blue", pch = 16)
-r <- Kriging(y, X, "gauss")
+
+k <- Kriging(y, X, "matern3_2")
+
 x <-seq(from = 0, to = 1, length.out = 101)
-p_x <- predict(r, x)
-lines(x, p_x$mean, col = "blue")
-lines(x, p_x$mean - 2 * p_x$stdev, col = "blue")
-lines(x, p_x$mean + 2 * p_x$stdev, col = "blue")
+p <- k$predict(x)
+
+lines(x, p$mean, col = "blue")
+polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)),
+border = NA, col = rgb(0, 0, 1, 0.2))
 ```
 
 ### Results

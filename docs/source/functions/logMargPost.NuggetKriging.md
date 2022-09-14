@@ -35,11 +35,13 @@ The logMargPost computed for fitted $\theta$.
 ```r
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 set.seed(123)
-X <- as.matrix(runif(5))
-y <- f(X) + 0.01*rnorm(nrow(X))
-r <- NuggetKriging(y, X, kernel = "gauss")
-print(r)
-logMargPost(r)
+X <- as.matrix(runif(10))
+y <- f(X) + 0.1 * rnorm(nrow(X))
+
+k <- NuggetKriging(y, X, kernel = "matern3_2", objective="LMP")
+print(k)
+
+k$logMargPost()
 ```
 
 ### Results

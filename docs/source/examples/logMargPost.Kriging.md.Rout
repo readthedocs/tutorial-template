@@ -1,13 +1,13 @@
 Kriging model:
 
-* data: 5x[0.287578,0.940467] -> 5x[0.194057,1.00912]
-* trend constant (est.): 0.523892
-* variance (est.): 0.0988318
+* data: 10x[0.0455565,0.940467] -> 10x[0.194057,1.00912]
+* trend constant (est.): 0.388571
+* variance (est.): 0.158888
 * covariance:
-  * kernel: gauss
-  * range (est.): 0.114748
+  * kernel: matern3_2
+  * range (est.): 0.313357
   * fit:
-    * objective: LL
+    * objective: LMP
     * optim: BFGS
 
-[1] 2.202
+[1] 10.64938

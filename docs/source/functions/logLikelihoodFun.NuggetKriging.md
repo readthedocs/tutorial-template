@@ -3,7 +3,7 @@
 
 ## Description
 
-Compute Log-Likelihood of NuggetKriging Model for given $\theta,\over{\sigma^2}{\sigma^2+nugget}$
+Compute Log-Likelihood of NuggetKriging Model for given $\theta,\frac{\sigma^2}{\sigma^2+nugget}$
 
 
 
@@ -37,7 +37,7 @@ Argument      |Description
 ## Value
 
 The log-Likelihood computed for given
-  $\theta,\over{\sigma^2}{\sigma^2+nugget}$ .
+  $\theta,\frac{\sigma^2}{\sigma^2+nugget}$ .
 
 
 ## Examples
@@ -45,15 +45,22 @@ The log-Likelihood computed for given
 ```r
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 set.seed(123)
-X <- as.matrix(runif(5))
-y <- f(X) + 0.1*rnorm(nrow(X))
-r <- NuggetKriging(y, X, kernel = "gauss")
-print(r)
-alpha = as.list(r)$sigma2/(as.list(r)$sigma2+as.list(r)$nugget)
-ll <- function(theta) r$logLikelihoodFun(cbind(theta,alpha))$logLikelihood
-t <- seq(from = 0.001, to = 2, length.out = 101)
-plot(t, ll(t), type = 'l')
-abline(v = as.list(r)$theta, col = "blue")
+X <- as.matrix(runif(10))
+y <- f(X) + 0.1 * rnorm(nrow(X))
+
+k <- NuggetKriging(y, X, kernel = "matern3_2")
+print(k)
+
+# alpha = k$sigma2()/(k$sigma2()+k$nugget())
+# ll <- function(theta) k$logLikelihoodFun(cbind(theta,alpha))$logLikelihood
+# from = 0.001, to = 2, length.out = 101)
+# plot(t, ll(t), type = 'l')
+# abline(v = k$theta(), col = "blue")
+
+ll <- function(theta_alpha) k$logLikelihoodFun(theta_alpha)$logLikelihood
+t <- seq(from = 0.001, to = 1, length.out = 31)
+contour(t,t,matrix(ncol=length(t),ll(expand.grid(t,0.5*t))),xlab="theta",ylab="sigma2/(sigma2+nugget)")
+points(k$theta(),k$sigma2()/(k$sigma2()+k$nugget()),col='blue')
 ```
 
 ### Results
