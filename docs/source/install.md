@@ -9,7 +9,7 @@ libKriging may be installed directly from:
   ```
 * R 
   ```r
-  devtools::install_github('libKriging/libkriging')
+  devtools::install_github('libKriging/rlibkriging')
   ```
 * Octave/Matlab \
   Download and uncompress the latest Octave or Matlab archive from libKriging releases <https://github.com/libKriging/libKriging/releases/>:

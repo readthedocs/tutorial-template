@@ -5,7 +5,7 @@ Usage
 
 libKriging may be used through:
 
-* direct C++ access (see :doc:`api`)
+* direct C++ access
 * Python wrapper
 * R wrapper
 * Octave wrapper
