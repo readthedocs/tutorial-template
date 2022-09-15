@@ -60,7 +60,7 @@ points(X, y, col = "blue", pch = 16)
 
 k <- NuggetKriging(y, X, "matern3_2")
 
-x <-seq(from = 0, to = 1, length.out = 101)
+x <- sort(c(X,seq(from = 0, to = 1, length.out = 101))) # include design points to see interpolation
 p <- k$predict(x)
 
 lines(x, p$mean, col = "blue")

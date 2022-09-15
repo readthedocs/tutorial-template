@@ -45,7 +45,7 @@ points(X, y, col = "blue")
 
 k <- NuggetKriging(y, X, "matern3_2")
 
-x <- seq(from = 0, to = 1, length.out = 101)
+x <- sort(c(X,seq(from = 0, to = 1, length.out = 101))) # include design points to see interpolation
 p <- k$predict(x)
 lines(x, p$mean, col = "blue")
 polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)), border = NA, col = rgb(0, 0, 1, 0.2))
@@ -57,7 +57,7 @@ points(newX, newy, col = "red")
 ## change the content of the object 'k'
 k$update(newy, newX)
 
-x <- seq(from = 0, to = 1, length.out = 101)
+x <- sort(c(X,newX,seq(from = 0, to = 1, length.out = 101))) # include design points to see interpolation
 p2 <- k$predict(x)
 lines(x, p2$mean, col = "red")
 polygon(c(x, rev(x)), c(p2$mean - 2 * p2$stdev, rev(p2$mean + 2 * p2$stdev)), border = NA, col = rgb(1, 0, 0, 0.2))
