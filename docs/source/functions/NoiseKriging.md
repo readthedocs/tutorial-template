@@ -31,7 +31,7 @@ Argument      |Description
 `y`     |     Numeric vector of response values.
 `noise`     |     Numeric vector of response variances.
 `X`     |     Numeric matrix of input design.
-`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , ... See XXX.
+`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , `"matern3_2"` , `"matern5_2"`.
 `regmodel`     |     Universal NoiseKriging linear trend.
 `normalize`     |     Logical. If `TRUE` both the input matrix `X` and the response `y` in normalized to take values in the interval $[0, 1]$ .
 `optim`     |     Character giving the Optimization method used to fit hyper-parameters. Possible values are: `"BFGS"` and `"none"` , the later simply keeping the values given in `parameters` . The method `"BFGS"` uses the gradient of the objective.

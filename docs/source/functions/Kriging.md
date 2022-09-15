@@ -29,7 +29,7 @@ Argument      |Description
 ------------- |----------------
 `y`     |     Numeric vector of response values.
 `X`     |     Numeric matrix of input design.
-`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , ... See XXX.
+`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , `"matern3_2"` , `"matern5_2"`.
 `regmodel`     |     Universal Kriging linear trend.
 `normalize`     |     Logical. If `TRUE` both the input matrix `X` and the response `y` in normalized to take values in the interval $[0, 1]$ .
 `optim`     |     Character giving the Optimization method used to fit hyper-parameters. Possible values are: `"BFGS"` , `"Newton"` and `"none"` , the later simply keeping the values given in `parameters` . The method `"BFGS"` uses the gradient of the objective. The method `"Newton"` uses both the gradient and the Hessian of the objective.

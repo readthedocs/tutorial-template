@@ -28,17 +28,17 @@ Argument      |Description
 ------------- |----------------
 `y`     |     Numeric vector of response values.
 `X`     |     Numeric matrix of input design.
-`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , ... See XXX.
+`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , `"matern3_2"` , `"matern5_2"`.
 `regmodel`     |     Universal NuggetKriging linear trend.
 `normalize`     |     Logical. If `TRUE` both the input matrix `X` and the response `y` in normalized to take values in the interval $[0, 1]$ .
 `optim`     |     Character giving the Optimization method used to fit hyper-parameters. Possible values are: `"BFGS"` and `"none"` , the later simply keeping the values given in `parameters` . The method `"BFGS"` uses the gradient of the objective.
 `objective`     |     Character giving the objective function to optimize. Possible values are: `"LL"` for the Log-Likelihood and `"LMP"` for the Log-Marginal Posterior.
-`parameters`     |     Initial values for the hyper-parameters. When provided this must be named list with elements `"sigma2"`  and `"theta"` containing the initial value(s) for the variance and for the range parameters. If `theta` is a matrix with more than one row, each row is used as a starting point for optimization.
+`parameters`     |     Initial values for the hyper-parameters. When provided this must be named list with some elements `"sigma2"`, `"theta"`, `"nugget"` containing the initial value(s) for the variance, range and nugget parameters. If `theta` is a matrix with more than one row, each row is used as a starting point for optimization.
 
 
 ## Details
 
-The hyper-parameters (variance and vector of correlation ranges)
+The hyper-parameters (variance, nugget and vector of correlation ranges)
  are estimated thanks to the optimization of a criterion given by
  `objective` , using the method given in `optim` .
 

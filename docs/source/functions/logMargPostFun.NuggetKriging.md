@@ -28,7 +28,7 @@ Compute the log-marginal posterior of a kriging model, using the prior XXXY for 
 
 Argument      |Description
 ------------- |----------------
-`theta_alpha`     |     Numeric vector of correlation range and variance over nugget+ variance parameters at which the function is to be evaluated.
+`theta_alpha`     |     Numeric vector of correlation range and variance over nugget + variance parameters at which the function is to be evaluated.
 `grad`     |     Logical. Should the function return the gradient (w.r.t theta_alpha)?
 
 
@@ -49,15 +49,22 @@ y <- f(X) + 0.1 * rnorm(nrow(X))
 k <- NuggetKriging(y, X, "matern3_2", objective="LMP")
 print(k)
 
-# alpha = k$sigma2()/(k$nugget()+k$sigma2())
-# lmp <- function(theta) k$logMargPostFun(cbind(theta,alpha))$logMargPost
-# t <- seq(from = 0.01, to = 2, length.out = 101)
-# plot(t, lmp(t), type = "l")
+# theta0 = k$theta()
+# lmp_alpha <- function(alpha) k$logMargPostFun(cbind(theta0,alpha))$logMargPost
+# a <- seq(from = 0.9, to = 1.0, length.out = 101)
+# plot(a, Vectorize(lmp_alpha)(a), type = "l",xlim=c(0.9,1))
+# abline(v = k$sigma2()/(k$sigma2()+k$nugget()), col = "blue")
+# 
+# alpha0 = k$sigma2()/(k$sigma2()+k$nugget())
+# lmp_theta <- function(theta) k$logMargPostFun(cbind(theta,alpha0))$logMargPost
+# t <- seq(from = 0.001, to = 2, length.out = 101)
+# plot(t, Vectorize(lmp_theta)(t), type = 'l')
 # abline(v = k$theta(), col = "blue")
 
 lmp <- function(theta_alpha) k$logMargPostFun(theta_alpha)$logMargPost
-t <- seq(from = 0.001, to = 1, length.out = 31)
-contour(2*t,t,matrix(ncol=length(t),lmp(expand.grid(2*t,t))))
+t <- seq(from = 0.4, to = 0.6, length.out = 51)
+a <- seq(from = 0.9, to = 1, length.out = 51)
+contour(t,a,matrix(ncol=length(t),lmp(expand.grid(t,a))),nlevels=50,xlab="theta",ylab="sigma2/(sigma2+nugget)")
 points(k$theta(),k$sigma2()/(k$sigma2()+k$nugget()),col='blue')
 ```
 

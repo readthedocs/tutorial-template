@@ -48,8 +48,7 @@ k <- Kriging(y, X, "matern3_2")
 x <- seq(from = 0, to = 1, length.out = 101)
 p <- k$predict(x)
 lines(x, p$mean, col = "blue")
-polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)),
-border = NA, col = rgb(0, 0, 1, 0.2))
+polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)), border = NA, col = rgb(0, 0, 1, 0.2))
 
 newX <- as.matrix(runif(3))
 newy <- f(newX)
@@ -61,8 +60,7 @@ k$update(newy, newX)
 x <- seq(from = 0, to = 1, length.out = 101)
 p2 <- k$predict(x)
 lines(x, p2$mean, col = "red")
-polygon(c(x, rev(x)), c(p2$mean - 2 * p2$stdev, rev(p2$mean + 2 * p2$stdev)),
-border = NA, col = rgb(1, 0, 0, 0.2))
+polygon(c(x, rev(x)), c(p2$mean - 2 * p2$stdev, rev(p2$mean + 2 * p2$stdev)), border = NA, col = rgb(1, 0, 0, 0.2))
 ```
 
 ### Results

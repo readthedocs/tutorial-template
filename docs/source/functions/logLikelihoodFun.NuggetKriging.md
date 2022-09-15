@@ -51,15 +51,22 @@ y <- f(X) + 0.1 * rnorm(nrow(X))
 k <- NuggetKriging(y, X, kernel = "matern3_2")
 print(k)
 
-# alpha = k$sigma2()/(k$sigma2()+k$nugget())
-# ll <- function(theta) k$logLikelihoodFun(cbind(theta,alpha))$logLikelihood
-# from = 0.001, to = 2, length.out = 101)
-# plot(t, ll(t), type = 'l')
+# theta0 = k$theta()
+# ll_alpha <- function(alpha) k$logLikelihoodFun(cbind(theta0,alpha))$logLikelihood
+# a <- seq(from = 0.9, to = 1.0, length.out = 101)
+# plot(a, Vectorize(ll_alpha)(a), type = "l",xlim=c(0.9,1))
+# abline(v = k$sigma2()/(k$sigma2()+k$nugget()), col = "blue")
+# 
+# alpha0 = k$sigma2()/(k$sigma2()+k$nugget())
+# ll_theta <- function(theta) k$logLikelihoodFun(cbind(theta,alpha0))$logLikelihood
+# t <- seq(from = 0.001, to = 2, length.out = 101)
+# plot(t, Vectorize(ll_theta)(t), type = 'l')
 # abline(v = k$theta(), col = "blue")
 
 ll <- function(theta_alpha) k$logLikelihoodFun(theta_alpha)$logLikelihood
-t <- seq(from = 0.001, to = 1, length.out = 31)
-contour(t,t,matrix(ncol=length(t),ll(expand.grid(t,0.5*t))),xlab="theta",ylab="sigma2/(sigma2+nugget)")
+a <- seq(from = 0.9, to = 1.0, length.out = 31)
+t <- seq(from = 0.001, to = 2, length.out = 101)
+contour(t,a,matrix(ncol=length(a),ll(expand.grid(t,a))),xlab="theta",ylab="sigma2/(sigma2+nugget)")
 points(k$theta(),k$sigma2()/(k$sigma2()+k$nugget()),col='blue')
 ```
 

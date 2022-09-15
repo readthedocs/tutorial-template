@@ -27,7 +27,7 @@ Get logLikelihood of NuggetKriging Model
 ## Value
 
 The logLikelihood computed for fitted
-  $theta$.
+  $\theta,\frac{\sigma^2}{\sigma^2+nugget}$.
 
 
 ## Examples

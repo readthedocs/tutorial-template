@@ -26,7 +26,7 @@ Get Log-Marginal Posterior of NuggetKriging Model
 
 ## Value
 
-The logMargPost computed for fitted $\theta$.
+The logMargPost computed for fitted $\theta,\frac{\sigma^2}{\sigma^2+nugget}$.
 
 
 

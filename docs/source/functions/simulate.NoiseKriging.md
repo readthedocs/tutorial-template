@@ -55,10 +55,10 @@ f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7
 plot(f)
 set.seed(123)
 X <- as.matrix(runif(10))
-y <- f(X) + 1:10/20 * rnorm(nrow(X))
+y <- f(X) + X/10 * rnorm(nrow(X))
 points(X, y, col = "blue")
 
-k <- NoiseKriging(y, 1:10/20^2, X, kernel = "matern3_2")
+k <- NoiseKriging(y, (X/10)^2, X, kernel = "matern3_2")
 
 x <- seq(from = 0, to = 1, length.out = 101)
 s <- k$simulate(nsim = 3, x = x)

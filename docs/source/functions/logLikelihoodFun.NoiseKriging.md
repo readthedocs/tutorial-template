@@ -46,20 +46,27 @@ The log-Likelihood computed for given
 f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7)
 set.seed(123)
 X <- as.matrix(runif(10))
-y <- f(X) + 1:10/20  *rnorm(nrow(X))
+y <- f(X) + X/10  *rnorm(nrow(X))
 
-k <- NoiseKriging(y, 1:10/20^2, X, kernel = "matern3_2")
+k <- NoiseKriging(y, (X/10)^2, X, kernel = "matern3_2")
 print(k)
 
-# sigma2 = k$sigma2()
-# ll <- function(theta) k$logLikelihoodFun(cbind(theta,sigma2))$logLikelihood
+# theta0 = k$theta()
+# ll_sigma2 <- function(sigma2) k$logLikelihoodFun(cbind(theta0,sigma2))$logLikelihood
+# s2 <- seq(from = 0.001, to = 1, length.out = 101)
+# plot(s2, Vectorize(ll_sigma2)(s2), type = 'l')
+# abline(v = k$sigma2(), col = "blue")
+
+# sigma20 = k$sigma2()
+# ll_theta <- function(theta) k$logLikelihoodFun(cbind(theta,sigma20))$logLikelihood
 # t <- seq(from = 0.001, to = 2, length.out = 101)
-# plot(t, ll(t), type = 'l')
+# plot(t, Vectorize(ll_theta)(t), type = 'l')
 # abline(v = k$theta(), col = "blue")
 
 ll <- function(theta_sigma2) k$logLikelihoodFun(theta_sigma2)$logLikelihood
-t <- seq(from = 0.001, to = 1, length.out = 31)
-contour(t,0.5*t,matrix(ncol=length(t),ll(expand.grid(t,0.5*t))),xlab="theta",ylab="sigma2")
+s2 <- seq(from = 0.001, to = 1, length.out = 31)
+t <- seq(from = 0.001, to = 2, length.out = 31)
+contour(t,s2,matrix(ncol=length(s2),ll(expand.grid(t,s2))),xlab="theta",ylab="sigma2")
 points(k$theta(),k$sigma2(),col='blue')
 ```
 
