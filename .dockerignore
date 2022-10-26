@@ -1,5 +1,5 @@
 ﻿**
-!src/webapp/dist
+!src/webapp/public
 !src/index.js
 !package.json
 !package-lock.json
