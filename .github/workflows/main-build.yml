@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and publish Doks
+        run: cd src/webapp && npm install && npm run build
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag tools.bluerain.tech/traxsense-public:${{github.run_number}}
+      - name: Docker Login
+        uses: docker/login-action@v2.0.0
+        with:
+          registry: ${{ secrets.DOCKER_REGISTRY_HOST }}
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          logout: false
+      - name: Push the docker image
+        run: docker push tools.bluerain.tech/traxsense-public:${{github.run_number}}
