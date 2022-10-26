@@ -1,0 +1,114 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Traxsense"
+titleSeparator = "-"
+titleAddition = "Asset Management Platform"
+description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
+
+## Documentation
+# docsVersion = "0.3"
+
+## Open Graph
+images = []
+ogLocale = "en_US"
+domainTLD = "traxsense.com"
+titleHome = "Traxsense"
+
+## Twitter Cards
+twitterSite = "@blueraintech"
+twitterCreator = "@blueraintech"
+
+## JSON-LD
+# schemaType = "Traxsense"
+schemaType = "Organization"
+schemaName = "Traxsense"
+schemaAuthor = "Bluerain Technologies"
+schemaAuthorTwitter = "https://www.linkedin.com/company/bluerain-technologies"
+schemaAuthorLinkedIn = "https://www.linkedin.com/company/bluerain-technologies"
+schemaAuthorGitHub = "https://github.com/blueraintech/traxsense-docs"
+schemaLocale = "en-US"
+schemaLogo = "logo-traxsense.png"
+schemaLogoWidth = 512
+schemaLogoHeight = 512
+schemaImage = "doks.png"
+schemaImageWidth = 1280
+schemaImageHeight = 640
+schemaTwitter = "https://www.linkedin.com/company/bluerain-technologies"
+schemaLinkedIn = ""
+schemaGitHub = "https://github.com/blueraintech/traxsense-docs"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = false
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+smallLimit = "300"
+
+# Images
+imageResponsive = true
+imageConvertTo = "webp"
+imageImageSizes = ["480","720","1080","1280","1600","2048"]
+singleSize = false
+imageAddClass = "img-fluid lazyload blur-up"
+
+### Image template
+defaultImage = "default-image.png" # put in `./assets/images/`
+fillImage = "1270x740 Center" # normalize image size
+
+# Footer
+footer = "Powered by <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+
+# Feed
+copyRight = "Copyright (c) 2022 Bluerain Technologies"
+
+# Alert
+alert = false
+alertDismissable = true
+# alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\" target=\"_blank\" rel=\"noopener\">Check out Doks v0.2</a>"
+alertText = "Introducing the Doks child theme, several DX + UX updates, and more! <a class=\"alert-link stretched-link\" href=\"https://getdoks.org/blog/doks-v0.2/\">Check out Doks v0.2</a>"
+
+# Edit Page
+# repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
+repoHost = "GitHub"
+#repoHost = "Gitea"
+docsRepo = "https://github.com/h-enk/doks"
+docsRepoBranch = "master"
+docsRepoSubPath = ""
+editPage = false
+lastMod = false
+
+[sections]
+  sectionNav = ["docs", "guides"]
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = true
+  searchSectionsShow = []
+  searchSectionsIndex = []
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = false
+  highLight = true
+  kaTex = false
+  multilingualMode = false
+  docsVersioning = false
+  fullWidth = false
+  navbarSticky = true
+  toTopButton = false
+  scrollSpy = false # experimental; needs Bootstrap >= 5.2.0-beta1
+
+[menu]
+  [menu.section]
+    auto = true
+    collapsibleSidebar = true
