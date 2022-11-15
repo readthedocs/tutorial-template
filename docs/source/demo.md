@@ -19,8 +19,8 @@ print(k_py.summary())
 # def ll(t): return k_py.logLikelihoodFun(t,False,False)[0]
 # t = np.arange(0,1,1/99); pyplot.figure(1); pyplot.plot(t, [ll(ti) for ti in t]); pyplot.show()
 
-x = np.arange(0, 1, 1 / 99)
-p = k_py.predict(x, True, False)
+x = np.linspace(0, 1, 101)
+p = k_py.predict(x, True, False, False)
 p = {"mean": p[0], "stdev": p[1], "cov": p[2]}
 
 import matplotlib.pyplot as pyplot
@@ -55,7 +55,7 @@ print(k_R)
 # you can also check logLikelihood using:
 # ll = function(t) logLikelihoodFun(k_R,t)$logLikelihood; plot(ll)
 
-x <- as.matrix(seq(0, 1, , 100))
+x <- as.matrix(seq(0, 1, , 101))
 p <- predict(k_R, x, TRUE, FALSE)
 
 plot(f)
@@ -81,7 +81,7 @@ disp(k_m.summary());
 % you can also check logLikelihood using:
 % function llt = ll (tt) global k_m; llt=k_m.logLikelihoodFun(tt); endfunction; t=0:(1/99):1; plot(t,arrayfun(@ll,t))
 
-x = reshape(0:(1/99):1,100,1);
+x = reshape(0:(1/99):1,101,1);
 [p_mean, p_stdev] = k_m.predict(x, true, false);
 h = figure(1)
 
