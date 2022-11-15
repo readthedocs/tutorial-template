@@ -7,3 +7,12 @@
   * fit:
     * objective: LL
     * optim: BFGS
+* data: 10x[0.0455565,0.940467] -> 10x[0.194057,1.00912]
+* trend constant (est.): 0.433949
+* variance (est.): 0.0873733
+* covariance:
+  * kernel: matern3_2
+  * range (est.): 0.240593
+  * fit:
+    * objective: LL
+    * optim: BFGS

@@ -1,5 +1,3 @@
-NoiseKriging model:
-
 * data: 10x[0.0455565,0.940467] -> 10x[0.152144,0.957381]
 * trend constant (est.): 0.487331
 * variance (est.): 0.0635445
@@ -10,4 +8,3 @@ NoiseKriging model:
   * fit:
     * objective: LL
     * optim: BFGS
-

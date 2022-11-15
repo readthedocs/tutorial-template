@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# previously geenrate functions content using https://docs.ropensci.org/r2readthedocs/
+# R> remotes::install_github("ropenscilabs/r2readthedocs")
+# R> r2readthedocs::r2readthedocs("../rlibkriging")
+# cp -r ../rlibkriging/docs/functions/*.md docs/source/functions/.
+
 for f in `ls functions`; do
     echo $f
     
