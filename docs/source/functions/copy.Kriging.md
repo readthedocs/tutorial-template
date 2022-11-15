@@ -43,4 +43,10 @@ k
 k$copy()
 ```
 
+### Results
+```{literalinclude} ../examples/copy.Kriging.md.Rout
+:language: bash
+```
+![](../examples/copy.Kriging.md.png)
+
 

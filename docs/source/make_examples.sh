@@ -5,6 +5,7 @@
 # R> r2readthedocs::r2readthedocs("../rlibkriging")
 # cp -r ../rlibkriging/docs/functions/*.md docs/source/functions/.
 
+# cd docs/source
 for f in `ls functions`; do
     echo $f
     
