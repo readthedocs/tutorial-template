@@ -62,9 +62,12 @@ Regression
    functions/predict.Kriging.md
    functions/simulate.Kriging.md
    functions/update.Kriging.md
+   functions/copy.Kriging.md
    functions/predict.NuggetKriging.md
    functions/simulate.NuggetKriging.md
    functions/update.NuggetKriging.md
+   functions/copy.NuggetKriging.md
    functions/predict.NoiseKriging.md
    functions/simulate.NoiseKriging.md
    functions/update.NoiseKriging.md
+   functions/copy.NoiseKriging.md

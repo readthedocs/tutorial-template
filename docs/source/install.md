@@ -18,6 +18,6 @@ libKriging may be installed directly from:
   ```
   Then
   ```octave
-  addpath("path/to/mLibKriging")
+  addpath("mLibKriging")
   ```
 
