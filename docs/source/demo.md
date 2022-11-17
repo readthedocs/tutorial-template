@@ -4,7 +4,7 @@ The sample code below should give you these figures:
 <img src="img/simulate.png" alt="simulate" width="300px"/>
 
 
-* Python:
+* Python: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://bit.ly/collab-libK-demo)
 ```python
 import numpy as np
 X = [0.0, 0.25, 0.5, 0.75, 1.0]
