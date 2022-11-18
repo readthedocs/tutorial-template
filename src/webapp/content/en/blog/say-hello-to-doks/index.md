@@ -6,7 +6,7 @@ date: 2022-10-04T09:19:42+01:00
 lastmod: 2022-10-04T09:19:42+01:00
 draft: false
 weight: 50
-images: ["images/architecture/architecture.png"]
+images: ["/assets/images/tn.png"]
 categories: ["News"]
 tags: ["asset management", "items", "tracking"]
 contributors: ["Bluerain Technologies"]

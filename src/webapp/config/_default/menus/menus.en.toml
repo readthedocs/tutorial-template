@@ -58,7 +58,7 @@
   parent = "get-started"
 
 [[main]]
-  name = "Tutorial"
+  name = "Book a Demo"
   weight = 50
   identifier = "tutorial"
   url = "/docs/prologue/introduction/"

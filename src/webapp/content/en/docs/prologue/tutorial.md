@@ -1,5 +1,5 @@
 ---
-title: "Tutorial"
+title: "Book a Demo"
 description: ""
 lead: ""
 date: 2022-10-26T12:29:27+02:00
@@ -14,10 +14,14 @@ weight: 999
 toc: true
 ---
 
-## Book a demo with our sales team
+### Book a demo with our sales team
 
-[27 10 350 5200 →](tel:+27103505200)
+#### Call us on:
 
-[27 11 794 3513 →](tel:+27117943513)
+[27 10 350 5200](tel:+27103505200)
 
-[sales@rfid.co.za →](mail:sales@rfid.co.za)
+[27 11 794 3513](tel:+27117943513)
+
+#### Email us:
+
+[sales@rfid.co.za](mail:sales@rfid.co.za)

@@ -20,11 +20,9 @@ It makes use of RFID, Mobile, BLE, IoT to help you track and maintain your items
 
 There are two main ways to get started with Traxsense:
 
-### Tutorial
+### Book a Demo
 
-{{< alert icon="👉" text="The Tutorial is intended for novice to intermediate users." />}}
-
-Step-by-step instructions on how to start a new Traxsense project. [Tutorial →]({{< relref "tutorial" >}})
+Step-by-step instructions on how to book a demo with our sales team [Book a Demo →]({{< relref "tutorial" >}})
 
 ### Quick Start
 

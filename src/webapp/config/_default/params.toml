@@ -61,7 +61,7 @@ singleSize = false
 imageAddClass = "img-fluid lazyload blur-up"
 
 ### Image template
-defaultImage = "default-image.png" # put in `./assets/images/`
+defaultImage = "login.png" # put in `./assets/images/`
 fillImage = "1270x740 Center" # normalize image size
 
 # Footer
