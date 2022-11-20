@@ -1,5 +1,7 @@
-Welcome to Lumache's documentation!
+Welcome to Mjolnirs's documentation!
 ===================================
+
+This is work in progress...
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
