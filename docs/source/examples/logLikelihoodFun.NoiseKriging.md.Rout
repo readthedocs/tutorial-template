@@ -1,9 +1,9 @@
 * data: 10x[0.0455565,0.940467] -> 10x[0.152144,0.957381]
-* trend constant (est.): 0.487331
-* variance (est.): 0.0635445
+* trend constant (est.): 0.487335
+* variance (est.): 0.0635381
 * covariance:
   * kernel: matern3_2
-  * range (est.): 0.211418
+  * range (est.): 0.211413
   * noise: 0.000827008, 0.00621425, 0.00167262, 0.0077972, 0.00884479, 2.07539e-05, 0.00278895, 0.00796412, 0.00304081, 0.00208497
   * fit:
     * objective: LL

@@ -1,32 +1,43 @@
-# `Kriging`
+# `Kriging::fit`
 
 
 ## Description
 
-Create an object `"Kriging"` using
- the libKriging library.
+Fit `Kriging` object on given data.
 
 
 ## Usage
 
-Just build the model:
-```r
-Kriging(kernel)
-# later, call fit(y,X,...)
-```
-or, build and fit at the same time:
-```r
-Kriging(
-  y,
-  X,
-  kernel,
-  regmodel = "constant",
-  normalize = FALSE,
-  optim = "BFGS",
-  objective = "LL",
-  parameters = NULL
-)
-```
+* Python
+    ```python
+    # k = Kriging(kernel=...)
+    k.fit(y, X, 
+          regmodel = "constant",
+          normalize = False,
+          optim = "BFGS",
+          objective = "LL",
+          parameters = None)
+    ```
+* R
+    ```r
+    # k = Kriging(kernel=...)
+    k$fit(y, X, 
+          regmodel = "constant",
+          normalize = FALSE,
+          optim = "BFGS",
+          objective = "LL",
+          parameters = NULL)
+    ```
+* Matlab/Octave
+    ```octave
+    % k = Kriging(kernel=...)
+    k.fit(y, X, 
+          regmodel = "constant",
+          normalize = false,
+          optim = "BFGS",
+          objective = "LL",
+          parameters = [])
+    ```
 
 
 ## Arguments
@@ -35,7 +46,6 @@ Argument      |Description
 ------------- |----------------
 `y`     |     Numeric vector of response values.
 `X`     |     Numeric matrix of input design.
-`kernel`     |     Character defining the covariance model: `"gauss"` , `"exp"` , `"matern3_2"` , `"matern5_2"`.
 `regmodel`     |     Universal Kriging linear trend.
 `normalize`     |     Logical. If `TRUE` both the input matrix `X` and the response `y` in normalized to take values in the interval $[0, 1]$ .
 `optim`     |     Character giving the Optimization method used to fit hyper-parameters. Possible values are: `"BFGS"` , `"Newton"` and `"none"` , the later simply keeping the values given in `parameters` . The method `"BFGS"` uses the gradient of the objective. The method `"Newton"` uses both the gradient and the Hessian of the objective.
@@ -50,13 +60,6 @@ The hyper-parameters (variance and vector of correlation ranges)
  `objective` , using the method given in `optim` .
 
 
-## Value
-
-An object `"Kriging"` . Should be used
- with its `predict` , `simulate` , `update` 
- methods.
-
-
 ## Examples
 
 ```r
@@ -64,26 +67,21 @@ f <- function(x) 1 - 1 / 2 * (sin(12 * x) / (1 + x) + 2 * cos(7 * x) * x^5 + 0.7
 set.seed(123)
 X <- as.matrix(runif(10))
 y <- f(X)
-## fit and print
-k <- Kriging(y, X, kernel = "matern3_2")
-k
 
-x <- as.matrix(seq(from = 0, to = 1, length.out = 101))
-p <- k$predict(x = x, stdev = TRUE, cov = FALSE)
+k <- Kriging("matern3_2")
+print("before fit")
+print(k)
 
-plot(f)
-points(X, y)
-lines(x, p$mean, col = "blue")
-polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)),
-border = NA, col = rgb(0, 0, 1, 0.2))
-
-s <- k$simulate(nsim = 10, seed = 123, x = x)
-
-matlines(x, s, col = rgb(0, 0, 1, 0.2), type = "l", lty = 1)
+k$fit(y,X)
+print("after fit")
+print(k)
 ```
+
 
 ### Results
-```{literalinclude} ../examples/Kriging.md.Rout
+```{literalinclude} ../examples/fit.Kriging.md.Rout
 :language: bash
 ```
-![](../examples/Kriging.md.png)
+![](../examples/fit.Kriging.md.png)
+
+

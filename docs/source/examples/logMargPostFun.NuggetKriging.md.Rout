@@ -1,10 +1,10 @@
 * data: 10x[0.0455565,0.940467] -> 10x[0.149491,0.940566]
-* trend constant (est.): 0.367088
-* variance (est.): 0.223368
+* trend constant (est.): 0.389559
+* variance (est.): 0.192207
 * covariance:
   * kernel: matern3_2
-  * range (est.): 0.471429
-  * nugget (est.): 0.00330748
+  * range (est.): 0.434061
+  * nugget (est.): 0.00330572
   * fit:
     * objective: LMP
     * optim: BFGS

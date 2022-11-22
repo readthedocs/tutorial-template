@@ -8,6 +8,12 @@ Create an object `"NuggetKriging"` using
 
 ## Usage
 
+Just build the model:
+```r
+NuggetKriging(kernel)
+# later, call fit(y,X,...)
+```
+or, build and fit at the same time:
 ```r
 NuggetKriging(
   y,

@@ -1,3 +1,7 @@
+[1] "before fit"
+* covariance:
+  * kernel: matern3_2
+[1] "after fit"
 * data: 10x[0.0455565,0.940467] -> 10x[0.149491,0.940566]
 * trend constant (est.): 0.488124
 * variance (est.): 0.0788813

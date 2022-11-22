@@ -1,3 +1,7 @@
+[1] "before fit"
+* covariance:
+  * kernel: matern3_2
+[1] "after fit"
 * data: 10x[0.0455565,0.940467] -> 10x[0.194057,1.00912]
 * trend constant (est.): 0.433954
 * variance (est.): 0.0873685
@@ -7,4 +11,3 @@
   * fit:
     * objective: LL
     * optim: BFGS
-[1] 8.62771

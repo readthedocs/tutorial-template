@@ -5,6 +5,7 @@
 # R> r2readthedocs::r2readthedocs("../rlibkriging")
 # cp -r ../rlibkriging/docs/functions/*.md docs/source/functions/.
 
+# Rscript -e "install.packages('../libKriging/bindings/R/rlibkriging_0.7-0_R_x86_64-pc-linux-gnu.tar.gz',repos=NULL)"
 # cd docs/source
 for f in `ls functions`; do
     echo $f
