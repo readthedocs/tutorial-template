@@ -69,10 +69,10 @@ border = NA, col = rgb(0, 0, 1, 0.2))
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/predict.NoiseKriging.md.Rout
+```{literalinclude} ../functions/examples/predict.NoiseKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/predict.NoiseKriging.md.png)
+![](../functions/examples/predict.NoiseKriging.md.png)
 
 
 ## Reference

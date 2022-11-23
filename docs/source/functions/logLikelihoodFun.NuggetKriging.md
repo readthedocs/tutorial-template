@@ -71,7 +71,7 @@ points(k$theta(),k$sigma2()/(k$sigma2()+k$nugget()),col='blue')
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/logLikelihoodFun.NuggetKriging.md.Rout
+```{literalinclude} ../functions/examples/logLikelihoodFun.NuggetKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/logLikelihoodFun.NuggetKriging.md.png)
+![](../functions/examples/logLikelihoodFun.NuggetKriging.md.png)

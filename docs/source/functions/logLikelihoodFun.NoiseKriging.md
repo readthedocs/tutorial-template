@@ -71,7 +71,7 @@ points(k$theta(),k$sigma2(),col='blue')
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/logLikelihoodFun.NoiseKriging.md.Rout
+```{literalinclude} ../functions/examples/logLikelihoodFun.NoiseKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/logLikelihoodFun.NoiseKriging.md.png)
+![](../functions/examples/logLikelihoodFun.NoiseKriging.md.png)

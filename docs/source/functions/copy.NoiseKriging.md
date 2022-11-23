@@ -44,7 +44,7 @@ k$copy()
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/copy.NoiseKriging.md.Rout
+```{literalinclude} ../functions/examples/copy.NoiseKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/copy.NoiseKriging.md.png)
+![](../functions/examples/copy.NoiseKriging.md.png)

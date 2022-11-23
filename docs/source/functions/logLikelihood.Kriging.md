@@ -45,10 +45,10 @@ k$logLikelihood()
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/logLikelihood.Kriging.md.Rout
+```{literalinclude} ../functions/examples/logLikelihood.Kriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/logLikelihood.Kriging.md.png)
+![](../functions/examples/logLikelihood.Kriging.md.png)
 
 
 ## Reference

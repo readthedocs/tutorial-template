@@ -45,10 +45,10 @@ k$logMargPost()
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/logMargPost.NuggetKriging.md.Rout
+```{literalinclude} ../functions/examples/logMargPost.NuggetKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/logMargPost.NuggetKriging.md.png)
+![](../functions/examples/logMargPost.NuggetKriging.md.png)
 
 
 ## Reference

@@ -79,9 +79,9 @@ print(k)
 
 
 ### Results
-```{literalinclude} ../functions/exmaples/fit.Kriging.md.Rout
+```{literalinclude} ../functions/examples/fit.Kriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/fit.Kriging.md.png)
+![](../functions/examples/fit.Kriging.md.png)
 
 

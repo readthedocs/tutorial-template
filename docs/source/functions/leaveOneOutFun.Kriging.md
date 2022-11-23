@@ -64,10 +64,10 @@ abline(v = k$theta(), col = "blue")
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/leaveOneOutFun.Kriging.md.Rout
+```{literalinclude} ../functions/examples/leaveOneOutFun.Kriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/leaveOneOutFun.Kriging.md.png)
+![](../functions/examples/leaveOneOutFun.Kriging.md.png)
 
 
 

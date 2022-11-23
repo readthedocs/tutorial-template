@@ -80,10 +80,10 @@ print(k)
 ```
 
 ### Results
-```{literalinclude} ../functions/exmaples/fit.NuggetKriging.md.Rout
+```{literalinclude} ../functions/examples/fit.NuggetKriging.md.Rout
 :language: bash
 ```
-![](../functions/exmaples/fit.NuggetKriging.md.png)
+![](../functions/examples/fit.NuggetKriging.md.png)
 
 
 
