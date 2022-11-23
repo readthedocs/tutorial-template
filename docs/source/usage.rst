@@ -11,6 +11,31 @@ libKriging may be used through:
 * Octave wrapper
 * Matlab wrapper
 
+The basic usage is almost the same whatever lang.:
+
+.. code-block:: python
+   :emphasize-lines: 9, 17, 20
+    # input design
+    X = ... 
+    # output results
+    y = ... 
+    
+    # load/import/... libKriging
+    ...
+    # build & fit Kriging model
+    k = Kriging(y, X, "gauss") 
+    # display model
+    print(k)
+    
+    # setup another (dense) input sample 
+    x = ... 
+    
+    # use kriging model to predict at x
+    p = predict(k, x, ...) 
+    
+    # and/or use kriging model to simulate at x
+    s = simulate(k, nsim = 10, seed = 123, x)
+
 
 Basic Python/R/Matlab demo
 ----------
