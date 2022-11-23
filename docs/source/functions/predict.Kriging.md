@@ -68,10 +68,10 @@ polygon(c(x, rev(x)), c(p$mean - 2 * p$stdev, rev(p$mean + 2 * p$stdev)), border
 ```
 
 ### Results
-```{literalinclude} ../examples/predict.Kriging.md.Rout
+```{literalinclude} ../functions/exmaples/predict.Kriging.md.Rout
 :language: bash
 ```
-![](../examples/predict.Kriging.md.png)
+![](../functions/exmaples/predict.Kriging.md.png)
 
 
 ## Reference

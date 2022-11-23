@@ -45,10 +45,10 @@ k$leaveOneOut()
 ```
 
 ### Results
-```{literalinclude} ../examples/leaveOneOut.Kriging.md.Rout
+```{literalinclude} ../functions/exmaples/leaveOneOut.Kriging.md.Rout
 :language: bash
 ```
-![](../examples/leaveOneOut.Kriging.md.png)
+![](../functions/exmaples/leaveOneOut.Kriging.md.png)
 
 
 ## Reference

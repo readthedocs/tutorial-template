@@ -80,10 +80,10 @@ print(k)
 ```
 
 ### Results
-```{literalinclude} ../examples/fit.NoiseKriging.md.Rout
+```{literalinclude} ../functions/exmaples/fit.NoiseKriging.md.Rout
 :language: bash
 ```
-![](../examples/fit.NoiseKriging.md.png)
+![](../functions/exmaples/fit.NoiseKriging.md.png)
 
 
 

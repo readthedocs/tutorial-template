@@ -64,7 +64,7 @@ polygon(c(x, rev(x)), c(p2$mean - 2 * p2$stdev, rev(p2$mean + 2 * p2$stdev)), bo
 ```
 
 ### Results
-```{literalinclude} ../examples/update.Kriging.md.Rout
+```{literalinclude} ../functions/exmaples/update.Kriging.md.Rout
 :language: bash
 ```
-![](../examples/update.Kriging.md.png)
+![](../functions/exmaples/update.Kriging.md.png)

@@ -82,8 +82,8 @@ matlines(x, s, col = rgb(0, 0, 1, 0.2), type = "l", lty = 1)
 ```
 
 ### Results
-```{literalinclude} ../examples/NuggetKriging.md.Rout
+```{literalinclude} ../functions/exmaples/NuggetKriging.md.Rout
 :language: bash
 ```
-![](../examples/NuggetKriging.md.png)
+![](../functions/exmaples/NuggetKriging.md.png)
 

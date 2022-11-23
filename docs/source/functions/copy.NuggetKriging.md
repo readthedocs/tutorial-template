@@ -45,9 +45,9 @@ k$copy()
 
 
 ### Results
-```{literalinclude} ../examples/copy.NuggetKriging.md.Rout
+```{literalinclude} ../functions/exmaples/copy.NuggetKriging.md.Rout
 :language: bash
 ```
-![](../examples/copy.NuggetKriging.md.png)
+![](../functions/exmaples/copy.NuggetKriging.md.png)
 
 

@@ -69,9 +69,9 @@ points(k$theta(),k$sigma2()/(k$sigma2()+k$nugget()),col='blue')
 ```
 
 ### Results
-```{literalinclude} ../examples/logMargPostFun.NuggetKriging.md.Rout
+```{literalinclude} ../functions/exmaples/logMargPostFun.NuggetKriging.md.Rout
 :language: bash
 ```
-![](../examples/logMargPostFun.NuggetKriging.md.png)
+![](../functions/exmaples/logMargPostFun.NuggetKriging.md.png)
 
 

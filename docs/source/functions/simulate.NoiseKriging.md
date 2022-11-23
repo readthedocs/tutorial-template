@@ -69,10 +69,10 @@ lines(x, s[ , 3], col = "blue")
 ```
 
 ### Results
-```{literalinclude} ../examples/simulate.NoiseKriging.md.Rout
+```{literalinclude} ../functions/exmaples/simulate.NoiseKriging.md.Rout
 :language: bash
 ```
-![](../examples/simulate.NoiseKriging.md.png)
+![](../functions/exmaples/simulate.NoiseKriging.md.png)
 
 
 ## Reference

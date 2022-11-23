@@ -83,7 +83,7 @@ matlines(x, s, col = rgb(0, 0, 1, 0.2), type = "l", lty = 1)
 ```
 
 ### Results
-```{literalinclude} ../examples/Kriging.md.Rout
+```{literalinclude} ../functions/exmaples/Kriging.md.Rout
 :language: bash
 ```
-![](../examples/Kriging.md.png)
+![](../functions/exmaples/Kriging.md.png)
