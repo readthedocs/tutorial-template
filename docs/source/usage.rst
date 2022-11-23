@@ -14,7 +14,7 @@ libKriging may be used through:
 The basic usage is almost the same whatever lang.:
 
 .. code-block:: python
-   :emphasize-lines: 9, 17, 20
+   :emphasize-lines: 9, 18, 21
     # input design
     X = ... 
     # output results
@@ -24,6 +24,7 @@ The basic usage is almost the same whatever lang.:
     ...
     # build & fit Kriging model
     k = Kriging(y, X, "gauss") 
+
     # display model
     print(k)
     
