@@ -1,25 +1,15 @@
 API
 =====
 
-libKriging may be used through:
+Following API doc supports:
 
-* direct C++ access
-* Python wrapper
-* R wrapper
-* Octave wrapper
-* Matlab wrapper
+* __Python__ wrapper
+* __R__ wrapper
+* __Octave__ wrapper
+* __Matlab__ wrapper
 
-All these syntax are almost identical, just diverging through basic language elements:
-   
-   ======    =====    =============
-   Python    R        Matlab/Octave
-   ======    =====    =============
-   `a = b`   `a <- b` `a = b`
-   `True`    `TRUE`   `true`
-   `False`   `FALSE`  `false`
-   `None`    `NULL`   `[]`
-   `a.b()`   `a$b()`  `a.b()`
-   ======    =====    =============
+.. include:: pyrm-syntax.md
+   :parser: myst_parser.sphinx_
 
 
 Contructors
