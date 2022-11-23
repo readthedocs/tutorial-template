@@ -5,14 +5,11 @@ Usage
 
 libKriging may be used through:
 
-* direct __C++__ access
-* __Python__ wrapper
-* __R__ wrapper
-* __Octave__ wrapper
-* __Matlab__ wrapper
-
-.. include:: pyrm-syntax.md
-   :parser: myst_parser.sphinx_
+* direct C++ access
+* Python wrapper
+* R wrapper
+* Octave wrapper
+* Matlab wrapper
 
 
 Basic Python/R/Matlab demo
