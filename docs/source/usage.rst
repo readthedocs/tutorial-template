@@ -15,6 +15,7 @@ The basic usage is almost the same whatever lang.:
 
 .. code-block:: python
    :emphasize-lines: 9, 18, 21
+   
     # input design
     X = ... 
     # output results
