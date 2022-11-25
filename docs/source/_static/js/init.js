@@ -12,7 +12,6 @@ document.head.appendChild(script);
         // Get parent <section> of the h2, which has an id we can use to track
         var id = h2.closest("section").getAttribute("id");
         if (id && gtag) {
-          console.log(id);
           gtag("event", "docs_section_view", {
             "section": id
           });
