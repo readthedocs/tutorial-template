@@ -26,7 +26,7 @@ Get Log-Marginal Posterior of Kriging Model
 
 ## Value
 
-The logMargPost computed for fitted $\theta$.
+The logMargPost computed for fitted $\theta$ the prior
 
 
 
