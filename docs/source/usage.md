@@ -47,10 +47,10 @@ at $X = \{0.0, 0.25, 0.5, 0.75, 1.0\}$, then predict and simulate in $[0,1]$.
 
 [This code, for Python, R or Matlab/Octave](pyrm-demo_basic.md) should return
 
-<div style="text-align:center">
+<html><div style="text-align:center">
 <img src="img/demo_basic-predict.png" alt="predict" width="100px"/>
 <img src="img/demo_basic-simulate.png" alt="simulate" width="100px"/>
-</div>
+</div></html>
 
 for both Python: [![Python](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/py-demo.ipynb), R: [![R](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/r-demo.ipynb) or Matlab/Octave.
 
