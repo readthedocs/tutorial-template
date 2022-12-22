@@ -37,7 +37,7 @@ s = k.simulate(nsim = 10, seed = 123, x)
 Basic demo
 ----------
 
-Sample the unknown objective function
+Sample the objective function
 
 $$
 f: x \rightarrow 1 - \frac 1 2 \left( {\frac {sin(12  x)} {1 + x} + 2 cos(7 x) x ^ 5 + 0.7} \right)
@@ -45,14 +45,10 @@ $$
 
 at $X = \{0.0, 0.25, 0.5, 0.75, 1.0\}$, then predict and simulate in $[0,1]$. 
 
-[This code, for Python, R or Matlab/Octave](pyrm-demo_basic.md) should return
+[This code, for Python, R or Matlab/Octave](pyrm-demo_basic.md) should return for both Python: [![Python](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/py-demo.ipynb), R: [![R](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/r-demo.ipynb) or Matlab/Octave :
 
-<html><div style="text-align:center">
 <img src="img/demo_basic-predict.png" alt="predict" width="100px"/>
 <img src="img/demo_basic-simulate.png" alt="simulate" width="100px"/>
-</div></html>
-
-for both Python: [![Python](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/py-demo.ipynb), R: [![R](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/r-demo.ipynb) or Matlab/Octave.
 
 
 SciKit-Learn wrapping
