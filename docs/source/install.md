@@ -3,20 +3,20 @@ Installation
 
 libKriging may be installed directly from:
 
-* Python 
+* Python, from PyPI: 
   ```bash
   pip3 install pylibkriging
   ```
 * R 
-  ```r
-  devtools::install_github('libKriging/rlibkriging')
-  ```
-* Octave/Matlab \
-  Download and uncompress the latest Octave or Matlab archive from libKriging releases <https://github.com/libKriging/libKriging/releases/>:
-  ```bash
-  curl -LO https://github.com/libKriging/libKriging/releases/download/vX.Y.Z/mLibKriging_X.Y.Z_Linux-x86_64.tgz
-  ```
-  Then
+  * from CRAN:
+      ```r
+      install.packages('rlibkriging')
+      ```
+  * from GitHub (dev version):
+      ```r
+      devtools::install_github('libKriging/rlibkriging')
+      ```
+* Octave/Matlab, **download and uncompress** the archive for your system from libKriging latest release <https://github.com/libKriging/libKriging/releases/latest>, then:
   ```octave
   addpath("mLibKriging")
   ```
