@@ -9,6 +9,9 @@ author = 'Graziella'
 release = '0.1'
 version = '0.1.0'
 
+# This is a Sphinx <2 thing.. it's installed in Python 2 environments
+master_doc = 'index'
+
 # -- General configuration
 
 extensions = [
