@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "prologue"
-weight: 100
+weight: 2
 toc: true
 ---
 
@@ -26,22 +26,4 @@ Step-by-step instructions on how to book a demo with our sales team [Book a Demo
 
 ### Quick Start
 
-{{< alert icon="👉" text="The Quick Start is intended for intermediate to advanced users." />}}
-
 One page summary of how to start a new Traxsense project. [Quick Start →]({{< relref "quick-start" >}})
-
-## Next steps
-
-Configuration, Security, Customization
-
-### Configuration
-
-Get instructions on how to accomplish common tasks with Doks. [Recipes →]({{< relref "configuration" >}})
-
-### Customization
-
-Get instructions on how to add even more to Doks. [Extensions →]({{< relref "customization" >}})
-
-## Help
-
-Get help on Doks. [Help →]({{< relref "how-to-update" >}})
