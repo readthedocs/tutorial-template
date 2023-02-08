@@ -10,7 +10,7 @@ menu:
   docs:
     parent: "prologue"
     identifier: "configuration-378e63b7697479cb4c5d07cdcbe635b1"
-weight: 999
+weight: 7
 toc: true
 ---
 
