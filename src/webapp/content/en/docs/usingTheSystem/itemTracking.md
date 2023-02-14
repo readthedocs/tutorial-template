@@ -79,4 +79,4 @@ All RFID tagged items read at the location/reader are displayed.
 
 To view the details of the item, select the item barcode, the item details and history are displayed.
 
-![Alt text](images/usingTheSystem/ItemTracking/Traxsense-Item-History.png)
+![Alt text](images/usingTheSystem/Items/Traxsense-Item-History.png)
