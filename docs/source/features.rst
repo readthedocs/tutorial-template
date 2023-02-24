@@ -1,7 +1,7 @@
-Features
-========
+API
+===
 
 .. autosummary::
    :toctree: generated
 
-   Features
+   lumache
