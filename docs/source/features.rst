@@ -1,4 +1,4 @@
-API App Features
+Features
 ===
 
 .. autosummary::
