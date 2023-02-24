@@ -1,22 +1,18 @@
-Welcome to Lumache's documentation!
+CPS730 Lab 1 - TODO Application
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+This application serves as a simple web-based TODO app, to help you manage your daily tasks.
 
 .. note::
 
-   This project is under active development.
+   This project is under active development. Please report bugs VIA gi
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   App Features
+   Technical Details
+   Contribution Guidelines
+   Decision Log
