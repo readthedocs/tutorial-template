@@ -14,6 +14,6 @@ Contents
 .. toctree::
 
    features
-   Technical Details <technical>
+   Technical Details <Technical Information>
    Contribution Guidelines <contributing>
    Decision Log <decision>
