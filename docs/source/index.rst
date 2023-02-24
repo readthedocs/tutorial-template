@@ -12,6 +12,7 @@ Contents
 
 .. toctree::
 
+   api
    Features
    Technical Details
    Contribution Guidelines
