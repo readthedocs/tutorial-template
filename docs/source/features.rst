@@ -1,5 +1,5 @@
 Features
-===
+========
 
 .. autosummary::
    :toctree: generated
