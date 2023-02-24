@@ -16,5 +16,5 @@ Contents
    technical-information
    contribution-guidelines
    decision-log
-   open-in-github
+   view-on-github
 
