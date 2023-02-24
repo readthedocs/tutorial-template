@@ -12,7 +12,7 @@ Contents
 
 .. toctree::
 
-   App Features
+   Features
    Technical Details
    Contribution Guidelines
    Decision Log
