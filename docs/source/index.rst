@@ -15,5 +15,5 @@ Contents
    api
    features
    technical details
-   contribution guidelines
+   Contribution Guidelines
    decision log
