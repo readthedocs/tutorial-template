@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'CPS730 Lab 1 - TODO App'
+copyright = 'TMU Students'
+author = 'Other TMU Students'
 
 release = '0.1'
 version = '0.1.0'
