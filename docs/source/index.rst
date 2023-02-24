@@ -12,8 +12,7 @@ Contents
 
 .. toctree::
 
-   api
    features
-   technical details
+   Technical Detials <technical-info>
    Contribution Guidelines <contributing>
-   decision log
+   Decision Log <decision>
