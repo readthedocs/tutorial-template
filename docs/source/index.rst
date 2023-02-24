@@ -1,5 +1,5 @@
-CPS730 Lab 1 - TODO Application
-===================================
+CPS730 TODO Application
+=======================
 
 This application serves as a simple web-based TODO app, to help you manage your daily tasks.
 
