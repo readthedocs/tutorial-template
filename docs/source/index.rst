@@ -13,7 +13,7 @@ Contents
 .. toctree::
 
    features
-   technical information
+   technical-information
    Contribution Guidelines <contributing>
    Decision Log <decision>
 
