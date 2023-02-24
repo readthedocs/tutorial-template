@@ -17,3 +17,4 @@ Contents
    Technical Details <Technical Information>
    Contribution Guidelines <contributing>
    Decision Log <decision>
+   `Technical Information`_
