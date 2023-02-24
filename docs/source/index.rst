@@ -14,6 +14,6 @@ Contents
 
    api
    features
-   Technical Details
-   Contribution Guidelines
-   Decision Log
+   technical details
+   contribution guidelines
+   decision log
