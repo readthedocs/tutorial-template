@@ -7,13 +7,6 @@ This application serves as a simple web-based TODO app, to help you manage your 
 
    This project is under active development. Please report bugs VIA Github here https://github.com/ymuhamma01/CPS730-Lab1 .
    
-   
-.. _My target:
-
-Explicit targets
-~~~~~~~~~~~~~~~~
-
-Reference `My target`_.
 
 Contents
 --------
@@ -21,6 +14,6 @@ Contents
 .. toctree::
 
    features
-   Technical Detials <technical-info>
+   Technical Detials <Technical Information>
    Contribution Guidelines <contributing>
    Decision Log <decision>
