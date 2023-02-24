@@ -14,6 +14,6 @@ Contents
 
    features
    technical-information
-   Contribution Guidelines <contributing>
-   Decision Log <decision>
+   contribution-guidelines
+   decision-log
 
