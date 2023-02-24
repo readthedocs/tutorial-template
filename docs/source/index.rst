@@ -13,7 +13,7 @@ Contents
 .. toctree::
 
    api
-   Features
+   features
    Technical Details
    Contribution Guidelines
    Decision Log
