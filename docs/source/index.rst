@@ -3,18 +3,23 @@ CPS730 TODO Application
 
 This application is a simple web-based TODO app, to help you manage your daily tasks.
 
-Project Background
-------------------
-
-Put information about the project here. 
 
 
 Project Contributors
 --------------------
 
 Contributors to this project include the group memebers from CPS730's lab:
-   Trevor Clarke
-   ... Add names
+   
+   Trevor Clarke - 500909637
+   
+   Polat Ilhan Tarim - 500975154
+   
+   Qiwei Wu - 500891903
+   
+   Hamdan Khan - 500900704
+   
+   Yahya Muhammad - 500968266
+   
 
 .. note::
 
@@ -26,8 +31,7 @@ Contents
 .. toctree::
 
    features
-   technical-information
-   contribution-guidelines
-   decision-log
+   definitions
+   setting-up-docker
+   deploying-app-using-nginx
    view-on-github
-
