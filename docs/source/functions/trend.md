@@ -64,11 +64,11 @@ kernel $C(\mathbf{x}, \mathbf{x}') := \mathbb{E}[\zeta(\mathbf{x}),\, \zeta(\mat
 the input space $\mathbb{R}^d$ which can be called
 *tensor-product*. With $\mathbf{h} := \mathbf{x} - \mathbf{x}'$ the kernel
 value expresses as
-\begin{equation*}
+$$
   C(\mathbf{x}, \, \mathbf{x}'; \boldsymbol{\theta}, \, \sigma^2) =
   C(\mathbf{h}; \boldsymbol{\theta}, \, \sigma^2) =
   \sigma^2 \, \prod_{\ell = 1}^d \kappa(h_\ell / \theta_\ell)  
-\end{equation*}
+$$
 where $\kappa(h)$ is a stationary correlation kernel on $\mathbb{R}$
 and $\boldsymbol{\theta}$ is a vector of $d$ parameters $\theta_\ell> 0$
 called *correlation ranges*.
@@ -77,11 +77,11 @@ A further constraint used in **libKriging** is that $\kappa(h)$ takes only
 positive values: $\gamma(h) >0$ for all $h$.  With
 $\lambda(h) := - \log \gamma(h)$ the derivative w.r.t. the correlation
 range $\theta_\ell$ can be computed as
-\begin{equation*}
+$$ 
   \partial_{\theta_\ell} C(\mathbf{h};\,\boldsymbol{\theta}) = 
   \theta_\ell^{-2} \, \lambda'(h_{\ell} / \theta_\ell) \,
   C(\mathbf{h};\,\boldsymbol{\theta}).
-\end{equation*}
+$$ 
 
 ### Available 1D correlation kernels
 
