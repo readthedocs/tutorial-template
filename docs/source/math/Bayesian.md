@@ -210,7 +210,8 @@ $$
   \left|n -p  - \corr{\mathbf{u}}^\top \mathbf{H}^{-1} \corr{\mathbf{u}} \right| 
 $$
 
-where $\corr{\mathbf{u}} := \sigma^2 \mathbf{u}$. See [@Gu_Phd] for details.
+where $\corr{\mathbf{u}} := \sigma^2 \mathbf{u}$. See :cite:t:`Gu_Phd`
+for details.
 
 **Note**   The information matrix takes the blocks in the order:
   "$\boldsymbol{\theta}$ *then* $\sigma^2$", while the opposite order is used

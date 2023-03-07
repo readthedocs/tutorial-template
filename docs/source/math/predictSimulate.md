@@ -1,4 +1,4 @@
-(PredAndSim)=
+(SecPredAndSim)=
 # Prediction and simulation
 
 ## Framework
@@ -108,7 +108,7 @@ $$
 
 In **libKriging** the prediction is computed by plugging the correlation
 parameters $\boldsymbol{\theta}$ i.e., by replacing these by their estimate
-obtained by optimizing the chosen objective: likelihood, LOO MSE or
+obtained by optimizing the chosen objective: likelihood, LOO, MSE or
 posterior marginal density. So the ranges $\theta_\ell$ are regarded
 as perfectly known. However the uncertainty on the GP variance
 $\sigma^2$ and on the nugget variance $\tau^2$ can be taken into
@@ -126,8 +126,8 @@ follows a Student distribution with $n-p$ degrees of freedom. This
 allows the derivation of a confidence interval on the mean in the
 frequentist case, and of a credible interval in the Bayesian case.
 
-**Note**   See [@GuEtAl_RobusGaSp].  Mind that the expression
-  *predictive distribution* used in [@GuEtAl_RobusGaSp]
+**Note**   See :cite:t:`GuEtAl_RobusGaSp`.  Mind that the expression
+  *predictive distribution* used in :cite:t:`GuEtAl_RobusGaSp`
   is potentially misleading since the correlation parameters are
   simply plugged into the prediction instead of being marginalized out
   of it.
@@ -136,7 +136,7 @@ frequentist case, and of a credible interval in the Bayesian case.
   estimate $\widehat{\sigma}_{\texttt{REML}}^2$ relates to the ML
   estimate according to
   $\widehat{\sigma}_{\texttt{REML}}^2 =
-  \widehat{\sigma}_{\texttt{ML}}^2 \times (n-p)/n$.
+  \widehat{\sigma}_{\texttt{ML}}^2 \times n/ (n-p)$.
 
 ### Class `"NuggetKriging"`
 
@@ -144,8 +144,8 @@ In the `"NuggetKriging"` case, estimates are obtained for
 the variance $\nu^2 := \sigma^2 + \tau^2$ and for the ratio
 $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$. From these, the ML
 estimate of $\sigma^2$ results as $\widehat{\sigma}^2 = \widehat{\alpha}
-\widehat{\nu}^2$. Using the same bias correction as in the
-`"Kriging"` case a confidence interval on the mean can be given,
+\, \widehat{\nu}^2$. Using the same bias correction as in the
+`"Kriging"` case, a confidence interval on the mean can be given,
 involving the quantiles of the Student distribution with $n - p$
 degrees of freedom.
 

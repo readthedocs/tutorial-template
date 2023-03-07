@@ -1,10 +1,11 @@
+(SecParam)=
 ## Parameters
 
 The parameters of the models are given in the Table below. Note that
 the trend parameters in $\boldsymbol{\beta}$ are of a somewhat
 different nature than the other ones. The parameters $\beta_k$ can
-best be compared to the values $\zeta(\mathbf{x}_i)$ of teh unobserved
-GP. Indeed if no nugget or noise is used the estimation of
+best be compared to the values $\zeta(\mathbf{x}_i)$ of the unobserved
+GP. Indeed if no nugget or noise is used, the estimation of
 $\boldsymbol{\beta}$ is the same thing as the estimation of
 $\boldsymbol{\zeta}$.
 
@@ -47,7 +48,7 @@ $$
 $$
 
 In the case where no nugget is used (corresponding to $\tau^2 \to 0$),
-the discrete sum in the \texttt{PSS} criterion is actually zero at the
+the discrete sum in the $\texttt{PSS}$ criterion is actually zero at the
 optimum so that $h$ interpolates the data and has minimal norm
 $\|.\|_{\mathcal{H}}$ amongst the functions $h \in \mathcal{H}$ that
 interpolates the data. We may regard Kriging as using a prior on a
@@ -68,12 +69,12 @@ the kernels available in **libKriging**: the constant trend function is
 therefore unpenalized, which makes the Kriging smoothing and the
 Kriging prediction behave well w.r.t. a translation of the observations
 $\mathbf{y} \to \mathbf{y} + \text{Cst}$. The function $h \in \mathcal{H}$
-minimizing the criterion \texttt{PSS} above can be written in a
+minimizing the criterion $\texttt{PSS}$ above can be written in a
 non-unique way as
 
 $$
 h(\mathbf{x}) = \sum_{i=1}^n \alpha_i \, C(\mathbf{x}_i, \, \mathbf{x})
-+ \sum_{k=1}^p \beta_k f_k(\mathbf{x}).
++ \sum_{k=1}^p \beta_k f_k(\mathbf{x}),
 $$
 
 and Kriging indeeds find suitable vectors $\boldsymbol{\alpha}$ and

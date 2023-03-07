@@ -33,7 +33,7 @@ $$
  \left[\mathbf{y} - \mathbf{F}\boldsymbol{\beta} \right] = 
   \mathbf{y}^\top \mathbf{B} \mathbf{y}
 $$
-where $\mathbf{B}$ is the BEM.
+where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
 
 ## Profile likelihood
 

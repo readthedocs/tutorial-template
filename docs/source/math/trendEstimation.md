@@ -27,9 +27,11 @@ correlation matrix $\mathbf{R}$ is known, then the ML estimate of
 $\boldsymbol{\beta}$ and its covariance are given by
 
 $$
-  \widehat{\boldsymbol{\beta}} = \left[\mathbf{F}^\top \mathbf{R}^{-1} \mathbf{F}\right]^{-1}
+  \widehat{\boldsymbol{\beta}} = \left[\mathbf{F}^\top \mathbf{R}^{-1} 
+  \mathbf{F}\right]^{-1}
   \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{y}, \qquad
-  \Cov(\widehat{\boldsymbol{\beta}}) = \sigma^2 [\mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}]^{-1}.
+  \Cov(\widehat{\boldsymbol{\beta}}) = \sigma^2 [\mathbf{F}^\top 
+  \mathbf{R}^{-1}\mathbf{F}]^{-1}.
 $$
 
 Moreover the ML estimate $\widehat{\sigma}^2$ is available as well.
@@ -69,6 +71,37 @@ Note that $\widehat{\sigma}^2_{\texttt{ML}}$ is a biased estimate of
 $\sigma^2$. An alternative unbiased estimate can be obtained by using
 $n-p$ instead of $n$ as the denominator: this is the so-called
 *Restricted Maximum Likelihood* (REML) estimate.
+
+
+The computations rely on the so-called ``thin'' or ``economical'' QR
+decomposition of the transformed trend matrix $\LInv{\mathbf{F}}$
+
+$$ 
+  \LInv{\mathbf{F}} = \mathbf{Q}_{\LInv{\mathbf{F}}} \mathbf{R}_{\LInv{\mathbf{F}}} 
+$$
+
+where $\mathbf{Q}_{\LInv{\mathbf{F}}}$ is
+$n \times p$ and $\mathbf{R}_{\LInv{\mathbf{F}}}$ is a $p \times p$ upper
+triangular matrix. The estimate comes by solving the triangular system
+$\mathbf{R}_{\LInv{\mathbf{F}}}\boldsymbol{\beta} = \mathbf{Q}_{\LInv{\mathbf{F}}}^\top
+\LInv{\mathbf{y}}$, and the covariance of the estimate is
+$\Cov(\widehat{\boldsymbol{\beta}}) = \mathbf{R}_{\LInv{\mathbf{F}}}^{-1}
+\mathbf{R}_{\LInv{\mathbf{F}}}^{-\top}$
+
+Following a popular linear regression trick, one can further use the
+QR decomposition of the matrix $\LInv{\mathbf{F}}_+$ obtained by adding a
+new column $\LInv{\mathbf{y}}$ to $\LInv{\mathbf{F}}$ 
+
+$$
+\LInv{\mathbf{F}}_+ := \left[ \LInv{\mathbf{F}} \, \vert \, \LInv{\mathbf{y}} \right]
+= \mathbf{Q}_{\LInv{\mathbf{F}}_+}\mathbf{R}_{\LInv{\mathbf{F}}_+}.  
+$$
+
+Then the $p+1$ column of $\mathbf{Q}_{\LInv{\mathbf{F}}_+}$ contains the vector
+of residuals $\LInvHat{\boldsymbol{\zeta}} = \LInv{\mathbf{y}} - \LInv{\mathbf{F}}
+\widehat{\boldsymbol{\beta}}$ in its first $p$ elements and the residual sum
+of squares is given by the square of the element
+$R_{\LInv{\mathbf{F}}_+}[p + 1, p +1]$. See \cite{Lange_Numerical}.
 
 
 ### `"NuggetKriging"` and `"NoiseKriging"`
@@ -133,7 +166,7 @@ $\langle\mathbf{z},\,\mathbf{z}'\rangle_{\mathbf{C}^{-1}} := \mathbf{z}^\top \ma
 **Note**   The BEM does not depend on the specific basis used to define the
   linear space of trend functions. It also depends on the kernel only
   through the *reduced kernel* related to the trend linear
-  space :cite:t:`Pronzato_Sens`. So the eigen decomposition of the BEM
+  space :cite:t:`Pronzato_Sens`. So the eigen-decomposition of the BEM
   provides useful insights into the model used such as the so-called
   *Principal Kriging Functions*
 
