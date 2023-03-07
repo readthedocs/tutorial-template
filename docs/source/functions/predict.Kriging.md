@@ -36,10 +36,10 @@ Argument      |Description
 
 ## Details
 
-Given "new" input points, the method compute the expectation,
- variance and (optionnally) the covariance of the corresponding
- stochastic process, conditional on the values at the input points
- used when fitting the model.
+Given "new" input points, the method compute the expectation, variance
+and (optionally) the covariance of the corresponding stochastic
+process, conditional on the values at the input points used when
+fitting the model.
 
 
 ## Value

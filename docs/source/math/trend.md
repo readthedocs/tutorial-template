@@ -1,6 +1,5 @@
-# Trend and kernel in Kriging models
-
-## Trend functions
+(SecTrend)=
+# Trend functions in Kriging models
 
 The possible trend functions in **libKriging** are as follow, by increasing
 level of complexity.
@@ -57,6 +56,6 @@ $$
 
 Mind that the coefficients relate to a specific order of the inputs.
 
-**Caution** The number of coefficients required in the interactive and quadratic
+**Note** The number of coefficients required in the interactive and quadratic
 trend increases quadratically with the dimension. For $d = 10$ the
 quadratic trend involves $66$ coefficients.

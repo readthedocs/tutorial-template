@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinxcontrib.bibtex',
 ]
 
 intersphinx_mapping = {
@@ -31,6 +32,8 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+
+bibtex_bibfiles = ['libKriging.bib']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
