@@ -116,10 +116,11 @@ $$
 where
 
 $$
-  S^2 := \mathbf{y}^\top \corr{\mathbf{B}} \mathbf{y} = n \, \widehat{\sigma}^2_{\texttt{ML}}
+  S^2 := \mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y} = 
+  n \, \widehat{\sigma}^2_{\texttt{ML}}
 $$
 
-and $\corr{\mathbf{B}} = \sigma^{2}\mathbf{B}$ where $\mathbf{B}$ is
+and $\mathring{\mathbf{B}} = \sigma^{2}\mathbf{B}$ where $\mathbf{B}$ is
 the bending-energy matrix as before.
 
 
@@ -207,15 +208,15 @@ Note that
 
 $$
   \pi_{\texttt{ref}}(\boldsymbol{\theta}) = |\mathbf{H}| \times
-  \left|n -p  - \corr{\mathbf{u}}^\top \mathbf{H}^{-1} \corr{\mathbf{u}} \right| 
+  \left|n -p  - \mathring{\mathbf{u}}^\top \mathbf{H}^{-1} \mathring{\mathbf{u}} \right| 
 $$
 
-where $\corr{\mathbf{u}} := \sigma^2 \mathbf{u}$. See :cite:t:`Gu_Phd`
+where $\mathring{\mathbf{u}} := \sigma^2 \mathbf{u}$. See :cite:t:`Gu_Phd`
 for details.
 
 **Note**   The information matrix takes the blocks in the order:
   "$\boldsymbol{\theta}$ *then* $\sigma^2$", while the opposite order is used
-  in [@Gu_Phd]
+  in :cite:t:`Gu_Phd`.
 
 ## The "Jointly Robust"  prior of Gu
 
@@ -236,13 +237,13 @@ $$
 $$
 
 where as above $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ so that the
-nugget variance ratio $\eta$ of [@Gu_JointlyRobust] is
+nugget variance ratio $\eta$ of :cite:t:`Gu_JointlyRobust` is
 $\eta = (1 - \alpha) / \alpha$. The JR prior corresponds to
 
 $$
   \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{a_{\texttt{JR}}}
   \exp\{ -b_{\texttt{JR}}t\} \qquad
-  t :=  \frac{1 - \alpha}{\alpha} + \sum_{\ell= 1}^d \frac{C_l}{\theta_l},
+  t :=  \frac{1 - \alpha}{\alpha} + \sum_{\ell= 1}^d \frac{C_\ell}{\theta_\ell},
 $$
 
 where $a_{\texttt{JR}}> -(d + 1)$ and $b_{\texttt{JR}} >0$ are two
@@ -277,7 +278,7 @@ to $a_{\texttt{ref}} = 1$.
 | `"NoiseKriging"` | *not used*  |
 
 Marginal log-likelihood for the different forms. The sum of squares
-$S^2$ is given by $S^2 := \mathbf{e}^\top \corrinv{\mathbf{C}}
+$S^2$ is given by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1}
 \mathbf{e}$ where $\mathbf{e}:= \mathbf{y} -
-\mathbf{F}\widehat{\boldsymbol{\beta}}$, $\corr{\mathbf{C}}$ is the
+\mathbf{F}\widehat{\boldsymbol{\beta}}$, $\mathring{\mathbf{C}}$ is the
 correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
