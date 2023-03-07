@@ -280,5 +280,7 @@ to $a_{\texttt{ref}} = 1$.
 Marginal log-likelihood for the different forms. The sum of squares
 $S^2$ is given by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1}
 \mathbf{e}$ where $\mathbf{e}:= \mathbf{y} -
-\mathbf{F}\widehat{\boldsymbol{\beta}}$, $\mathring{\mathbf{C}}$ is the
+\mathbf{F}\widehat{\boldsymbol{\beta}}$ and  $\mathring{\mathbf{C}}$ is the
 correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
+
+.. bibliography::

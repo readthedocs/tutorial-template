@@ -14,9 +14,9 @@ part from the nugget or noise in $\mathbf{y} -
 \mathbf{F}\widehat{\boldsymbol{\beta}}$.
 
 If the covariance parameters are known, the estimate
-$\widehat{\boldsymbol{\beta}}$ can be obtained by using General Least Squares
-(GLS); this estimate is also the Maximum Likelihood estimate.  The
-computations related to GLS can rely on the Cholesky and the QR
+$\widehat{\boldsymbol{\beta}}$ can be obtained by using General Least
+Squares (GLS); this estimate is also the Maximum Likelihood estimate.
+The computations related to GLS can rely on the Cholesky and the QR
 decompositions of matrices as now detailed.
 
 ### The `"Kriging"` case
@@ -30,7 +30,7 @@ $$
   \widehat{\boldsymbol{\beta}} = \left[\mathbf{F}^\top \mathbf{R}^{-1} 
   \mathbf{F}\right]^{-1}
   \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{y}, \qquad
-  \Cov(\widehat{\boldsymbol{\beta}}) = \sigma^2 [\mathbf{F}^\top 
+  \textsf{Cov}(\widehat{\boldsymbol{\beta}}) = \sigma^2 [\mathbf{F}^\top 
   \mathbf{R}^{-1}\mathbf{F}]^{-1}.
 $$
 
@@ -73,7 +73,7 @@ $n-p$ instead of $n$ as the denominator: this is the so-called
 *Restricted Maximum Likelihood* (REML) estimate.
 
 
-The computations rely on the so-called ``thin'' or ``economical'' QR
+The computations rely on the so-called "thin" or "economical" QR
 decomposition of the transformed trend matrix $\LInv{\mathbf{F}}$
 
 $$ 

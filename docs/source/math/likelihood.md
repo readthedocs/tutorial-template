@@ -17,10 +17,11 @@ $$
 $$
 
 where $\boldsymbol{\psi}$ is the vector of covariance parameters which
-depend on the specific Kriging model used. The *profile likelihood* is
-the function of $\boldsymbol{\theta}$ only obtained by replacing the
-unknown $\boldsymbol{\beta}$ and $\sigma^2$ by their
-maximum-likelihood estimates. It can be denoted by
+depend on the specific Kriging model used, see the section
+[Parameters](SecParam). The *profile likelihood* is the function of
+$\boldsymbol{\theta}$ only obtained by replacing the unknown
+$\boldsymbol{\beta}$ and $\sigma^2$ by their maximum-likelihood
+estimates. It can be denoted by
 $L_{\texttt{prof}}(\boldsymbol{\theta};\,\mathbf{y})$ or simply
 $L_{\texttt{prof}}(\boldsymbol{\theta})$.
 
@@ -118,14 +119,10 @@ $L_{\texttt{prof}}(\boldsymbol{\theta},\,\sigma^2) := L(\boldsymbol{\theta}, \,
 | `"NoiseKriging"` | *not used*  |
 
 Marginal log-likelihood for the different forms. The sum of squares
-$S^2$ is given by $S^2 := \mathbf{e}^\top \corrinv{\mathbf{C}}
+$S^2$ is given by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1}
 \mathbf{e}$ where $\mathbf{e}:= \mathbf{y} -
-\mathbf{F}\widehat{\boldsymbol{\beta}}$, $\corr{\mathbf{C}}$ is the
-correlation matrix (equal to $\m{R}$ or $\m{R}_\alpha$).
-
-
-
-
+\mathbf{F}\widehat{\boldsymbol{\beta}}$ and $\mathring{\mathbf{C}}$ is
+the correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
 
 
 ### Derivatives w.r.t. the parameters

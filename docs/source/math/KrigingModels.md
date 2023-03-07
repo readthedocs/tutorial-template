@@ -139,4 +139,4 @@ corresponding to distinct inputs $\mathbf{x}_i$.
   increments, as is the case for splines. So the name *Kriging
     model* is understood here in a more restrictive way.
 
-See the [Prediction and simulation](PredAndSim) page.
+See the [Prediction and simulation](SecPredAndSim) page.

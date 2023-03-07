@@ -26,16 +26,16 @@ their MLE $\boldsymbol{\beta}$.}
 
 ## Functional point of view
 
-For the models used with **libKriging**, both the trend functions and the
-covariance kernel have an impact. While a GP model for $\zeta(\mathbf{x})$
-relates to a covariance kernel and the corresponding Reproducing
-Kernel Hilbert Space (RKHS), a Kriging model as described in [](SecKrigingModels) relate
-to a *semi-RKHS* :cite:t:`BerlinetThomasagnant_RKHS`. 
-This space $\mathcal{H}$ is
-a semi-Hilbert space of functions in which the trend functions $f_k$
+For the models used with **libKriging**, both the trend functions and
+the covariance kernel have an impact. While a GP model for
+$\zeta(\mathbf{x})$ relates to a covariance kernel and to the
+corresponding Reproducing Kernel Hilbert Space (RKHS), a Kriging model
+as described in [](SecKrigingModels) relate to a *semi-RKHS*
+:cite:t:`BerlinetThomasagnant_RKHS`.  This space $\mathcal{H}$ is a
+semi-Hilbert space of functions in which the trend functions $f_k$
 generate a finite-dimensional linear subspace $\mathcal{F}$ called the
 *nullspace* which contains so-called *unpenalized* functions i.e.,
-functions with (semi) norm zero. 
+functions with (semi) norm zero.
 
 When the covariance parameters are known, Kriging provides as the
 *Kriging mean* the function $h \in \mathcal{H}$ which minimises the
