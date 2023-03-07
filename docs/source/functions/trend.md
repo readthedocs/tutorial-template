@@ -9,7 +9,7 @@ level of complexity.
   $\mathbf{f}(\mathbf{x})^\top\boldsymbol{\beta} = \beta$.
   
 * The **linear trend** involves $p = d +1$ coefficients
-  :: math
+  .. math::
     \mathbf{f}(\mathbf{x})^\top \boldsymbol{\beta} = \beta_0 + \sum_{i=1}^d \beta_i \, x_i.
 
 
