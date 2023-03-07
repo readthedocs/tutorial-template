@@ -23,6 +23,7 @@ A further constraint used in **libKriging** is that $\kappa(h)$ takes only
 positive values: $\gamma(h) >0$ for all $h$.  With
 $\lambda(h) := - \log \gamma(h)$ the derivative w.r.t. the correlation
 range $\theta_\ell$ can be computed as
+
 $$ 
   \partial_{\theta_\ell} C(\mathbf{h};\,\boldsymbol{\theta}) = 
   \theta_\ell^{-2} \, \lambda'(h_{\ell} / \theta_\ell) \,
