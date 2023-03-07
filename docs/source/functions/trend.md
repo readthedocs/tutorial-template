@@ -9,23 +9,23 @@ level of complexity.
   $\mathbf{f}(\mathbf{x})^\top\boldsymbol{\beta} = \beta$.
   
 * The **linear trend** involves $p = d +1$ coefficients
-  \begin{equation*}
+  $$
     \mathbf{f}(\mathbf{x})^\top \boldsymbol{\beta} = \beta_0 + \sum_{i=1}^d \beta_i \, x_i.
-  \end{equation*}
+  $$
 
 * The **interactive trend** involves $1 + d + d (d-1) /2$
   coefficients
-  \begin{equation*}
+  $$
     \mathbf{f}(\mathbf{x})^\top \boldsymbol{\beta} = \beta_0  +
     \sum_{i=1}^d \sum_{j=1}^{i-1} \beta_{ji} \, x_j x_i. 
-  \end{equation*} 
+  $$
   
 * The **quadratic trend** involves $p = 1 + d + d(d+1) /2$
   coefficients
-  \begin{equation*}
+  $$
     \mathbf{f}(\mathbf{x})^\top \boldsymbol{\beta} = \beta_0  +
     \sum_{i=1}^d \sum_{j=1}^i \beta_{ji} \, x_j x_i. 
-  \end{equation*}
+  $$
 
 Starting from the constant trend, the other forms come by
 adding the $d$ linear terms $x_i$, adding the $d \times (d-1) / 2$
