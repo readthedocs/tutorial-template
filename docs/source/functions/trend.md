@@ -100,9 +100,8 @@ h_\ell^2 / \theta_\ell^2$.
 
 | kernel  | Name  | Expression  |
 |:--|:--|:--|
-| `"exp"` |  Exponential |  $\kappa(h) = \exp\{-|h|\}$  |
+| `"exp"` |  Exponential |  $\kappa(h) = \exp(-|h|)$  |
 | `"matern3_2"` | Matérn whith shape $3/2$ | $\kappa(h) = [1 + z] \exp\{-z\}$, $z := \sqrt{3} \, |h|$ |
 | `"matern5_2"` | Matérn whith shape $5/2$  | $\kappa(h) = [1 + z + z^2/3] \exp\{-z\}$, $z := \sqrt{5} \, |h|$  |
 | `"gauss"` | Gaussian  | $\kappa(h) = \exp\{-h^2/2\}$ |
 
-TabKern 1D correlation kernels $\kappa(h)$ on $\mathbb{R}$. 
