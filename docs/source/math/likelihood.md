@@ -30,8 +30,8 @@ $\widehat{\boldsymbol{\beta}}$ in the sum of squares used in the
 log-likelihood, we get a quadratic form of $\mathbf{y}$
 
 $$
- \left[\mathbf{y} - \mathbf{F}\boldsymbol{\beta} \right]^\top \mathbf{C}^{-1}
- \left[\mathbf{y} - \mathbf{F}\boldsymbol{\beta} \right] = 
+ \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right]^\top \mathbf{C}^{-1}
+ \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right] = 
   \mathbf{y}^\top \mathbf{B} \mathbf{y}
 $$
 where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
@@ -45,12 +45,12 @@ step can provide an estimate of the variance for the non-trend part
 component i.e., the difference between the response and the trend
 part. See :cite:t:`RoustantEtAl_DiceKriging` .
 
-This allows maximization of a *profile likelihood* function
-$L_{\texttt{prof}}$ depending on a smaller number of parameters. In
-practice the log-likelihood $\ell := \log L$ and log-profile
-likelihood $\ell_{\texttt{prof}} := \log L_{\texttt{prof}}$ are
-used. The profile log-likelihoods are detailed and summarized in
-Table below.
+This allows the maximization of a *profile likelihood*
+function $L_{\texttt{prof}}$ depending on a smaller number of
+parameters. In practice the log-likelihood $\ell := \log L$ and
+log-profile likelihood $\ell_{\texttt{prof}} := \log
+L_{\texttt{prof}}$ are used. The profile log-likelihoods are detailed
+and summarized in [Table below](TabProflik).
 
 ### `"Kriging"`
 
