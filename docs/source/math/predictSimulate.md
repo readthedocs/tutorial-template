@@ -32,7 +32,7 @@ covariance matrix.
    on $y(\mathbf{x}_i)=y_i$ for $i=1$, $\dots$, $n$. So if
    $n_{\texttt{sim}}$ is large the average $n_{\texttt{sim}}^{-1}\,
    \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\New{\mathbf{x}})$ should be close
-   to the conditional expectation given by the predict method.
+   to the conditional expectation given by the `predict` method.
 
 
 In order to give more details on the prediction, the following

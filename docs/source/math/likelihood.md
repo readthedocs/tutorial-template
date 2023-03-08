@@ -45,12 +45,12 @@ step can provide an estimate of the variance for the non-trend part
 component i.e., the difference between the response and the trend
 part. See :cite:t:`RoustantEtAl_DiceKriging` .
 
-This allows the maximization of a *profile likelihood*
-function $L_{\texttt{prof}}$ depending on a smaller number of
-parameters. In practice the log-likelihood $\ell := \log L$ and
-log-profile likelihood $\ell_{\texttt{prof}} := \log
-L_{\texttt{prof}}$ are used. The profile log-likelihoods are detailed
-and summarized in [Table below](TabProflik).
+This allows the maximization of a *profile likelihood* function
+$L_{\texttt{prof}}$ depending on a smaller number of parameters. In
+practice the log-likelihood $\ell := \log L$ and log-profile
+likelihood $\ell_{\texttt{prof}} := \log L_{\texttt{prof}}$ are
+used. The profile log-likelihood functions are detailed and summarized
+in the [Table below](TabProflik).
 
 ### `"Kriging"`
 

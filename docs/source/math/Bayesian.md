@@ -107,11 +107,11 @@ constants. The sum of squares $S^2$ can be expressed as $S^2 =
 $\mathring{\mathbf{B}} := \sigma^2 \mathbf{B}$ is a scaled version ot
 the [Bending Energy matrix](SecBending) $\mathbf{B}$.
 
-It can be interesting to compare the table with the [table of profile
-log-likelihoods](TabProflik) from which it can be obtained
-adding the quantity $\log\lvert \mathbf{F}^\top
-\mathring{\mathbf{C}}^{-1}\mathbf{F}\rvert - p \log S^2$
-
+It can be interesting to compare this table with the [table of profile
+log-likelihoods](TabProflik). The marginal likelihood can be obtained
+from the profile log-likelihood by adding the quantity $\log\lvert
+\mathbf{F}^\top \mathring{\mathbf{C}}^{-1}\mathbf{F}\rvert - p \log
+S^2$.
 
 ## Objective priors of Gu et al
 
@@ -152,7 +152,6 @@ $$
 
 and $\mathring{\mathbf{B}} = \sigma^{2}\mathbf{B}$ where $\mathbf{B}$ is
 the bending-energy matrix as before.
-
 
 
 ## Reference prior for the correlation parameters [not implemented yet]
@@ -299,3 +298,4 @@ to $a_{\texttt{ref}} = 1$.
 
 
 .. bibliography::
+   :cited:
