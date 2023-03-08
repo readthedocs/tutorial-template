@@ -39,11 +39,11 @@ where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
 ## Profile likelihood
 
 In the ML framework it turns out that at least the ML estimate
-$\widehat{\boldsymbol{\beta}}$ of the trend coefficient vector can be computed
-by GLS as exposed in Section [](SecGLS). Moreover the GLS step can
-provide an estimate of the variance for the non-trend part component
-i.e., the difference between the response and the trend part. See
-:cite:t:`RoustantEtAl_DiceKriging` .
+$\widehat{\boldsymbol{\beta}}$ of the trend coefficient vector can be
+computed by GLS as exposed in Section [](SecGLS). Moreover the GLS
+step can provide an estimate of the variance for the non-trend part
+component i.e., the difference between the response and the trend
+part. See :cite:t:`RoustantEtAl_DiceKriging` .
 
 This allows maximization of a *profile likelihood* function
 $L_{\texttt{prof}}$ depending on a smaller number of parameters. In
@@ -111,19 +111,28 @@ $\sigma^2$ with only the trend parameter being concentrated out
 $L_{\texttt{prof}}(\boldsymbol{\theta},\,\sigma^2) := L(\boldsymbol{\theta}, \,
 \widehat{\boldsymbol{\beta}})$.
 
+(TabProflik)=
+### Table 
+ 
+The following table gives the profile log-likelihood for the different
+forms of Kriging models. The sum of squares $S^2$ is given by $S^2 =
+\mathbf{e}^\top \mathring{\mathbf{C}}^{-1} \mathbf{e}$ where
+$\mathbf{e}:= \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ is
+the estimated non-trend component and $\mathring{\mathbf{C}}$ is the
+correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
 
 |   |   |
 |:--|:--|
-| `"Kriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}\rvert + (n - p) \log S^2$  |
-| `"NuggetKriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}_\alpha^{-1}\mathbf{F}\rvert + (n - p) \log S^2$ |
-| `"NoiseKriging"` | *not used*  |
+| `"Kriging"` |  $-2 \ell_{\texttt{prof}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + n \log S^2$  |
+|`"NuggetKriging"` | $-2 \ell_{\texttt{prof}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + n \log S^2$  |
+|`"NoiseKriging`" | $-2 \ell_{\texttt{prof}}(\boldsymbol{\theta}, \, \sigma^2) = \log \lvert\mathbf{C}\rvert + \mathbf{e}^\top \mathbf{C}^{-1}\mathbf{e}$  |
 
-Marginal log-likelihood for the different forms. The sum of squares
-$S^2$ is given by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1}
-\mathbf{e}$ where $\mathbf{e}:= \mathbf{y} -
-\mathbf{F}\widehat{\boldsymbol{\beta}}$ and $\mathring{\mathbf{C}}$ is
-the correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
-
+Note that $\widehat{\boldsymbol{\beta}}$ and $\mathbf{e}$ depend
+on the covariance parameters as do the correlation or covariance
+matrix. The profile log-likelihood are given up to additive constants. The 
+sum of squares $S^2$ can be expressed as $S^2 =
+\mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y}$ where $\mathring{\mathbf{B}} := \sigma^2 \mathbf{B}$
+is a scaled version ot the  [Bending Energy matrix](SecBending) $\mathbf{B}$.
 
 ### Derivatives w.r.t. the parameters
 
@@ -151,11 +160,3 @@ be used in the optimization routine.
 
 
 
-
-
-
-
-
-
-```{r label="TabProf", child=paste0("./tables/TabProf", FILE_EXT), fig.width=6, fig.height=6}
-``` 

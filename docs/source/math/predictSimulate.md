@@ -11,18 +11,29 @@ y(\New{\mathbf{x}}_{\New{n}})]^\top$ conditional on $\mathbf{y}$ is known: this
 is a Gaussian distribution, characterized by its mean vector and its
 covariance matrix.
 
-The `predict` method will provide the conditional expectation
-$\mathbb{E}[y(\New{\mathbf{x}}) \, \vert \, \mathbf{y}]$ a.k.a the Kriging mean. The
-method can also provide the vector of conditional standard deviations
-or the conditional covariance matrix which can be called Kriging
-standard deviation or Kriging covariance.  Consistently with the
-non-parametric regression framework $y = h(\mathbf{x}) + \varepsilon$ where
-$h$ is a function that must be estimate, we can speak of a
-*confidence interval* on the unknown mean at a "new"
-$\New{\mathbf{x}}$. It must be understood that the confidence interval is
-on the smooth part "*trend* $+$ *GP*"
-$\mu(\mathbf{x}) + \zeta(\mathbf{x})$ of the stochastic process regarded as an
-unknown deterministic quantity.
+- **The `predict` method** will provide the conditional expectation
+   $\mathbb{E}[y(\New{\mathbf{x}}) \, \vert \, \mathbf{y}]$ a.k.a the
+   Kriging mean. The method can also provide the vector of conditional
+   standard deviations or the conditional covariance matrix which can
+   be called Kriging standard deviation or Kriging covariance.
+   Consistently with the non-parametric regression framework $y =
+   h(\mathbf{x}) + \varepsilon$ where $h$ is a function that must be
+   estimate, we can speak of a *confidence interval* on the unknown
+   mean at a "new" $\New{\mathbf{x}}$. It must be understood that the
+   confidence interval is on the smooth part "*trend* $+$ *GP*"
+   $\mu(\mathbf{x}) + \zeta(\mathbf{x})$ of the stochastic process
+   regarded as an unknown deterministic quantity.
+
+- **The `simulate` method** Generate partial observations from paths
+   of the processus conditional on the known observations. More
+   precisely, the methods returns the values
+   $y^{[k]}(\New{\mathbf{x}}_i)$ at the new design points for
+   $n_{\texttt{sim}}$ independent drawings of the process conditional
+   on $y(\mathbf{x}_i)=y_i$ for $i=1$, $\dots$, $n$. So if
+   $n_{\texttt{sim}}$ is large the average $n_{\texttt{sim}}^{-1}\,
+   \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\New{\mathbf{x}})$ should be close
+   to the conditional expectation given by the predict method.
+
 
 In order to give more details on the prediction, the following
 notations will be used.
@@ -34,7 +45,7 @@ notations will be used.
 * $\NewNew{\mathbf{C}} = \mathbf{C}(\New{\mathbf{X}},\, \New{\mathbf{X}})$ is the
   $\New{n} \times \New{n}$ covariance matrix for the new inputs.
 
-## Known covariance kernel
+## Known covariance parameters
 
 If the covariance kernel is known, the Kriging mean is given by
 
@@ -98,19 +109,20 @@ $$
   framework corresponding to the GP $\zeta(\mathbf{x})$ being a white
   noise. 
 
-**Note**   Since a stationary GP $\zeta(\mathbf{x})$ is used in the model, the
-  "Kriging prediction" *returns to the trend*: for a new
-  input $\New{\mathbf{x}}$ which is far away from the inputs used to fit
-  the model, the prediction $\widehat{y}(\New{\mathbf{x}})$ tends to the
-  estimated trend $\mathbf{f}(\New{\mathbf{x}})^\top \widehat{\boldsymbol{\beta}}$.
+**Note** Since a stationary GP $\zeta(\mathbf{x})$ is used in the
+  model, the "Kriging prediction" *returns to the trend*: for a new
+  input $\New{\mathbf{x}}$ which is far away from the inputs used to
+  fit the model, the prediction $\widehat{y}(\New{\mathbf{x}})$ tends
+  to the estimated trend $\mathbf{f}(\New{\mathbf{x}})^\top
+  \widehat{\boldsymbol{\beta}}$.
 
-## Unknown covariance kernel
+## Unknown covariance parameters
 
 In **libKriging** the prediction is computed by plugging the correlation
 parameters $\boldsymbol{\theta}$ i.e., by replacing these by their estimate
 obtained by optimizing the chosen objective: likelihood, LOO, MSE or
-posterior marginal density. So the ranges $\theta_\ell$ are regarded
-as perfectly known. However the uncertainty on the GP variance
+posterior marginal density. So the *ranges $\theta_\ell$ are regarded
+as perfectly known*. However, the uncertainty on the GP variance
 $\sigma^2$ and on the nugget variance $\tau^2$ can be taken into
 account as follows.
 

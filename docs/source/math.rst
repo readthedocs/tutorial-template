@@ -2,13 +2,11 @@ Models description
 ==================
 
 
-Generalities
------------
-
 .. toctree::
    :maxdepth: 1
 
    math/KrigingModels.md
+   math/KrigingSteps.md
    math/trend.md
    math/kernel.md
    math/parameters.md

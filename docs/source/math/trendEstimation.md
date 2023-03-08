@@ -138,7 +138,7 @@ $$
 The $n \times n$ matrix $\mathbf{B}$ is such that
 $\mathbf{B}\mathbf{F} = \mathbf{0}$ which means that the columns of
 $\mathbf{F}$ are eigenvectors of $\mathbf{B}$ with eigenvalue $0$. If
-$\mathbf{C}$ is postive definite and $\mathbf{F}$ has full column rank
+$\mathbf{C}$ is positive definite and $\mathbf{F}$ has full column rank
 as assumed, then $\mathbf{B}$ has rank $n- p$.
 
 In the special case where no trend is used i.e., $p=0$ the bending

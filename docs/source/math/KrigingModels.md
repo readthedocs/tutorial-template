@@ -66,18 +66,14 @@ nugget or noise term.
 To describe the three classes of Kriging models, we assume that $n$
 observations are given corresponding to $n$ input vectors $\mathbf{x}_i$.
 
-### Class `"Kriging"`
-
-The `Kriging` class correspond to observations of the form
+- **The `Kriging` class** correspond to observations of the form
 
 $$
   \mathbf{y}(\mathbf{x}_i) = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i), \qquad
   i= 1,\, \dots,\, n.
 $$
 
-### Class `"NuggetKriging"`
-
-The `"NuggetKriging"` class corresponds to observations of the form
+- **The `"NuggetKriging"` class** corresponds to observations of the form
 
 $$
   \mathbf{y}(\mathbf{x}_i) = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i)
@@ -88,9 +84,7 @@ The sum $\zeta(\mathbf{x}) + \varepsilon(\mathbf{x})$ defines a GP with
 discontinuous paths and covariance kernel
 $C(\mathbf{x}, \mathbf{x}') + \tau^2\delta(\mathbf{x},\,\mathbf{x}')$.
 
-### Class `"NoiseKriging"`
-
-The `"NoiseKriging"` class corresponds to observations of the form
+- **The `"NoiseKriging"` class** corresponds to observations of the form
 
 $$
   \mathbf{y}_i = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i) + \varepsilon_i,

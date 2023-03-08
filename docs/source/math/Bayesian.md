@@ -83,6 +83,36 @@ nugget variance.
   marginalization is for the values $\boldsymbol{\zeta}$ of the
   unobserved GP hence is nothing but the likelihood defined above.
 
+## Table of marginal likelihood functions
+
+The following table gives the marginal log-likelihood for the different
+forms of Kriging models. The sum of squares $S^2$ is given by $S^2 :=
+\mathbf{e}^\top \mathring{\mathbf{C}}^{-1} \mathbf{e}$ where
+$\mathbf{e}:= \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ and
+$\mathring{\mathbf{C}}$ is the correlation matrix (equal to
+$\mathbf{R}$ or $\mathbf{R}_\alpha$).
+
+
+|   |   |
+|:--|:--|
+| `"Kriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}\rvert + (n - p) \log S^2$  |
+| `"NuggetKriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}_\alpha^{-1}\mathbf{F}\rvert + (n - p) \log S^2$ |
+| `"NoiseKriging"` | *not used*  |
+
+Note that $\widehat{\boldsymbol{\beta}}$ and $\mathbf{e}$ depend on
+the covariance parameters as do the correlation or covariance
+matrix. The profile log-likelihood are given up to additive
+constants. The sum of squares $S^2$ can be expressed as $S^2 =
+\mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y}$ where
+$\mathring{\mathbf{B}} := \sigma^2 \mathbf{B}$ is a scaled version ot
+the [Bending Energy matrix](SecBending) $\mathbf{B}$.
+
+It can be interesting to compare the table with the [table of profile
+log-likelihoods](TabProflik) from which it can be obtained
+adding the quantity $\log\lvert \mathbf{F}^\top
+\mathring{\mathbf{C}}^{-1}\mathbf{F}\rvert - p \log S^2$
+
+
 ## Objective priors of Gu et al
 
 In the `Kriging` case, a specific prior for the covariance
@@ -267,20 +297,5 @@ same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
 to $a_{\texttt{ref}} = 1$.
 
-
-
-
-
-|   |   |
-|:--|:--|
-| `"Kriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}\rvert + (n - p) \log S^2$  |
-| `"NuggetKriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}_\alpha^{-1}\mathbf{F}\rvert + (n - p) \log S^2$ |
-| `"NoiseKriging"` | *not used*  |
-
-Marginal log-likelihood for the different forms. The sum of squares
-$S^2$ is given by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1}
-\mathbf{e}$ where $\mathbf{e}:= \mathbf{y} -
-\mathbf{F}\widehat{\boldsymbol{\beta}}$ and  $\mathring{\mathbf{C}}$ is the
-correlation matrix (equal to $\mathbf{R}$ or $\mathbf{R}_\alpha$).
 
 .. bibliography::
