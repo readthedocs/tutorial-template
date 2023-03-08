@@ -67,12 +67,6 @@ $\sigma^2$. An alternative unbiased estimate can be obtained by using
 $n-p$ instead of $n$ as the denominator: this is the so-called
 *Restricted Maximum Likelihood* (REML) estimate.
 
-Note that $\widehat{\sigma}^2_{\texttt{ML}}$ is a biased estimate of
-$\sigma^2$. An alternative unbiased estimate can be obtained by using
-$n-p$ instead of $n$ as the denominator: this is the so-called
-*Restricted Maximum Likelihood* (REML) estimate.
-
-
 The computations rely on the so-called "thin" or "economical" QR
 decomposition of the transformed trend matrix $\LInv{\mathbf{F}}$
 
