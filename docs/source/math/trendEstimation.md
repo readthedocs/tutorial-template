@@ -43,22 +43,25 @@ left-multiplying the relation $\mathbf{y} = \mathbf{F}\boldsymbol{\beta} + \bold
 by $\mathbf{L}^{-1}$, we get
 
 $$
-  \LInv{\mathbf{y}} = \LInv{\mathbf{F}}\boldsymbol{\beta} + 
-  \LInv{\boldsymbol{\zeta}}
+  \mathbf{y}^\dagger = \mathbf{F}^\dagger\boldsymbol{\beta} + 
+  \boldsymbol{\zeta}^\dagger
 $$
 
-where \LInvNm{} symbols indicate a left multiplication by $\mathbf{L}^{-1}$
-e.g., $\LInv{\mathbf{y}}=\mathbf{L}^{-1}\mathbf{y}$.  We get a standard linear
-regression with i.i.d. Gaussian errors $\LInv{\zeta}_i$ having zero
-mean and variance $\sigma^2$. So the ML estimates
-$\widehat{\boldsymbol{\beta}}$ and $\widehat{\sigma}^2$ come by Ordinary Least
-Squares. Using
-$\widehat{\boldsymbol{\zeta}} = \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ and
-$\LInvHat{\boldsymbol{\zeta}} := \mathbf{L}^{-1}\widehat{\boldsymbol{\zeta}}$ we have
+where the "dagged" symbols indicate a left multiplication by
+$\mathbf{L}^{-1}$ e.g.,
+$\mathbf{y}^\dagger=\mathbf{L}^{-1}\mathbf{y}$.  We get a standard
+linear regression with i.i.d. Gaussian errors
+$\boldsymbol{\zeta}_i^\dagger$ having zero mean and variance
+$\sigma^2$. So the ML estimates $\widehat{\boldsymbol{\beta}}$ and
+$\widehat{\sigma}^2$ come by Ordinary Least Squares. Using
+$\widehat{\boldsymbol{\zeta}} = \mathbf{y} -
+\mathbf{F}\widehat{\boldsymbol{\beta}}$ and
+$\boldsymbol{\zeta}^\dagger :=
+\mathbf{L}^{-1}\widehat{\boldsymbol{\zeta}}$ we have
 
 $$
   \widehat{\sigma}^2_{\texttt{ML}} = \frac{1}{n} \,S^2, \quad\text{with}\quad
-  S^2 := \LInvHatT{\boldsymbol{\zeta}}\LInvHat{\boldsymbol{\zeta}}
+  S^2 := \widehat{\boldsymbol{\zeta}}^{\dagger\top}\widehat{\boldsymbol{\zeta}}^\dagger
   = \widehat{\boldsymbol{\zeta}}^\top\mathbf{R}^{-1}\widehat{\boldsymbol{\zeta}}.
 $$
 
@@ -68,34 +71,35 @@ $n-p$ instead of $n$ as the denominator: this is the so-called
 *Restricted Maximum Likelihood* (REML) estimate.
 
 The computations rely on the so-called "thin" or "economical" QR
-decomposition of the transformed trend matrix $\LInv{\mathbf{F}}$
+decomposition of the transformed trend matrix $\mathbf{F}^\dagger$
 
 $$ 
-  \LInv{\mathbf{F}} = \mathbf{Q}_{\LInv{\mathbf{F}}} \mathbf{R}_{\LInv{\mathbf{F}}} 
+  \mathbf{F}^\dagger = \mathbf{Q}_{\mathbf{F}^\dagger} \mathbf{R}_{\mathbf{F}^\dagger} 
 $$
 
-where $\mathbf{Q}_{\LInv{\mathbf{F}}}$ is
-$n \times p$ and $\mathbf{R}_{\LInv{\mathbf{F}}}$ is a $p \times p$ upper
+where $\mathbf{Q}_{\mathbf{F}^\dagger}$ is
+$n \times p$ and $\mathbf{R}_{\mathbf{F}^\dagger}$ is a $p \times p$ upper
 triangular matrix. The estimate comes by solving the triangular system
-$\mathbf{R}_{\LInv{\mathbf{F}}}\boldsymbol{\beta} = \mathbf{Q}_{\LInv{\mathbf{F}}}^\top
-\LInv{\mathbf{y}}$, and the covariance of the estimate is
-$\Cov(\widehat{\boldsymbol{\beta}}) = \mathbf{R}_{\LInv{\mathbf{F}}}^{-1}
-\mathbf{R}_{\LInv{\mathbf{F}}}^{-\top}$
+$\mathbf{R}_{\mathbf{F}^\dagger}\boldsymbol{\beta} = \mathbf{Q}_{\mathbf{F}^\dagger}^\top
+\mathbf{y}^\dagger$, and the covariance of the estimate is
+$\textsf{Cov}(\widehat{\boldsymbol{\beta}}) = \mathbf{R}_{\mathbf{F}^\dagger}^{-1}
+\mathbf{R}_{\mathbf{F}^\dagger}^{-\top}$
 
 Following a popular linear regression trick, one can further use the
-QR decomposition of the matrix $\LInv{\mathbf{F}}_+$ obtained by adding a
-new column $\LInv{\mathbf{y}}$ to $\LInv{\mathbf{F}}$ 
+QR decomposition of the matrix $\mathbf{F}^\dagger_+$ obtained by adding a
+new column $\mathbf{y}^\dagger$ to $\mathbf{F}^\dagger$ 
 
 $$
-\LInv{\mathbf{F}}_+ := \left[ \LInv{\mathbf{F}} \, \vert \, \LInv{\mathbf{y}} \right]
-= \mathbf{Q}_{\LInv{\mathbf{F}}_+}\mathbf{R}_{\LInv{\mathbf{F}}_+}.  
+\mathbf{F}^\dagger_+ := \left[ \mathbf{F}^\dagger \, \vert \, \mathbf{y}^\dagger \right]
+= \mathbf{Q}_{\mathbf{F}^\dagger_+}\mathbf{R}_{\mathbf{F}^\dagger_+}.  
 $$
 
-Then the $p+1$ column of $\mathbf{Q}_{\LInv{\mathbf{F}}_+}$ contains the vector
-of residuals $\LInvHat{\boldsymbol{\zeta}} = \LInv{\mathbf{y}} - \LInv{\mathbf{F}}
-\widehat{\boldsymbol{\beta}}$ in its first $p$ elements and the residual sum
-of squares is given by the square of the element
-$R_{\LInv{\mathbf{F}}_+}[p + 1, p +1]$. See \cite{Lange_Numerical}.
+Then the $p+1$ column of $\mathbf{Q}_{\mathbf{F}^\dagger_+}$ contains
+the vector of residuals $\widehat{\boldsymbol{\zeta}}^\dagger =
+\mathbf{y}^\dagger - \mathbf{F}^\dagger \widehat{\boldsymbol{\beta}}$
+in its first $p$ elements and the residual sum of squares is given by
+the square of the element $R_{\mathbf{F}^\dagger_+}[p + 1, p +1]$. See
+:cite:t:`Lange_Numerical`.
 
 
 ### `"NuggetKriging"` and `"NoiseKriging"`
@@ -227,22 +231,22 @@ $$
 It turns out that the trend part of the solution is then identical
 to the GLS estimate $\widehat{\boldsymbol{\beta}}$.
 
-If $\New{n}$ inputs are given in $\New{\mathbf{X}}$, then with
-$\New{\mathbf{C}} = \mathbf{C}(\New{\mathbf{X}}, \, \mathbf{X})$ and
-$\New{\mathbf{F}} =\mathbf{F}(\New{\mathbf{X}})$ the prediction writes
+If $n^\star$ inputs are given in $\mathbf{X}^\star$, then with
+$\mathbf{C}^\star := \mathbf{C}(\mathbf{X}^\star, \, \mathbf{X})$ and
+$\mathbf{F}^\star :=\mathbf{F}(\mathbf{X}^\star)$ the prediction writes
 in blocks form as
 
 $$
-  \New{\widehat{\mathbf{y}}} =
+  \widehat{\mathbf{y}}^\star =
   \begin{bmatrix}
-    \New{\mathbf{C}} & \New{\mathbf{F}}
+    \mathbf{C}^\star & \mathbf{F}^\star
   \end{bmatrix}
   \begin{bmatrix}
     \widehat{\boldsymbol{\alpha}} \\
     \widehat{\boldsymbol{\beta}}
   \end{bmatrix} =
   \begin{bmatrix}
-    \New{\mathbf{C}} & \New{\mathbf{F}}
+    \mathbf{C}^\star & \mathbf{F}^\star
   \end{bmatrix}
   \begin{bmatrix}
     \mathbf{B} & \mathbf{U}\\

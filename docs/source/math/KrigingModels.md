@@ -40,8 +40,8 @@ only when a single path is considered for the stochastic process, in
 which case no duplicated value can exist for the vector of inputs.
 
 When a nugget term is used, the process $y(\mathbf{x})$ is discontinuous,
-so the prediction at a new value $\New{\mathbf{x}}$ will be identical to
-$y(\mathbf{x}_i)$ if it happens that $\New{\mathbf{x}} = \mathbf{x}_i$ for some
+so the prediction at a new value $\mathbf{x}^\star$ will be identical to
+$y(\mathbf{x}_i)$ if it happens that $\mathbf{x}^\star = \mathbf{x}_i$ for some
 $i$. We may say that the prediction is an interpolation, in relation
 with this feature. However, in the usual acceptation of this term,
 interpolation involves the use of a *smooth* function, say at
@@ -117,9 +117,9 @@ $\mathbf{y} = \mathbf{F} \boldsymbol{\beta} + \boldsymbol{\zeta}$,
 while those for `NuggetKriging` and `NoiseKriging` models write as
 $\mathbf{y} = \mathbf{F} \boldsymbol{\beta} + \boldsymbol{\zeta} +
 \boldsymbol{\varepsilon}$.  Similar notations are used if a sequence
-of $\New{n}$ "new" designs $\New{\mathbf{x}}_i$ are considered,
-resulting in matrices with $\New{n}$ rows $\New{\mathbf{X}}$ and
-$\New{\mathbf{F}}$.
+of $n^\star$ "new" designs $\mathbf{x}_i^\star$ are considered,
+resulting in matrices with $n^\star$ rows $\mathbf{X}^\star$ and
+$\mathbf{F}^\star$.
 
 
 It will be assumed that the matrix $\mathbf{F}$ has rank $p$ (hence that

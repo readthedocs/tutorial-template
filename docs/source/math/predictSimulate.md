@@ -3,81 +3,84 @@
 
 ## Framework
 
-For all types of Kriging models we can consider $\New{n}$ "new"
-inputs $\New{\mathbf{x}}_i$ given as the rows of a $\New{n} \times d$
-matrix $\New{\mathbf{X}}$. The distribution of the random vector
-$\New{\mathbf{y}} := [y(\New{\mathbf{x}}_1), \, \dots, \,
-y(\New{\mathbf{x}}_{\New{n}})]^\top$ conditional on $\mathbf{y}$ is known: this
+For all types of Kriging models we can consider $n^\star$ "new"
+inputs $\mathbf{x}_i^\star$ given as the rows of a $n^\star \times d$
+matrix $\mathbf{X}^\star$. The distribution of the random vector
+$\mathbf{y}^\star := [y(\mathbf{x}_1^\star), \, \dots, \,
+y(\mathbf{x}_{n^\star}^\star)]^\top$ conditional on $\mathbf{y}$ is known: this
 is a Gaussian distribution, characterized by its mean vector and its
 covariance matrix.
 
 - **The `predict` method** will provide the conditional expectation
-   $\mathbb{E}[y(\New{\mathbf{x}}) \, \vert \, \mathbf{y}]$ a.k.a the
+   $\mathbb{E}[y(\mathbf{x}^\star) \, \vert \, \mathbf{y}]$ a.k.a the
    Kriging mean. The method can also provide the vector of conditional
    standard deviations or the conditional covariance matrix which can
    be called Kriging standard deviation or Kriging covariance.
    Consistently with the non-parametric regression framework $y =
    h(\mathbf{x}) + \varepsilon$ where $h$ is a function that must be
    estimate, we can speak of a *confidence interval* on the unknown
-   mean at a "new" $\New{\mathbf{x}}$. It must be understood that the
+   mean at a "new" $\mathbf{x}^\star$. It must be understood that the
    confidence interval is on the smooth part "*trend* $+$ *GP*"
    $\mu(\mathbf{x}) + \zeta(\mathbf{x})$ of the stochastic process
    regarded as an unknown deterministic quantity.
 
-- **The `simulate` method** Generate partial observations from paths
+- **The `simulate` method** generates partial observations from paths
    of the processus conditional on the known observations. More
    precisely, the methods returns the values
-   $y^{[k]}(\New{\mathbf{x}}_i)$ at the new design points for
+   $y^{[k]}(\mathbf{x}_i^\star)$ at the new design points for
    $n_{\texttt{sim}}$ independent drawings of the process conditional
    on $y(\mathbf{x}_i)=y_i$ for $i=1$, $\dots$, $n$. So if
    $n_{\texttt{sim}}$ is large the average $n_{\texttt{sim}}^{-1}\,
-   \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\New{\mathbf{x}})$ should be close
-   to the conditional expectation given by the `predict` method.
+   \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\mathbf{x}^\star)$ should be
+   close to the conditional expectation given by the `predict` method.
 
 
 In order to give more details on the prediction, the following
 notations will be used.
-* $\New{\mathbf{F}} = \mathbf{F}(\New{\mathbf{X}})$ is the "new" trend matrix with
-  dimension $\New{n} \times p$.
-* $\New{\mathbf{C}} = \mathbf{C}(\New{\mathbf{X}},\, \mathbf{X})$ is the
-  $\New{n} \times n$ covariance matrix between the new and the observation
-  inputs. When $\New{n}=1$ we have row matrix.
-* $\NewNew{\mathbf{C}} = \mathbf{C}(\New{\mathbf{X}},\, \New{\mathbf{X}})$ is the
-  $\New{n} \times \New{n}$ covariance matrix for the new inputs.
+
+* $\mathbf{F}^\star := \mathbf{F}(\mathbf{X}^\star)$ is the "new" trend matrix with
+  dimension $n^\star \times p$.
+  
+* $\mathbf{C}^\star := \mathbf{C}(\mathbf{X}^\star,\, \mathbf{X})$ is the
+  $n^\star \times n$ covariance matrix between the new and the observation
+  inputs. When $n^\star=1$ we have row matrix.
+
+* $\mathbf{C}^{\star\star} := \mathbf{C}(\mathbf{X}^\star,\, \mathbf{X}^\star)$ is the
+  $n^\star \times n^\star$ covariance matrix for the new inputs.
 
 ## Known covariance parameters
 
 If the covariance kernel is known, the Kriging mean is given by
 
 $$
-  \mathbb{E}[\New{\mathbf{y}} \, \vert \,\mathbf{y} ] =
+  \mathbb{E}[\mathbf{y}^\star \, \vert \,\mathbf{y} ] =
   \underset{\text{trend}}
-  {\underbrace{\New{\mathbf{F}}\widehat{\boldsymbol{\beta}}}}  +
+  {\underbrace{\mathbf{F}^\star\widehat{\boldsymbol{\beta}}}}  +
   \underset{\text{GP}}
-  {\underbrace{\New{\mathbf{C}}\mathbf{C}^{-1} [\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}]}},
+  {\underbrace{\mathbf{C}^\star\mathbf{C}^{-1} [\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}]}},
 $$
 
 where $\widehat{\boldsymbol{\beta}}$ stands for the GLS estimate of $\boldsymbol{\beta}$.  At
 the right-hand side the first term is the prediction of the trend and
 the second term is the simple Kriging prediction for the GP part
-$\New{\boldsymbol{\zeta}}$ where the estimation
+$\boldsymbol{\zeta}^\star$ where the estimation
 $\widehat{\boldsymbol{\zeta}} = \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ is used as
 if it was containing the unkown observations $\boldsymbol{\zeta}$. The Kriging
 covariance is given by
 
 $$
-  \Cov[\New{\mathbf{y}} \, \vert \,\mathbf{y} ] =
+  \textsf{Cov}[\mathbf{y}^\star \, \vert \,\mathbf{y} ] =
   \underset{\text{trend}}
-  {\underbrace{[\New{\mathbf{F}} - \NewHat{\mathbf{F}}] \,\Cov(\widehat{\boldsymbol{\beta}})\,
-      [\New{\mathbf{F}} - \NewHat{\mathbf{F}}]^\top}} +
+  {\underbrace{[\mathbf{F}^\star - \widehat{\mathbf{F}}^\star] \,\textsf{Cov}(\widehat{\boldsymbol{\beta}})\,
+      [\mathbf{F}^\star - \widehat{\mathbf{F}}^\star]^\top}} +
   \underset{\text{GP}}
   {\underbrace{
-      \NewNew{\mathbf{C}} - \New{\mathbf{C}} \mathbf{C}^{-1} \NewT{\mathbf{C}}}},
+      \mathbf{C}^{\star\star} - \mathbf{C}^\star \mathbf{C}^{-1} \mathbf{C}^{\star\top}}},
 $$
 
-where $\NewHat{\mathbf{F}} := \New{\mathbf{C}} \mathbf{C}^{-1}\mathbf{F}$ is the
+where $\widehat{\mathbf{F}}^\star := \mathbf{C}^\star \mathbf{C}^{-1}\mathbf{F}$ is the
 simple Kriging prediction of the trend matrix. At the right-hand
-side the first term accounts for the uncertainty due to the trend. It
+side, the first term accounts for the uncertainty due to the trend. It
 disappears if the estimation of $\boldsymbol{\beta}$ is perfect or if the
 trend functions are perfectly predicted by Kriging. The second and
 third terms are the unconditional covariance of the GP part and the
@@ -87,33 +90,33 @@ observations and the new inputs.
 **Note**   The conditional covariance can be expressed as
 
 $$
-  \Cov[\New{\mathbf{y}} \, \vert \,\mathbf{y} ] = \NewNew{\mathbf{C}} -
+  \textsf{Cov}[\mathbf{y}^\star \, \vert \,\mathbf{y} ] = \mathbf{C}^{\star\star} -
   \begin{bmatrix}
-     \New{\mathbf{C}} & \New{\mathbf{F}}
+     \mathbf{C}^\star & \mathbf{F}^\star
   \end{bmatrix}
   \begin{bmatrix}
      \mathbf{C} & \mathbf{F}\\
      \mathbf{F}^\top & \mathbf{0}
   \end{bmatrix}^{-1}
   \begin{bmatrix}
-    \NewT{\mathbf{C}}\\
-	\NewT{\mathbf{F}}
+    \mathbf{C}^{\star\top}\\
+	\mathbf{F}^{\star\top}
    \end{bmatrix}.
 $$
   
   
   The block square matrix to be inverted is not positive hence its
   inverse is not positive either. So the prediction covariance can be
-  larger than the conditional covariance $\NewNew{\mathbf{C}}$ of the
+  larger than the conditional covariance $\mathbf{C}^{\star\star}$ of the
   GP.  This is actually the case in the classical linear regression
   framework corresponding to the GP $\zeta(\mathbf{x})$ being a white
   noise. 
 
 **Note** Since a stationary GP $\zeta(\mathbf{x})$ is used in the
   model, the "Kriging prediction" *returns to the trend*: for a new
-  input $\New{\mathbf{x}}$ which is far away from the inputs used to
-  fit the model, the prediction $\widehat{y}(\New{\mathbf{x}})$ tends
-  to the estimated trend $\mathbf{f}(\New{\mathbf{x}})^\top
+  input $\mathbf{x}^\star$ which is far away from the inputs used to
+  fit the model, the prediction $\widehat{y}(\mathbf{x}^\star)$ tends
+  to the estimated trend $\mathbf{f}(\mathbf{x}^\star)^\top
   \widehat{\boldsymbol{\beta}}$.
 
 ## Unknown covariance parameters
@@ -165,7 +168,7 @@ degrees of freedom.
 
 The derivative (or gradient) of the prediction mean and of the
 standard deviation vector with respect to the input vector
-$\New{\mathbf{x}}$ can be optionally provided. These derivatives are
+$\mathbf{x}^\star$ can be optionally provided. These derivatives are
 required in Bayesian Optimization. The derivatives are obtained by
 applying the chain rule to the expressions for the expectation and the
 variance.

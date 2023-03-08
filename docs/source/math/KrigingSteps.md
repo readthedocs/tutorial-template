@@ -23,27 +23,27 @@
   **libKriging** only *point estimates* will be given for the
   correlation parameters.
 
-* **Update** Update a model object by processing $\New{n}$ new
+* **Update** Update a model object by processing $n^\star$ new
   observations.  Once this step is achieved, the predictions will be
-  based on the full set of $n + \New{n}$ observations. The covariance
+  based on the full set of $n + n^\star$ observations. The covariance
   parameters can optionally be updated by using the new observations
   when computing the fitting objective.
 
-* **Predict** Given $\New{n}$ "new" inputs $\New{\mathbf{x}}_i$ forming
-  the rows of a matrix $\New{\mathbf{X}}$, compute the Gaussian
-  distribution of $\New{\mathbf{y}}$ conditional on $\mathbf{y}$. As long as the
-  covariance parameters are regarded as known, the conditional
-  distribution is Gaussian, and is characterized by its expectation
-  vector and its covariance matrix. These are often called the
-  *Kriging mean* and the *Kriging covariance*.
+* **Predict** Given $n^\star$ "new" inputs $\mathbf{x}^\star_i$
+  forming the rows of a matrix $\mathbf{X}^\star$, compute the
+  Gaussian distribution of $\mathbf{y}^\star$ conditional on
+  $\mathbf{y}$. As long as the covariance parameters are regarded as
+  known, the conditional distribution is Gaussian, and is
+  characterized by its expectation vector and its covariance
+  matrix. These are often called the *Kriging mean* and the *Kriging
+  covariance*.
 
-* **Simulate** Given $\New{n}$ "new" inputs $\New{\mathbf{x}}_i$
-  forming the rows of a matrix $\New{\mathbf{X}}$, draw a sample of
-  $n_{\texttt{sim}}$ vectors $\New{\mathbf{y}}$ $k=1$, $\dots$,
+* **Simulate** Given $n^\star$ "new" inputs $\mathbf{x}^\star_i$
+  forming the rows of a matrix $\mathbf{X}^\star$, draw a sample of
+  $n_{\texttt{sim}}$ vectors $\mathbf{y}^\star$ $k=1$, $\dots$,
   $n_{\texttt{sim}}$ from the distribution of $y(\mathbf{x})$
   conditional on the observations.
   
-
 By "Kriging" one often means the prediction step. The fit step is
 generally the most costly one in terms of computation because the fit
 objective has to be evaluated repeatedly (say dozens of times) and
