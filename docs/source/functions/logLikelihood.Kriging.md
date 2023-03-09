@@ -1,3 +1,4 @@
+(logLikelihood.Kriging)=
 # `Kriging::logLikelihood`
 
 
@@ -23,11 +24,18 @@ Get Log-Likelihood of Kriging Model
     % k = Kriging(...)
     k.logLikelihood()
     ```
-
+## Details
+ 
+See [`logLikelihoodFun.Kriging`](logLikelihoodFun.Kriging) for more
+details on the corresponding profile log-likelihood function.
 
 ## Value
 
-The log-Likelihood computed for fitted $\theta$.
+The value of the maximized profile log-likelihood
+$\ell_{\texttt{prof}}(\widehat{\boldsymbol{\theta}})$. This is also
+the value $\ell(\widehat{\boldsymbol{\theta}},\, \widehat{\sigma}^2,\,
+\widehat{\boldsymbol{\beta}})$ of the maximized log-likelihood.
+
 
 
 ## Examples

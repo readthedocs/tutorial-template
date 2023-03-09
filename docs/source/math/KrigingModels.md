@@ -122,11 +122,12 @@ resulting in matrices with $n^\star$ rows $\mathbf{X}^\star$ and
 $\mathbf{F}^\star$.
 
 
-It will be assumed that the matrix $\mathbf{F}$ has rank $p$ (hence that
-$n \geqslant p$) and that the Kernel $C(\mathbf{x},\,\mathbf{x}')$ is positive
-definite on $\mathbb{R}^d$ meaning that the matrix
-$\mathbf{C}(\mathbf{X},\,\mathbf{X})$ is positive definite for every design
-corresponding to distinct inputs $\mathbf{x}_i$.
+It will be assumed that the matrix $\mathbf{F}$ has rank $p$ (hence
+that $n \geqslant p$) and that the Kernel
+$C(\mathbf{x},\,\mathbf{x}')$ is positive definite on $\mathbb{R}^d$
+meaning that the matrix $\mathbf{C}(\mathbf{X},\,\mathbf{X})$ is
+positive definite for every design $\mathbf{X}$ corresponding to
+distinct inputs $\mathbf{x}_i$.
 
 **Note**  :cite:t:`BerlinetThomasagnant_RKHS` define Kriging models as the sum of
   a deterministic trend and a stochastic process with stationary

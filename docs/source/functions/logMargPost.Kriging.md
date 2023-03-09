@@ -2,7 +2,7 @@
 
 ## Description
 
-Get Log-Marginal Posterior of Kriging Model
+Get the Maximized Log-Marginal Posterior Density of a Kriging Model
 
 
 ## Usage
@@ -23,11 +23,21 @@ Get Log-Marginal Posterior of Kriging Model
     k.logMargPost()
     ```
 
+## Details
+
+Using the *jointly robust* prior
+$\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \,
+\boldsymbol{\beta})$ the marginal or integrated posterior is the
+function $\boldsymbol{\theta}$ obtained by marginalizing out the GP
+variance $\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend coefficients.
+See [`logMargPostFun.Kriging`](logMargPostFun.Kriging) for the log-marginal 
+posterior density.
 
 ## Value
 
-The logMargPost computed for fitted $\theta$.
-
+The maximal value of the log-marginal posterior density, corresponding
+to the estimated value of the vector $\boldsymbol{\theta}$ of
+correlation ranges when `objective="LMP"` is used.
 
 
 ## Examples

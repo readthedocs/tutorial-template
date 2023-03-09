@@ -18,24 +18,10 @@ $$
 
 where $\boldsymbol{\psi}$ is the vector of covariance parameters which
 depend on the specific Kriging model used, see the section
-[Parameters](SecParam). The *profile likelihood* is the function of
-$\boldsymbol{\theta}$ only obtained by replacing the unknown
-$\boldsymbol{\beta}$ and $\sigma^2$ by their maximum-likelihood
-estimates. It can be denoted by
-$L_{\texttt{prof}}(\boldsymbol{\theta};\,\mathbf{y})$ or simply
-$L_{\texttt{prof}}(\boldsymbol{\theta})$.
+[Parameters](SecParam). The notation $|\mathbf{C}|$ is for the
+determinant of the matrix $\mathbf{C}$. 
 
-Remind that if we replace $\boldsymbol{\beta}$ by its estimate
-$\widehat{\boldsymbol{\beta}}$ in the sum of squares used in the
-log-likelihood, we get a quadratic form of $\mathbf{y}$
-
-$$
- \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right]^\top \mathbf{C}^{-1}
- \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right] = 
-  \mathbf{y}^\top \mathbf{B} \mathbf{y}
-$$
-where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
-
+(SecMLProf)=
 ## Profile likelihood
 
 In the ML framework it turns out that at least the ML estimate
@@ -47,10 +33,21 @@ part. See :cite:t:`RoustantEtAl_DiceKriging` .
 
 This allows the maximization of a *profile likelihood* function
 $L_{\texttt{prof}}$ depending on a smaller number of parameters. In
-practice the log-likelihood $\ell := \log L$ and log-profile
+practice the log-likelihood $\ell := \log L$ and the log-profile
 likelihood $\ell_{\texttt{prof}} := \log L_{\texttt{prof}}$ are
 used. The profile log-likelihood functions are detailed and summarized
 in the [Table below](TabProflik).
+
+Remind that if we replace $\boldsymbol{\beta}$ by its estimate
+$\widehat{\boldsymbol{\beta}}$ in the sum of squares used in the
+log-likelihood, we get a quadratic form of $\mathbf{y}$
+
+$$
+ \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right]^\top \mathbf{C}^{-1}
+ \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right] = 
+  \mathbf{y}^\top \mathbf{B} \mathbf{y}
+$$
+where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
 
 ### `"Kriging"`
 

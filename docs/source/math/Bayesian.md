@@ -42,39 +42,67 @@ $\sigma^2$, and that the prior for $\boldsymbol{\beta}$ is an improper prior
 with constant density
 
 $$
-   p(\boldsymbol{\beta} \, \vert \, \boldsymbol{\theta}, \sigma^2)
-        = p(\boldsymbol{\beta}) \propto 1.
+   \pi(\boldsymbol{\beta} \, \vert \, \boldsymbol{\theta}, \sigma^2)
+        = \pi(\boldsymbol{\beta}) \propto 1.
 $$
 
 Then the problem boils down to the choice of the joint prior
-$\pi(\boldsymbol{\theta}, \, \sigma^2)$.
+$\pi(\boldsymbol{\theta}, \, \sigma^2)$. 
+
+## Objective priors of Gu et al
+
+In the case where no nugget or noise is used, an interesting choice
+
+$$ 
+  \tag{1}
+  \pi(\boldsymbol{\theta}, \, \sigma^2) =
+    \frac{\pi(\boldsymbol{\theta})}{(\sigma^2)^a}
+$$
+
+with $a >0$. Indeed, the result of the integration with respect to
+$\sigma^2$ and $\boldsymbol{\beta}$ is then known in closed form.
+If a nugget term is used.
+
 
 ## Fit: Bayesian marginal analysis
-
 
 In the `Kriging` case, the *marginal likelihood*
 a.k.a. *integrated likelihood* for $\boldsymbol{\theta}$ is obtained by
 marginalizing the GP variance $\sigma^2$ and the trend parameter
-vector $\boldsymbol{\beta}$ out of the likelihood, leading to
+vector $\boldsymbol{\beta}$ out of the likelihood according to
 
 $$
   L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y}) := 
   p(\boldsymbol{\theta} \, \vert \, \mathbf{y}) \propto \int
   p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
-  p(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
+  \frac{1}{\sigma^{2a}} \,
   \text{d}\sigma^2\,
   \text{d}\boldsymbol{\beta},
 $$
 
 where $p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta})$ is
-the likelihood $L(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta};\, \mathbf{y})$.
+the likelihood $L(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta};\, \mathbf{y})$. We get a closed expression given in the [table below](TabMarglik).
+Now for a prior having the form (1), the marginal posterior is
+
+$$
+    p_{\texttt{marg}}(\boldsymbol{\theta}\,\vert \,\mathbf{y}) 
+	\propto \pi(\boldsymbol{\theta}) \times  L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y}).
+$$
 
 In the `NuggetKriging` case, the same approach can be used, but
 the parameter used for the nugget is not marginalized out so it
-remains an argument of the marginal likelihood to be maximized. In
+remains an argument of the marginal likelihood. In
 **libKriging** the nugget parameter is taken as
 $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where $\tau^2$ is the
 nugget variance.
+
+
+$$
+    p_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha \,\vert \,\mathbf{y}) 
+	\propto \pi(\boldsymbol{\theta},\,\alpha) \times  L_{\texttt{marg}}(\boldsymbol{\theta},\,\alpha;\,\mathbf{y}).
+$$
+
+
 
 **Note** The marginal likelihood differs from the frequentist notion
   attached to this name. But it also differs from the marginal
@@ -83,75 +111,31 @@ nugget variance.
   marginalization is for the values $\boldsymbol{\zeta}$ of the
   unobserved GP hence is nothing but the likelihood defined above.
 
+(TabMarglik)=
 ## Table of marginal likelihood functions
 
-The following table gives the marginal log-likelihood for the different
-forms of Kriging models. The sum of squares $S^2$ is given by $S^2 :=
-\mathbf{e}^\top \mathring{\mathbf{C}}^{-1} \mathbf{e}$ where
-$\mathbf{e}:= \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ and
-$\mathring{\mathbf{C}}$ is the correlation matrix (equal to
-$\mathbf{R}$ or $\mathbf{R}_\alpha$).
+The following table gives the marginal log-likelihood for the
+different forms of Kriging models. The sum of squares $S^2$ is given
+by $S^2 := \mathbf{e}^\top \mathring{\mathbf{C}}^{-1} \mathbf{e}$
+where $\mathbf{e}:= \mathbf{y} -
+\mathbf{F}\widehat{\boldsymbol{\beta}}$ and $\mathring{\mathbf{C}}$ is
+the correlation matrix (equal to $\mathbf{R}$ or
+$\mathbf{R}_\alpha$). The sum of squares $S^2$ can be expressed as
+$S^2 = \mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y}$ where
+$\mathring{\mathbf{B}} := \sigma^2 \mathbf{B}$ is a scaled version ot
+the [Bending Energy matrix](SecBending) $\mathbf{B}$.
 
 
 |   |   |
 |:--|:--|
-| `"Kriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}\rvert + (n - p) \log S^2$  |
-| `"NuggetKriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}_\alpha^{-1}\mathbf{F}\rvert + (n - p) \log S^2$ |
+| `"Kriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}) = \log \lvert\mathbf{R}\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}^{-1}\mathbf{F}\rvert + (n - p + 2a - 2) \log S^2$  |
+| `"NuggetKriging"` | $-2 \ell_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha) = \log \lvert\mathbf{R}_\alpha\rvert + \log\lvert \mathbf{F}^\top \mathbf{R}_\alpha^{-1}\mathbf{F}\rvert + (n - p + 2a -2) \log S^2$ |
 | `"NoiseKriging"` | *not used*  |
 
-Note that $\widehat{\boldsymbol{\beta}}$ and $\mathbf{e}$ depend on
-the covariance parameters as do the correlation or covariance
-matrix. The profile log-likelihood are given up to additive
-constants. The sum of squares $S^2$ can be expressed as $S^2 =
-\mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y}$ where
-$\mathring{\mathbf{B}} := \sigma^2 \mathbf{B}$ is a scaled version ot
-the [Bending Energy matrix](SecBending) $\mathbf{B}$.
 
 It can be interesting to compare this table with the [table of profile
-log-likelihoods](TabProflik). The marginal likelihood can be obtained
-from the profile log-likelihood by adding the quantity $\log\lvert
-\mathbf{F}^\top \mathring{\mathbf{C}}^{-1}\mathbf{F}\rvert - p \log
-S^2$.
+log-likelihoods](TabProflik). 
 
-## Objective priors of Gu et al
-
-In the `Kriging` case, a specific prior for the covariance
-parameters $\sigma^2$ and $\boldsymbol{\theta}$ can be defined by
-
-$$
-  \pi_{\texttt{obj}}(\boldsymbol{\theta},\,\sigma^2) \propto
-  \frac{\pi_{\texttt{ref}}(\boldsymbol{\theta})}{(\sigma^2)^{a_{\texttt{obj}}}}
-$$
-
-where $a_{\texttt{obj}}>0$ is a real number and
-$\pi_{\texttt{ref}}(\boldsymbol{\theta})$ relates to the Fisher information
-matrix, see later. The special case $a_{\texttt{obj}} = 1$ corresponds
-to the *reference joint prior*
-$\pi_{\texttt{ref}}(\boldsymbol{\theta},\,\sigma^2)$.
-
-Note that since $\pi(\boldsymbol{\theta},\,\sigma^2) \propto
-\pi_{\texttt{ref}}(\boldsymbol{\theta},\,\sigma^2) \times
-(\sigma^2)^{1-a_{\texttt{obj}}}$ a quite different impact of the prior
-on the MAP is to be expected depending on whether $a_{\texttt{obj}} <
-1$ or $a_{\texttt{obj}} > 1$.
-
-This leads to the expression for the marginal likelihood
-
-$$
-  -2 \, \log p(\boldsymbol{\theta} \, \vert \, \mathbf{y})
-  = \log |\mathbf{R}| + \log\left| \mathbf{F}^\top \mathbf{R}^{-1} \mathbf{F} \right|
-  + \left\{ n - p + 2 a_{\texttt{obj}} - 2 \right\} \log S^2
-$$
-
-where
-
-$$
-  S^2 := \mathbf{y}^\top \mathring{\mathbf{B}} \mathbf{y} = 
-  n \, \widehat{\sigma}^2_{\texttt{ML}}
-$$
-
-and $\mathring{\mathbf{B}} = \sigma^{2}\mathbf{B}$ where $\mathbf{B}$ is
-the bending-energy matrix as before.
 
 
 ## Reference prior for the correlation parameters [not implemented yet]
@@ -159,7 +143,7 @@ the bending-energy matrix as before.
 :cite:t:`BergerAtAl_ObjectiveBayesSpatial` define the reference joint
 prior for $\boldsymbol{\theta}$ and $\sigma^2$ in relation to the integrated
 likelihood where only the trend parameter $\boldsymbol{\beta}$ is marginalized
-out
+out, that is 
 $p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2) \, = \int p(\boldsymbol{\theta},
 \, \sigma^2, \, \boldsymbol{\beta}) \, \text{d}\boldsymbol{\beta}$ and they show that
 it has the form
@@ -191,7 +175,7 @@ $$
     & -\mathbb{E}\left\{\frac{\partial^2 }{\partial \sigma^2\partial \sigma^2}\,
       \ell_{\texttt{marg}}(\boldsymbol{\theta}, \,\sigma^2 )\right\}
     \rule{0pt}{1.5em}
-  \end{bmatrix} =
+  \end{bmatrix} =:
   \begin{bmatrix}
     \mathbf{H} & \mathbf{u}^\top\\
     \mathbf{u} & b
@@ -199,9 +183,10 @@ $$
 $$
 
 One can show that this information matrix can be expressed by using
-the $n \times n$ symmetric matrices
-$\mathbf{N}_k := \mathbf{L}^{-1} \left[\partial_{\theta_k} \mathbf{R}\right]
-\mathbf{L}^{-\top}$ where $\mathbf{L}$ is the lower Cholesky root of the correlation matrix
+the $n \times n$ symmetric matrices $\mathbf{N}_k := \mathbf{L}^{-1}
+\left[\partial_{\theta_k} \mathbf{R}\right] \mathbf{L}^{-\top}$ where
+$\mathbf{L}$ is the lower Cholesky root of the correlation matrix
+according to
 
 $$
   \mathbf{H} = \frac{1}{2}\,
@@ -262,7 +247,7 @@ obvious abuse of notation by
 
 $$
   \pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \, \alpha)  \propto
-  \frac{\pi_{\texttt{JR}}(\boldsymbol{\theta}, \alpha)}{\sigma^2}
+  \frac{\pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)}{\sigma^2}
 $$
 
 where as above $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ so that the
@@ -270,12 +255,12 @@ nugget variance ratio $\eta$ of :cite:t:`Gu_JointlyRobust` is
 $\eta = (1 - \alpha) / \alpha$. The JR prior corresponds to
 
 $$
-  \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{a_{\texttt{JR}}}
+  \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{r_{\texttt{JR}}}
   \exp\{ -b_{\texttt{JR}}t\} \qquad
   t :=  \frac{1 - \alpha}{\alpha} + \sum_{\ell= 1}^d \frac{C_\ell}{\theta_\ell},
 $$
 
-where $a_{\texttt{JR}}> -(d + 1)$ and $b_{\texttt{JR}} >0$ are two
+where $r_{\texttt{JR}}> -(d + 1)$ and $b_{\texttt{JR}} >0$ are two
 hyperparameters and $C_\ell$ is proportional to the range $r_\ell$ of
 the column $\ell$ in $\mathbf{X}$
 
@@ -283,10 +268,10 @@ $$
   C_\ell = n^{-1/d} \times r_\ell, \qquad r_\ell := \max_i\{X_{i\ell}\} -\min_i\{X_{i\ell}\}.
 $$
 
-The values of $a_{\texttt{JR}}$ and $b_{\texttt{JR}}$ are chosen as
+The values of $r_{\texttt{JR}}$ and $b_{\texttt{JR}}$ are chosen as
 
 $$
-  a_{\texttt{JR}} := 0.2, \qquad b_{\texttt{JR}} := n^{-1/d} \times (a_{\texttt{JR}} + d).
+  r_{\texttt{JR}} := 0.2, \qquad b_{\texttt{JR}} := n^{-1/d} \times (a_{\texttt{JR}} + d).
 $$
 
 Note that as opposed to the objective prior described above, the JR
@@ -295,6 +280,10 @@ GP. However the integration w.r.t.  $\sigma^2$ and $\boldsymbol{\beta}$ is the
 same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
 to $a_{\texttt{ref}} = 1$.
+
+**Caution** XXX The parameter $r_{\texttt{JR}}$ is denoted by $a$ in
+:cite:t:`Gu_JointlyRobust` and in the code of **libKriging**. It
+differs from the exponent $a$ of $\sigma^{-2}$ used above.
 
 
 .. bibliography::

@@ -33,10 +33,20 @@ Argument      |Description
 `grad`     |     Logical. Should the function return the gradient (w.r.t theta)?
 
 
+## Details 
+
+Using the *jointly robust* prior
+$\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \,
+\boldsymbol{\beta})$ the marginal or integrated posterior is the
+function $\boldsymbol{\theta}$ obtained by marginalizing out the GP
+variance $\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend
+coefficients.
+
+
 ## Value
 
-The value of the log-marginal posterior computed for the
- given vector $\theta$.
+A function which compute the log-marginal posterior density $\log
+p(\boldsymbol{\theta} \,|\, \mathbf{y})$.
 
 
 ## Examples

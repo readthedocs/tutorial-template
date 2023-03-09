@@ -1,3 +1,4 @@
+(logLikelihood.NuggetKriging)=
 # `NuggetKriging::logLikelihood`
 
 
@@ -22,12 +23,23 @@ Get logLikelihood of NuggetKriging Model
     % k = NuggetKriging(...)
     k.logLikelihood()
     ```
-
+	
+## Details
+ 
+See [`logLikelihoodFun.NuggetKriging`](logLikelihoodFun.NuggetKriging)
+for more details on the corresponding profile log-likelihood function.
 
 ## Value
 
-The logLikelihood computed for fitted
-  $\theta,\frac{\sigma^2}{\sigma^2+nugget}$.
+The value of the maximized profile log-likelihood
+$\ell_{\texttt{prof}}(\widehat{\boldsymbol{\theta}},\,\widehat{\alpha})$
+where $\alpha:= \sigma^2 / (\sigma^2 + \nu^2)$ is the ratio of the
+variances $\sigma^2$ for the GP and $\sigma^2 + \nu^2$ for the GP $+$
+nugget. This is also the value $\ell(\widehat{\boldsymbol{\theta}},\,
+\widehat{\alpha},\, \widehat{\sigma}^2,\, \widehat{\boldsymbol{\beta}})$
+or $\ell(\widehat{\boldsymbol{\theta}},\,
+\widehat{\sigma}^2,\, \widehat{\tau}^2, \, \widehat{\boldsymbol{\beta}})$
+of the maximized log-likelihood.
 
 
 ## Examples
