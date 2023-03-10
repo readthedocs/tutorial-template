@@ -121,11 +121,12 @@ $$
 
 ## Unknown covariance parameters
 
-In **libKriging** the prediction is computed by plugging the correlation
-parameters $\boldsymbol{\theta}$ i.e., by replacing these by their estimate
-obtained by optimizing the chosen objective: likelihood, LOO, MSE or
-posterior marginal density. So the *ranges $\theta_\ell$ are regarded
-as perfectly known*. However, the uncertainty on the GP variance
+In **libKriging** the prediction is computed by plugging the
+correlation parameters $\boldsymbol{\theta}$ i.e., by replacing these
+by their estimate obtained by optimizing the chosen objective:
+*log-likelihood*, *Leave-One-Out Sum of Squared Errors*, or 
+*marginal posterior density*. So the *ranges $\theta_\ell$ are regarded as
+perfectly known*. However, the uncertainty on the GP variance
 $\sigma^2$ and on the nugget variance $\tau^2$ can be taken into
 account as follows.
 

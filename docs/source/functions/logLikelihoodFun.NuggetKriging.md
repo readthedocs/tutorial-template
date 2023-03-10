@@ -50,13 +50,13 @@ Squares. See [here](SecMLProf) for more details.
 
 ## Value
 
-A function which computes the profile log-likelihood
-$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\alpha)$ for a given
-vector $\boldsymbol{\theta}$ of correlation ranges and a variance
-ratio $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where $\sigma^2$ and
-$\tau^2$ stand for the GP and the nugget variance. The parameters must
-be such that $\theta_k >0$ for $k=1$, $\dots$, $d$ and $0 < \alpha
-< 1$.
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\alpha)$ for the given
+vector $\boldsymbol{\theta}$ of correlation ranges and the given
+variance ratio $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where
+$\sigma^2$ and $\tau^2$ stand for the GP and the nugget variance. The
+parameters must be such that $\theta_k >0$ for $k=1$, $\dots$, $d$ and
+$0 < \alpha < 1$.
 
 
 ## Examples

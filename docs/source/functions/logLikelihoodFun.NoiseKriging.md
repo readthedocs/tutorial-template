@@ -4,8 +4,9 @@
 
 ## Description
 
-Compute Log-Likelihood of NoiseKriging Model for given $\theta,\sigma^2$
-
+Compute the Profile Log-Likelihood of a ` NoiseKriging` Model for a
+given Vector $\boldsymbol{\theta}$ of Correlation Ranges and a given
+GP Variance $\sigma^2$
 
 
 ## Usage
@@ -46,10 +47,10 @@ for more details.
 
 ## Value
 
-A function which computes the profile log-likelihood
-$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\sigma^2)$for a given
-vector $\boldsymbol{\theta}$ of correlation ranges and a GP variance
-$\sigma^2$.
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\sigma^2)$ for the given
+vector $\boldsymbol{\theta}$ of correlation ranges and the given GP
+variance $\sigma^2$.
 
 
 ## Examples

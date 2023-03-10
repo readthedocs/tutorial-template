@@ -25,8 +25,11 @@ In this section we switch to a Bayesian style of notations. The vector
 of parameters is formed by three blocks: the vector $\boldsymbol{\theta}$ of
 correlation ranges, the GP variance $\sigma^2$ and the vector
 $\boldsymbol{\beta}$ of trend parameters. A major concern is the elicitation
-of the prior density $\pi(\boldsymbol{\theta}, \, \sigma^2, \,\boldsymbol{\beta})$.  A
-natural idea is that the prior should not provide information about
+of the prior density $\pi(\boldsymbol{\theta}, \, \sigma^2, \,\boldsymbol{\beta})$.
+
+## Objective priors of Gu et al
+
+A natural idea is that the prior should not provide information about
 $\boldsymbol{\beta}$, implying the use of *improper* probability
 densities. With the factorization
 
@@ -49,9 +52,7 @@ $$
 Then the problem boils down to the choice of the joint prior
 $\pi(\boldsymbol{\theta}, \, \sigma^2)$. 
 
-## Objective priors of Gu et al
-
-In the case where no nugget or noise is used, an interesting choice
+In the case where no nugget or noise is used, an interesting choice is
 
 $$ 
   \tag{1}
@@ -59,10 +60,9 @@ $$
     \frac{\pi(\boldsymbol{\theta})}{(\sigma^2)^a}
 $$
 
-with $a >0$. Indeed, the result of the integration with respect to
-$\sigma^2$ and $\boldsymbol{\beta}$ is then known in closed form.
-If a nugget term is used.
-
+with $a >0$. With this specific form the result of the integration of
+the likelihood or of the posterior density with respect to $\sigma^2$
+and $\boldsymbol{\beta}$ is then known in closed form.  
 
 ## Fit: Bayesian marginal analysis
 
@@ -80,28 +80,27 @@ $$
   \text{d}\boldsymbol{\beta},
 $$
 
-where $p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta})$ is
-the likelihood $L(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta};\, \mathbf{y})$. We get a closed expression given in the [table below](TabMarglik).
-Now for a prior having the form (1), the marginal posterior is
+where $p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2, \,
+\boldsymbol{\beta})$ is the likelihood $L(\boldsymbol{\theta}, \,
+\sigma^2, \, \boldsymbol{\beta};\, \mathbf{y})$. We get a closed
+expression given in the [table below](TabMarglik).  Now for a prior
+having the form (1), the marginal posterior factorizes as
 
 $$
     p_{\texttt{marg}}(\boldsymbol{\theta}\,\vert \,\mathbf{y}) 
 	\propto \pi(\boldsymbol{\theta}) \times  L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y}).
 $$
 
-In the `NuggetKriging` case, the same approach can be used, but
-the parameter used for the nugget is not marginalized out so it
-remains an argument of the marginal likelihood. In
-**libKriging** the nugget parameter is taken as
-$\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where $\tau^2$ is the
-nugget variance.
-
+In the `NuggetKriging` case, the same approach can be used, but the
+parameter used for the nugget is not marginalized out so it remains an
+argument of the marginal likelihood. In **libKriging** the nugget
+parameter is taken as $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where
+$\tau^2$ is the nugget variance. We then have the factorization
 
 $$
     p_{\texttt{marg}}(\boldsymbol{\theta}, \, \alpha \,\vert \,\mathbf{y}) 
 	\propto \pi(\boldsymbol{\theta},\,\alpha) \times  L_{\texttt{marg}}(\boldsymbol{\theta},\,\alpha;\,\mathbf{y}).
 $$
-
 
 
 **Note** The marginal likelihood differs from the frequentist notion
@@ -140,13 +139,14 @@ log-likelihoods](TabProflik).
 
 ## Reference prior for the correlation parameters [not implemented yet]
 
+For the case when no nugget or noise is used,
 :cite:t:`BergerAtAl_ObjectiveBayesSpatial` define the reference joint
-prior for $\boldsymbol{\theta}$ and $\sigma^2$ in relation to the integrated
-likelihood where only the trend parameter $\boldsymbol{\beta}$ is marginalized
-out, that is 
-$p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2) \, = \int p(\boldsymbol{\theta},
-\, \sigma^2, \, \boldsymbol{\beta}) \, \text{d}\boldsymbol{\beta}$ and they show that
-it has the form
+prior for $\boldsymbol{\theta}$ and $\sigma^2$ in relation to the
+integrated likelihood where only the trend parameter
+$\boldsymbol{\beta}$ is marginalized out, that is $p(\mathbf{y} \,
+\vert \,\boldsymbol{\theta}, \, \sigma^2) \, = \int
+p(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
+\text{d}\boldsymbol{\beta}$ and they show that it has the form
 
 $$
   \pi_{\texttt{ref}}(\boldsymbol{\theta},\, \sigma^2) %% = \left|\mathbf{I}^\star(\sigma^2,\, \boldsymbol{\theta})\right|^{1/2}
@@ -232,6 +232,7 @@ for details.
   "$\boldsymbol{\theta}$ *then* $\sigma^2$", while the opposite order is used
   in :cite:t:`Gu_Phd`.
 
+(SecJointlyrobust)=
 ## The "Jointly Robust"  prior of Gu
 
 The prior described in the previous section suffers from its high

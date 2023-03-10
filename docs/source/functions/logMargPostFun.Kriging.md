@@ -2,9 +2,8 @@
 
 ## Description
 
-Compute the log-marginal posterior of a kriging model, using the
- prior XXXY.
-
+Compute the Log-Marginal Posterior Density of a `Kriging` Model Object for a given
+Vector $\boldsymbol{\theta}$ of Correlation Ranges
 
 ## Usage
 
@@ -30,24 +29,29 @@ Compute the log-marginal posterior of a kriging model, using the
 Argument      |Description
 ------------- |----------------
 `theta`     |     Numeric vector of correlation range parameters at which the function is to be evaluated.
-`grad`     |     Logical. Should the function return the gradient (w.r.t theta)?
+`grad`     |     Logical. Should the function return the gradient (w.r.t `theta`)?
 
 
 ## Details 
 
-Using the *jointly robust* prior
-$\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \,
-\boldsymbol{\beta})$ the marginal or integrated posterior is the
-function $\boldsymbol{\theta}$ obtained by marginalizing out the GP
-variance $\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend
-coefficients.
-
+The log-marginal posterior density relates to the [*jointly robust*
+prior](SecJointlyrobust) $\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \,
+\boldsymbol{\beta}) \propto \pi(\boldsymbol{\theta}) \, \sigma^{-2}$. The
+marginal (or integrated) posterior is the function
+$\boldsymbol{\theta}$ obtained by marginalizing out the GP variance
+$\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend
+coefficients. Due to the form of the prior, the marginalization can be
+done on the likelihood $p_{\texttt{marg}}(\boldsymbol{\theta}\,\vert
+\,\mathbf{y}) \propto \pi(\boldsymbol{\theta}) \times
+L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y})$.
 
 ## Value
 
-A function which compute the log-marginal posterior density $\log
-p(\boldsymbol{\theta} \,|\, \mathbf{y})$.
-
+The value of the log-marginal posterior density $\log
+p_{\texttt{marg}}(\boldsymbol{\theta} \,|\, \mathbf{y})$. By
+maximizing this function we should get the estimate of
+$\boldsymbol{\theta}$ obtained when using `objective = "LMP"` in the
+[`fit.Kriging`](fit.Kriging) method.
 
 ## Examples
 

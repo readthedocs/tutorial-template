@@ -7,16 +7,16 @@ observation $i$ in $\mathbf{y}$. The vector of *leave-one-out* (LOO)
 predictions is defined by
 
 $$
-  \widehat{\mathbf{y}}_{\mathtt{LOO}} =
+  \widehat{\mathbf{y}}_{\mathtt{LOO}} :=
   [ \widehat{y}_{1|-1}, \dots, \,  \widehat{y}_{n|-n} ]^\top,
 $$
 
-and the leave-one-out mean square error criterion is defined by
+and the leave-one-out Sum of Square Errors criterion is defined by
 
 $$
-  \texttt{MSE}_{\texttt{LOO}} :=
-  \frac{1}{n} \, \sum_{i=1}^n \{ y_i - \widehat{y}_{i|-i} \}^2 =
-  \frac{1}{n}\, \| \mathbf{y} - \widehat{\mathbf{y}}_{\texttt{LOO}} \|^2.
+  \texttt{SSE}_{\texttt{LOO}} :=
+  \sum_{i=1}^n \{ y_i - \widehat{y}_{i|-i} \}^2 =
+  \| \mathbf{y} - \widehat{\mathbf{y}}_{\texttt{LOO}} \|^2.
 $$
 
 It can be shown that
@@ -30,7 +30,7 @@ where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM)
 and $\mathbf{D}_{\mathbf{B}}$ is the diagonal matrix with the same
 diagonal as $\mathbf{B}$.
 
-By minimizing $\texttt{MSE}_{\texttt{LOO}}$ with respect to the
+By minimizing $\texttt{SSE}_{\texttt{LOO}}$ with respect to the
 covariance parameters we get estimates of these. Note that
 the LOO MSE does not depend on the trend parameters $\boldsymbol{\beta}$.
 

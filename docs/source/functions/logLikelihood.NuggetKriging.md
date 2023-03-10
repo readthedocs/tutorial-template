@@ -4,7 +4,7 @@
 
 ## Description
 
-Get logLikelihood of NuggetKriging Model
+Get the Maximized Log-Likelihood of a `NuggetKriging` Model Object
 
 
 ## Usage

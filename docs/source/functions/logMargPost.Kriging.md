@@ -2,7 +2,7 @@
 
 ## Description
 
-Get the Maximized Log-Marginal Posterior Density of a Kriging Model
+Get the Maximized Log-Marginal Posterior Density of a ` Kriging`  Model
 
 
 ## Usage
@@ -25,20 +25,22 @@ Get the Maximized Log-Marginal Posterior Density of a Kriging Model
 
 ## Details
 
-Using the *jointly robust* prior
+Using the [*jointly robust*](SecJointlyrobust) prior
 $\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \sigma^2, \,
 \boldsymbol{\beta})$ the marginal or integrated posterior is the
-function $\boldsymbol{\theta}$ obtained by marginalizing out the GP
-variance $\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend coefficients.
-See [`logMargPostFun.Kriging`](logMargPostFun.Kriging) for the log-marginal 
-posterior density.
+function of $\boldsymbol{\theta}$ obtained from the posterior density
+by marginalizing out the GP variance $\sigma^2$ and the vector
+$\boldsymbol{\beta}$ of trend coefficients.  See
+[`logMargPostFun.Kriging`](logMargPostFun.Kriging) for the
+log-marginal posterior density. By maximizing this function
+w.r.t. $\boldsymbol{\theta}$ we get estimated correlation ranges which
+are warranted to be postitive and finite $0 < \theta_k < \infty$.
 
 ## Value
 
 The maximal value of the log-marginal posterior density, corresponding
 to the estimated value of the vector $\boldsymbol{\theta}$ of
-correlation ranges when `objective="LMP"` is used.
-
+correlation ranges.
 
 ## Examples
 
@@ -64,5 +66,5 @@ k$logMargPost()
 ## Reference
 
 * Code: <https://github.com/libKriging/libKriging/blob/master/src/lib/Kriging.cpp#L494>
-* RobustGaSP R package
+* The [RobustGaSP R package](https://CRAN.R-project.org/package=RobustGaSP)
 

@@ -4,8 +4,8 @@
 
 ## Description
 
-Compute Log-Likelihood of Kriging Model for given vector $\boldsymbol{\theta}$
-of correlation ranges
+Compute the Profile Log-Likelihood of a `Kriging` Model Object for a
+given Vector $\boldsymbol{\theta}$ of Correlation Ranges
 
 ## Usage
 
@@ -49,7 +49,8 @@ details.
 
 ## Value
 
-A function which computes the profile log-likelihood for a given vector
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta})$ for the given vector
 $\boldsymbol{\theta}$ of correlation ranges.
 
 ## Examples

@@ -3,8 +3,7 @@
 
 ## Description
 
-Create an object `"Kriging"` using
- the libKriging library.
+Create a `Kriging` Object representing a Trend $+$ GP Model
 
 
 ## Usage

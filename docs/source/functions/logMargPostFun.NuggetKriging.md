@@ -2,7 +2,10 @@
 
 ## Description
 
-Compute the log-marginal posterior of a kriging model, using the prior XXXY for given $\theta,\frac{\sigma^2}{\sigma^2+nugget}$
+Compute the Log-Marginal Posterior Density of a `NuggetKriging` Model
+for a given Vector $\boldsymbol{\theta}$ of Correlation
+Ranges and a given Ratio $\sigma^2 = (\sigma^2 + \tau^2)$ of Variances
+$\texttt{GP} / (\texttt{GP}+ \texttt{nugget})$
 
 
 ## Usage
@@ -29,13 +32,31 @@ Compute the log-marginal posterior of a kriging model, using the prior XXXY for 
 Argument      |Description
 ------------- |----------------
 `theta_alpha`     |     Numeric vector of correlation range and variance over nugget + variance parameters at which the function is to be evaluated.
-`grad`     |     Logical. Should the function return the gradient (w.r.t theta_alpha)?
+`grad`     |     Logical. Should the function return the gradient (w.r.t `theta_alpha`)?
 
+## Details 
+
+The log-marginal posterior density relates to the [*jointly robust*
+prior](SecJointlyrobust) $\pi_{\texttt{JR}}(\boldsymbol{\theta},\, \alpha,\,\sigma^2, \,
+\boldsymbol{\beta}) \propto \pi(\boldsymbol{\theta},\,\alpha) \, \sigma^{-2}$. The
+marginal (or integrated) posterior is the function
+$\boldsymbol{\theta}$ and $\alpha$ obtained by marginalizing out the GP variance
+$\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend
+coefficients. Due to the form of the prior, the marginalization can be
+done on the likelihood $p_{\texttt{marg}}(\boldsymbol{\theta}\,\vert
+\,\mathbf{y}) \propto \pi(\boldsymbol{\theta}) \times
+L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y})$.
 
 ## Value
 
-The value of the log-marginal posterior computed for the
- given vector $\theta,\frac{\sigma^2}{\sigma^2+nugget}$.
+The value of the log-marginal posterior density $\log
+p_{\texttt{marg}}(\boldsymbol{\theta},\,\alpha \,|\, \mathbf{y})$
+where $\boldsymbol{\theta}$ is the vector of correlation ranges and
+$\alpha = \sigma^2 / (\sigma^2 + \tau^2)$ is the ratio of variances
+$\texttt{GP}/ (\texttt{GP} + \texttt{nugget})$.  By maximizing this
+function we should get the estimates of $\boldsymbol{\theta}$ and
+$\alpha$ obtained when using `objective = "LMP"` in the
+[`fit.NuggetKriging`](fit.NuggetKriging) method.
 
 
 ## Examples
