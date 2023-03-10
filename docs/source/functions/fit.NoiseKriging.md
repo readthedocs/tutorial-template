@@ -3,7 +3,7 @@
 
 ## Description
 
-Fit `NoiseKriging` object on given data.
+Fit a `NoiseKriging` Model Object with given Observations
 
 
 ## Usage

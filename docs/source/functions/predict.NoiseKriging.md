@@ -38,8 +38,9 @@ Argument      |Description
 
 Given $n^\star$ "new" input points $\mathbf{x}^\star_{j}$, the method
 compute the expectation, the standard deviation and (optionally) the
-covariance of the "new" observations $\mu(\mathbf{x}^\star) +
-\zeta(\mathbf{x}^\star)$ of the "trend $+$ GP" stochastic process,
+covariance of the estimated values of the "trend $+$ GP" stochastic
+process $\mu(\mathbf{x}_j^\star) + \zeta(\mathbf{x}_j^\star)$ at the
+"new" observations. The estimation is based on the distribution
 conditional on the $n$ noisy observations $y_i$ made at the input
 points $\mathbf{x}_i$ as used when fitting the model. The $n^\star$
 input vectors (with length $d$) are given as the rows of a
@@ -55,12 +56,13 @@ A list containing the element `mean` and possibly `stdev` and
 `cov`. 
 
 - The expectation in ` mean` is the estimate of the vector
-   $\textsf{E}[\mathbf{y}^\star \, \vert \,\mathbf{y}]$ with length
-   $n^\star$ where $\mathbf{y}^\star$ and $\mathbf{y}$ are the random
-   vectors corresponding to the observation and the "new" input
-   points. Similarly the conditional standard deviation in `stdev` is
-   a vector with length $n^\star$ and the conditional covariance in
-   `cov` is a $n^\star \times n^\star$ matrix. 
+   $\textsf{E}[\boldsymbol{\mu}^\star + \boldsymbol{\zeta}^\star \,
+   \vert \,\mathbf{y}]$ with length $n^\star$ where 
+   $\boldsymbol{\mu}^\star$ and $\boldsymbol{\zeta}^\star$ are for "new"
+   points and $\mathbf{y}$ corresponds to the observations. Similarly
+   the conditional standard deviation in `stdev` is a vector with
+   length $n^\star$ and the conditional covariance in `cov` is a
+   $n^\star \times n^\star$ matrix.
    
 - The (optional) derivatives are two $n^\star \times d$ matrices
    `pred_mean_deriv` and ` pred_sdtdev_deriv` with their row $j$

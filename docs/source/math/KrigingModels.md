@@ -11,7 +11,7 @@ real inputs $x_k$, sometimes called the design vector. The response
 variable or output $y$ is assumed to be observed for $n$ values
 $\mathbf{x}_i$ of the input vector with corresponding response values $y_i$
 for $i=1$, $\dots$, $n$. The response values are considered as
-realisations of random variables.
+realizations of random variables.
 
 The models involve the following elements or components.
 

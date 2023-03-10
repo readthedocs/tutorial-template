@@ -51,7 +51,7 @@ Fit objective
    functions/logLikelihoodFun.NoiseKriging.md
 
 
-Regression
+Prediction and simulation
 ---------
 
 .. toctree::
