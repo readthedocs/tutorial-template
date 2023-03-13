@@ -4,7 +4,7 @@
 
 Compute the Log-Marginal Posterior Density of a `NuggetKriging` Model
 for a given Vector $\boldsymbol{\theta}$ of Correlation
-Ranges and a given Ratio $\sigma^2 = (\sigma^2 + \tau^2)$ of Variances
+Ranges and a given Ratio $\sigma^2 / (\sigma^2 + \tau^2)$ of Variances
 $\texttt{GP} / (\texttt{GP}+ \texttt{nugget})$
 
 
