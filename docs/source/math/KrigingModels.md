@@ -23,7 +23,7 @@ The models involve the following elements or components.
   
 * **Smooth Gaussian Process (GP)** An unobserved GP
   $\zeta(\mathbf{x})$, at least continuous, with mean zero and known
-  covariance kernel $C(\mathbf{x}, \, \mathbf{x}')$.
+  covariance kernel $C_\zeta(\mathbf{x}, \, \mathbf{x}')$.
   
 * **Nugget** A White noise GP $\varepsilon(\mathbf{x})$ with
   variance $\tau^2$ hence with covariance kernel
@@ -69,25 +69,42 @@ observations are given corresponding to $n$ input vectors $\mathbf{x}_i$.
 - **The `Kriging` class** correspond to observations of the form
 
 $$
-  \mathbf{y}(\mathbf{x}_i) = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i), \qquad
+  \mathbf{y}(\mathbf{x}_i) = 
+  \underset{\text{trend}}{
+  \underbrace{\mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta}}} 
+  + 
+  \underset{\text{smooth GP}}{\underbrace{\zeta(\mathbf{x}_i)}}, \qquad
   i= 1,\, \dots,\, n.
 $$
 
 - **The `"NuggetKriging"` class** corresponds to observations of the form
 
 $$
-  \mathbf{y}(\mathbf{x}_i) = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i)
-  + \varepsilon(\mathbf{x}_i), \qquad i= 1,\, \dots,\, n.
+  \mathbf{y}(\mathbf{x}_i) = 
+  \underset{\text{trend}}{
+  \underbrace{\mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta}}} 
+  + 
+  \underset{\text{smooth GP}}{\underbrace{\zeta(\mathbf{x}_i)}}
+  + 
+  \underset{\text{nugget}}{\underbrace{\varepsilon(\mathbf{x}_i)}}, 
+  \qquad i= 1,\, \dots,\, n.
 $$
 
-The sum $\zeta(\mathbf{x}) + \varepsilon(\mathbf{x})$ defines a GP with
-discontinuous paths and covariance kernel
-$C(\mathbf{x}, \mathbf{x}') + \tau^2\delta(\mathbf{x},\,\mathbf{x}')$.
+The sum $\eta(\mathbf{x}) := \zeta(\mathbf{x}) +
+\varepsilon(\mathbf{x})$ defines a GP with discontinuous paths and
+covariance kernel $C(\mathbf{x}, \mathbf{x}') +
+\tau^2\delta(\mathbf{x},\,\mathbf{x}')$.
 
 - **The `"NoiseKriging"` class** corresponds to observations of the form
 
 $$
-  \mathbf{y}_i = \mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta} + \zeta(\mathbf{x}_i) + \varepsilon_i,
+  y_i = 
+  \underset{\text{trend}}{
+  \underbrace{\mathbf{f}(\mathbf{x}_i)^\top \boldsymbol{\beta}}} 
+  + 
+  \underset{\text{smooth GP}}{\underbrace{\zeta(\mathbf{x}_i)}} 
+  + 
+  \underset{\text{noise}}{\underbrace{\varepsilon_i}},
   \qquad i= 1,\, \dots,\, n
 $$
 
@@ -95,7 +112,7 @@ where the noise r.vs $\varepsilon_i$ are Gaussian with mean zero and
 known variances $\tau_i^2$.  Although the response $y_i$ corresponds
 to the input $\mathbf{x}_i$ as for the classes `"Kriging"` and
 `"NugggetKriging"`, there can be several observations made at the
-same input $\mathbf{x}_i$. We may then speak of duplicated inputs.
+same input $\mathbf{x}_i$. We may then speak of *duplicated* inputs.
 
 ## Matrix formalism and assumptions
 
@@ -121,11 +138,13 @@ of $n^\star$ "new" designs $\mathbf{x}_i^\star$ are considered,
 resulting in matrices with $n^\star$ rows $\mathbf{X}^\star$ and
 $\mathbf{F}^\star$.
 
-
+It must be kept in mind that unless explicitly stated otherwise, the
+covariance matrix $\mathbf{C}$ is *that of the non-trend component*
+$\boldsymbol{\eta}$ including the smooth GP plus the nugget or noise.
 It will be assumed that the matrix $\mathbf{F}$ has rank $p$ (hence
-that $n \geqslant p$) and that the Kernel
-$C(\mathbf{x},\,\mathbf{x}')$ is positive definite on $\mathbb{R}^d$
-meaning that the matrix $\mathbf{C}(\mathbf{X},\,\mathbf{X})$ is
+that $n \geqslant p$) and that the matrix $\mathbf{C}$ is positive
+definite. Inasmuch a positive kernel $C_\zeta(\mathbf{x},\, \mathbf{x}')$ is
+used the matrix $\mathbf{C}_\zeta(\mathbf{X}, \, \mathbf{X})$ is
 positive definite for every design $\mathbf{X}$ corresponding to
 distinct inputs $\mathbf{x}_i$.
 

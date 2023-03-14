@@ -5,7 +5,7 @@
   unknown, these can be estimated by [Generalized Least
   Squares](SecGLS). This step separates the observed response $y_i$
   into a trend and component $\widehat{\mu}(\mathbf{x}_i)$ a non-trend
-  component. The non-trend component involves a GP component
+  component. The non-trend component involves a smooth GP component
   $\widehat{\zeta}(\mathbf{x}_i)$ and, optionally, a nugget or noise
   component $\widehat{\varepsilon}(\mathbf{x}_i)$ or
   $\widehat{\varepsilon}_i$.

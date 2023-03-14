@@ -256,12 +256,12 @@ nugget variance ratio $\eta$ of :cite:t:`Gu_JointlyRobust` is
 $\eta = (1 - \alpha) / \alpha$. The JR prior corresponds to
 
 $$
-  \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{r_{\texttt{JR}}}
+  \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{a_{\texttt{JR}}}
   \exp\{ -b_{\texttt{JR}}t\} \qquad
   t :=  \frac{1 - \alpha}{\alpha} + \sum_{\ell= 1}^d \frac{C_\ell}{\theta_\ell},
 $$
 
-where $r_{\texttt{JR}}> -(d + 1)$ and $b_{\texttt{JR}} >0$ are two
+where $a_{\texttt{JR}}> -(d + 1)$ and $b_{\texttt{JR}} >0$ are two
 hyperparameters and $C_\ell$ is proportional to the range $r_\ell$ of
 the column $\ell$ in $\mathbf{X}$
 
@@ -269,10 +269,10 @@ $$
   C_\ell = n^{-1/d} \times r_\ell, \qquad r_\ell := \max_i\{X_{i\ell}\} -\min_i\{X_{i\ell}\}.
 $$
 
-The values of $r_{\texttt{JR}}$ and $b_{\texttt{JR}}$ are chosen as
+The values of $a_{\texttt{JR}}$ and $b_{\texttt{JR}}$ are chosen as
 
 $$
-  r_{\texttt{JR}} := 0.2, \qquad b_{\texttt{JR}} := n^{-1/d} \times (a_{\texttt{JR}} + d).
+  a_{\texttt{JR}} := 0.2, \qquad b_{\texttt{JR}} := n^{-1/d} \times (a_{\texttt{JR}} + d).
 $$
 
 Note that as opposed to the objective prior described above, the JR
@@ -282,7 +282,7 @@ same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
 to $a_{\texttt{ref}} = 1$.
 
-**Caution** XXX The parameter $r_{\texttt{JR}}$ is denoted by $a$ in
+**Caution** XXX The parameter $a_{\texttt{JR}}$ is denoted by $a$ in
 :cite:t:`Gu_JointlyRobust` and in the code of **libKriging**. It
 differs from the exponent $a$ of $\sigma^{-2}$ used above.
 

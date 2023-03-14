@@ -152,7 +152,7 @@ $$
   \underset{\text{trend}}
   {\underbrace{\widehat{\boldsymbol{\mu}}}} +
   \underset{\text{GP}}
-  {\underbrace{\widehat{\boldsymbol{\zeta}}}}
+  {\underbrace{\widehat{\boldsymbol{\eta}}}}
   = [\mathbf{I}_n - \mathbf{C}\mathbf{B}] \, \mathbf{y} + \mathbf{C}\mathbf{B} \, \mathbf{y}.
 $$
 

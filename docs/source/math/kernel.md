@@ -2,16 +2,17 @@
 
 ## General form
 
-The zero-mean GP $\zeta(\mathbf{x})$ is characterized by its covariance
-kernel $C(\mathbf{x}, \mathbf{x}') := \mathbb{E}[\zeta(\mathbf{x}),\, \zeta(\mathbf{x}')]$.
-**libKriging** uses a specific form of covariance kernel $C(\mathbf{x},\,\mathbf{x}')$ on
-the input space $\mathbb{R}^d$ which can be called
-*tensor-product*. With $\mathbf{h} := \mathbf{x} - \mathbf{x}'$ the kernel
-value expresses as
+The zero-mean smooth GP $\zeta(\mathbf{x})$ is characterized by its
+covariance kernel $C_\zeta(\mathbf{x}, \mathbf{x}') :=
+\mathbb{E}[\zeta(\mathbf{x}),\, \zeta(\mathbf{x}')]$.  **libKriging**
+uses a specific form of covariance kernel
+$C_\zeta(\mathbf{x},\,\mathbf{x}')$ on the input space $\mathbb{R}^d$ which
+can be called *tensor-product*. With $\mathbf{h} := \mathbf{x} -
+\mathbf{x}'$ the kernel value expresses as
 
 $$
-  C(\mathbf{x}, \, \mathbf{x}'; \boldsymbol{\theta}, \, \sigma^2) =
-  C(\mathbf{h}; \boldsymbol{\theta}, \, \sigma^2) =
+  C_\zeta(\mathbf{x}, \, \mathbf{x}'; \boldsymbol{\theta}, \, \sigma^2) =
+  C_\zeta(\mathbf{h}; \boldsymbol{\theta}, \, \sigma^2) =
   \sigma^2 \, \prod_{\ell = 1}^d \kappa(h_\ell / \theta_\ell)  
 $$
 
@@ -25,9 +26,9 @@ $\lambda(h) := - \log \gamma(h)$ the derivative w.r.t. the correlation
 range $\theta_\ell$ can be computed as
 
 $$ 
-  \partial_{\theta_\ell} C(\mathbf{h};\,\boldsymbol{\theta}) = 
+  \partial_{\theta_\ell} C_\zeta(\mathbf{h};\,\boldsymbol{\theta}) = 
   \theta_\ell^{-2} \, \lambda'(h_{\ell} / \theta_\ell) \,
-  C(\mathbf{h};\,\boldsymbol{\theta}).
+  C_\zeta(\mathbf{h};\,\boldsymbol{\theta}).
 $$ 
 
 ## Available 1D correlation kernels
@@ -35,7 +36,7 @@ $$
 The 1D correlation kernels available are listed in the Table below.
 Remind that in this setting the smoothness of the paths of the GP
 $\zeta(\mathbf{x})$ is controlled by the smoothness of the kernel
-$C(\mathbf{h})$ at $\mathbf{h} = \mathbf{0}$ hence by the smoothness
+$C_\zeta(\mathbf{h})$ at $\mathbf{h} = \mathbf{0}$ hence by the smoothness
 of the correlation kernel $\kappa(h)$ for $h=0$.  Note that the 1D
 exponential kernel is not differentiable at $h = 0$ and the
 corresponding paths are continuous but nowhere differentiable. The

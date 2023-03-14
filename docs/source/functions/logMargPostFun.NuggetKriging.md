@@ -43,9 +43,9 @@ marginal (or integrated) posterior is the function
 $\boldsymbol{\theta}$ and $\alpha$ obtained by marginalizing out the GP variance
 $\sigma^2$ and the vector $\boldsymbol{\beta}$ of trend
 coefficients. Due to the form of the prior, the marginalization can be
-done on the likelihood $p_{\texttt{marg}}(\boldsymbol{\theta}\,\vert
-\,\mathbf{y}) \propto \pi(\boldsymbol{\theta}) \times
-L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y})$.
+done on the likelihood $p_{\texttt{marg}}(\boldsymbol{\theta},\,\alpha \,\vert
+\,\mathbf{y}) \propto \pi(\boldsymbol{\theta},\,\alpha) \times
+L_{\texttt{marg}}(\boldsymbol{\theta},\,\alpha;\,\mathbf{y})$.
 
 ## Value
 
