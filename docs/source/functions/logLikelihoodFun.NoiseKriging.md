@@ -1,4 +1,3 @@
-(logLikelihoodFun.NoiseKriging)=
 # `NoiseKriging::logLikelihoodFun`
 
 

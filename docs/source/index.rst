@@ -40,4 +40,3 @@ Contents
    usage
    api
    math
-

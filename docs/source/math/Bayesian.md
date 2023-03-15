@@ -286,6 +286,3 @@ to $a_{\texttt{ref}} = 1$.
 :cite:t:`Gu_JointlyRobust` and in the code of **libKriging**. It
 differs from the exponent $a$ of $\sigma^{-2}$ used above.
 
-
-.. bibliography::
-   :cited:

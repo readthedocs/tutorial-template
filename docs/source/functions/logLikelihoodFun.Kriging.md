@@ -1,4 +1,3 @@
-(logLikelihoodFun.Kriging)=
 # `Kriging::logLikelihoodFun`
 
 

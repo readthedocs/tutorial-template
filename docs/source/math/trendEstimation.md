@@ -231,10 +231,11 @@ $$
 It turns out that the trend part of the solution is then identical
 to the GLS estimate $\widehat{\boldsymbol{\beta}}$.
 
-If $n^\star$ inputs are given in $\mathbf{X}^\star$, then with
-$\mathbf{C}^\star := \mathbf{C}(\mathbf{X}^\star, \, \mathbf{X})$ and
-$\mathbf{F}^\star :=\mathbf{F}(\mathbf{X}^\star)$ the prediction writes
-in blocks form as
+If $n^\star$ "new" inputs $\mathbf{x}^\star_j$ are given in a matrix
+$\mathbf{X}^\star$, then with $\mathbf{C}^\star :=
+\mathbf{C}(\mathbf{X}^\star, \, \mathbf{X})$ and $\mathbf{F}^\star
+:=\mathbf{F}(\mathbf{X}^\star)$ the prediction writes in blocks form
+as
 
 $$
   \widehat{\mathbf{y}}^\star =

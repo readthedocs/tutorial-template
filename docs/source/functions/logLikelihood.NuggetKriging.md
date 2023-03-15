@@ -1,4 +1,3 @@
-(logLikelihood.NuggetKriging)=
 # `NuggetKriging::logLikelihood`
 
 
@@ -15,7 +14,7 @@ Get the Maximized Log-Likelihood of a `NuggetKriging` Model Object
     k.logLikelihood()
     ```
 * R
-    ```rlibKriging
+    ```R
     k$logLikelihood()
     ```
 * Matlab/Octave
