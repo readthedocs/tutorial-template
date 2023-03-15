@@ -14,5 +14,4 @@ Models description
    math/predictSimulate
    math/likelihood
    math/leaveOneOut
-   math/Bayesian
-   
+   math/Bayesian   
