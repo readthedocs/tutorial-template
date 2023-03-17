@@ -31,7 +31,7 @@ the covariance kernel have an impact. While a GP model for
 $\zeta(\mathbf{x})$ relates to a covariance kernel and to the
 corresponding Reproducing Kernel Hilbert Space (RKHS), a Kriging model
 as described in [](SecKrigingModels) relate to a *semi-RKHS*
-:cite:t:`BerlinetThomasagnant_RKHS`.  This space $\mathcal{H}$ is a
+{cite:t}`BerlinetThomasagnant_RKHS`.  This space $\mathcal{H}$ is a
 semi-Hilbert space of functions in which the trend functions $f_k$
 generate a finite-dimensional linear subspace $\mathcal{F}$ called the
 *nullspace* which contains so-called *unpenalized* functions i.e.,
@@ -80,7 +80,7 @@ $$
 and Kriging indeeds find suitable vectors $\boldsymbol{\alpha}$ and
 $\boldsymbol{\beta}$. The representation of $h$ can be made unique by
 imposing orthogonality constraints, see [](SecBending).
-See :cite:t:`Wahba_Improper` for the use of an improper
+See {cite:t}`Wahba_Improper` for the use of an improper
 prior on the coefficients of the trend functions.
 
 **Note** Allowing for a non-informative trend has an important

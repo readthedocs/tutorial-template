@@ -3,13 +3,12 @@
 # Bayesian marginal analysis
 
 ## Motivation and general form of prior
-
-:cite:authors:`BergerAtAl_ObjectiveBayesSpatial` have shown that the
+{cite:authors}`BergerAtAl_ObjectiveBayesSpatial` have shown that the
 ML estimation of Kriging models often gives estimated ranges
 $\widehat{\theta}_k = 0$ or $\widehat{\theta}_k = \infty$, leading to
 poor predictions. Although finite positive bounds can be imposed in
 the optimization to address this issue, the bounds are quite
-arbitrary. :cite:authors:`BergerAtAl_ObjectiveBayesSpatial` have shown
+arbitrary. {cite:authors}`BergerAtAl_ObjectiveBayesSpatial` have shown
 that one can instead replace the ML estimates by the marginal
 posterior mode (MAP) in a Bayesian analysis. Provided that suitable
 priors are used, it can be shown that the estimated ranges will be
@@ -105,8 +104,8 @@ $$
 
 **Note** The marginal likelihood differs from the frequentist notion
   attached to this name. But it also differs from the marginal
-  likelihood as often used in the GP community
-  :cite:t:`RasmussenWilliams_GaussianProcesses` where the
+  likelihood as often used in the GP community e.g., in
+  {cite:t}`RasmussenWilliams_GaussianProcesses` where the
   marginalization is for the values $\boldsymbol{\zeta}$ of the
   unobserved GP hence is nothing but the likelihood defined above.
 
@@ -140,7 +139,7 @@ log-likelihoods](TabProflik).
 ## Reference prior for the correlation parameters [not implemented yet]
 
 For the case when no nugget or noise is used,
-:cite:t:`BergerAtAl_ObjectiveBayesSpatial` define the reference joint
+{cite:authors}`BergerAtAl_ObjectiveBayesSpatial` define the reference joint
 prior for $\boldsymbol{\theta}$ and $\sigma^2$ in relation to the
 integrated likelihood where only the trend parameter
 $\boldsymbol{\beta}$ is marginalized out, that is $p(\mathbf{y} \,
@@ -214,7 +213,7 @@ $\mathbf{I}^\star(\boldsymbol{\theta}, \, \sigma^2)$ corresponding to $\sigma^2$
 we get a new $(d+1) \times (d+1)$ matrix say
 $\mathbf{I}^\star(\boldsymbol{\theta})$ which no longer depends on $\sigma^2$, the
 notation $\mathbf{I}^\star(\boldsymbol{\theta})$ being consistent
-with :cite:t:`GuEtAl_RobusGaSp`. Then
+with {cite:t}`GuEtAl_RobusGaSp`. Then
 $\pi_{\texttt{ref}}(\boldsymbol{\theta}) = \left| \mathbf{I}^\star(\boldsymbol{\theta})
 \right|^{1/2}$.
 
@@ -225,12 +224,12 @@ $$
   \left|n -p  - \mathring{\mathbf{u}}^\top \mathbf{H}^{-1} \mathring{\mathbf{u}} \right| 
 $$
 
-where $\mathring{\mathbf{u}} := \sigma^2 \mathbf{u}$. See :cite:t:`Gu_Phd`
+where $\mathring{\mathbf{u}} := \sigma^2 \mathbf{u}$. See {cite:t}`Gu_Phd`
 for details.
 
 **Note**   The information matrix takes the blocks in the order:
   "$\boldsymbol{\theta}$ *then* $\sigma^2$", while the opposite order is used
-  in :cite:t:`Gu_Phd`.
+  in {cite:t}`Gu_Phd`.
 
 (SecJointlyrobust)=
 ## The "Jointly Robust"  prior of Gu
@@ -241,7 +240,7 @@ one needs the derivatives of the correlation matrix $\mathbf{R}$ and in
 order to use the derivatives of the prior to find the MAP, the second
 order derivatives of $\mathbf{R}$ are required.
 
-:cite:t:`Gu_JointlyRobust` define an easily computed prior called the
+{cite:t}`Gu_JointlyRobust` defines an easily computed prior called the
 *Jointly Robust* (JR) prior. This prior is implemented in the R
 package **RobustGaSP**. In the nugget case the prior is defined with some
 obvious abuse of notation by
@@ -252,7 +251,7 @@ $$
 $$
 
 where as above $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ so that the
-nugget variance ratio $\eta$ of :cite:t:`Gu_JointlyRobust` is
+nugget variance ratio $\eta$ of {cite:t}`Gu_JointlyRobust` is
 $\eta = (1 - \alpha) / \alpha$. The JR prior corresponds to
 
 $$
@@ -282,7 +281,7 @@ same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
 to $a_{\texttt{ref}} = 1$.
 
-**Caution** XXX The parameter $a_{\texttt{JR}}$ is denoted by $a$ in
-:cite:t:`Gu_JointlyRobust` and in the code of **libKriging**. It
+**Caution** The parameter $a_{\texttt{JR}}$ is denoted by $a$ in
+{cite:t}`Gu_JointlyRobust` and in the code of **libKriging**. It
 differs from the exponent $a$ of $\sigma^{-2}$ used above.
 
