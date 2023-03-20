@@ -164,7 +164,7 @@ $\langle\mathbf{z},\,\mathbf{z}'\rangle_{\mathbf{C}^{-1}} := \mathbf{z}^\top \ma
 **Note**   The BEM does not depend on the specific basis used to define the
   linear space of trend functions. It also depends on the kernel only
   through the *reduced kernel* related to the trend linear
-  space {cite:t}`Pronzato_Sens`. So the eigen-decomposition of the BEM
+  space, see {cite:t}`Pronzato_Sens`. So the eigen-decomposition of the BEM
   provides useful insights into the model used such as the so-called
   *Principal Kriging Functions*
 

@@ -107,7 +107,8 @@ $$
   likelihood as often used in the GP community e.g., in
   {cite:t}`RasmussenWilliams_GaussianProcesses` where the
   marginalization is for the values $\boldsymbol{\zeta}$ of the
-  unobserved GP hence is nothing but the likelihood defined above.
+  unobserved GP hence is nothing but the likelihood descrided in [this
+  section](SecMLE).
 
 (TabMarglik)=
 ## Table of marginal likelihood functions
@@ -154,11 +155,12 @@ $$
 
 where $\pi_{\texttt{ref}}(\boldsymbol{\theta})$ no longer depends on $\sigma^2$.
 
-We now give some hints on the derivation and the computation. Let
-$\mathbf{I}^\star(\boldsymbol{\theta},\,\sigma^2)$ be the $(d+1) \times (d+1)$
-Fisher information matrix based on the marginal log-likelihood
-$\ell_{\texttt{marg}}(\boldsymbol{\theta},\,\sigma^2) = \log
-L_{\texttt{marg}}(\boldsymbol{\theta},\,\sigma^2)$
+We now give some hints on the derivation and the computation of the
+reference prior. Let
+$\mathbf{I}^\star(\boldsymbol{\theta},\,\sigma^2)$ be the $(d+1)
+\times (d+1)$ Fisher information matrix based on the marginal
+log-likelihood $\ell_{\texttt{marg}}(\boldsymbol{\theta},\,\sigma^2) =
+\log L_{\texttt{marg}}(\boldsymbol{\theta},\,\sigma^2)$
 
 $$
   \mathbf{I}^\star(\boldsymbol{\theta},\, \sigma^2) := 

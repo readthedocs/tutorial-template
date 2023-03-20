@@ -10,8 +10,9 @@ Models description
    math/trend.md
    math/kernel.md
    math/parameters.md
-   math/trendEstimation
-   math/predictSimulate
-   math/likelihood
-   math/leaveOneOut
-   math/Bayesian   
+   math/trendEstimation.md
+   math/predictSimulate.md
+   math/likelihood.md
+   math/leaveOneOut.md
+   math/Bayesian.md   
+   math/Adet.rst

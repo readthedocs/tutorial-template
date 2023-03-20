@@ -65,10 +65,11 @@ The Kriging framework is similar to the splines framework, but as
 opposed to the later one, the trend functions are chosen quite
 arbitrarily and may also belong to the RKHS of the kernel. This will
 indeed be the case when $d=1$ and a constant trend is used with one of
-the kernels available in **libKriging**: the constant trend function is
-therefore unpenalized, which makes the Kriging smoothing and the
-Kriging prediction behave well w.r.t. a translation of the observations
-$\mathbf{y} \to \mathbf{y} + \text{Cst}$. The function $h \in \mathcal{H}$
+the kernels available in **libKriging**: the constant trend function
+is therefore unpenalized, which makes the Kriging smoothing and the
+Kriging prediction behaves well w.r.t. a translation of the
+observations $\mathbf{y} \to \mathbf{y} + \text{Cst}$: the predicted
+values are then translated similarly. The function $h \in \mathcal{H}$
 minimizing the criterion $\texttt{PSS}$ above can be written in a
 non-unique way as
 

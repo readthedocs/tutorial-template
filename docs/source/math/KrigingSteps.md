@@ -1,6 +1,8 @@
 (SecSteps)=
 # Kriging steps
 
+Kriging models can be used in different steps depending on the goal.
+
 * **Trend estimation** If only the trend parameters $\beta_k$ are
   unknown, these can be estimated by [Generalized Least
   Squares](SecGLS). This step separates the observed response $y_i$

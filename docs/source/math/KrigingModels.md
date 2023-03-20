@@ -148,9 +148,9 @@ used the matrix $\mathbf{C}_\zeta(\mathbf{X}, \, \mathbf{X})$ is
 positive definite for every design $\mathbf{X}$ corresponding to
 distinct inputs $\mathbf{x}_i$.
 
-**Note**  :cite:t:`BerlinetThomasagnant_RKHS` define Kriging models as the sum of
-  a deterministic trend and a stochastic process with stationary
-  increments, as is the case for splines. So the name *Kriging
-    model* is understood here in a more restrictive way.
+**Note** {cite:t}`BerlinetThomasagnant_RKHS` define Kriging models as
+  the sum of a deterministic trend and a stochastic process with
+  stationary increments, as is the case for splines. So the name
+  *Kriging model* is understood here in a more restrictive way.
 
 See the [Prediction and simulation](SecPredAndSim) page.

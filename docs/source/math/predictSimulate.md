@@ -4,12 +4,12 @@
 ## Framework
 
 
-Consider first the cases where the observations are from a stochastic
-process $y(\mathbf{x})$ namely the ` Kriging` and the `NuggetKriging`
-cases. Consider $n^\star$ "new" inputs $\mathbf{x}_j^\star$ given as
-the rows of a $n^\star \times d$ matrix $\mathbf{X}^\star$ and the
-random vector of "new" responses $\mathbf{y}^\star :=
-[y(\mathbf{x}_1^\star), \, \dots, \,
+Consider first the cases where the observations $y_i$ are from a
+stochastic process $y(\mathbf{x})$ namely the ` Kriging` and the
+`NuggetKriging` cases. Consider $n^\star$ "new" inputs
+$\mathbf{x}_j^\star$ given as the rows of a $n^\star \times d$ matrix
+$\mathbf{X}^\star$ and the random vector of "new" responses
+$\mathbf{y}^\star := [y(\mathbf{x}_1^\star), \, \dots, \,
 y(\mathbf{x}_{n^\star}^\star)]^\top$. The distribution of
 $\mathbf{y}^\star$ conditional on the observations $\mathbf{y}$ is
 known: this is a Gaussian distribution, characterized by its mean
@@ -27,7 +27,7 @@ a smooth unobserved GP $\zeta(\mathbf{x})$ are used, possibly with a
 nugget GP $\varepsilon(\mathbf{x})$. Interestingly, the computation
 can provide estimates $\widehat{\mu}(\mathbf{x})$,
 $\widehat{\zeta}(\mathbf{x})$ and $\widehat{\varepsilon}(\mathbf{x})$
-for the unobserved component.
+for the unobserved components: *trend*, *smooth GP* and *nugget*.
 
 In the noisy case `"NoiseKriging`", the observations $y_i$ are noisy
 versions of the "trend $+$ GP" process $\eta(\mathbf{x}) :=
@@ -35,9 +35,9 @@ versions of the "trend $+$ GP" process $\eta(\mathbf{x}) :=
 $\varepsilon_i$ are Gaussian, the distribution of the random vector
 $\boldsymbol{\eta}^\star := [\eta(\mathbf{x}_1^\star), \, \dots, \,
 \eta(\mathbf{x}_{n^\star}^\star)]^\top$ conditional on the
-observations $\mathbf{y}$ is a Gaussian distribution,
-characterized by its mean vector and its covariance matrix that can 
-be computed by using the same Kriging equations.
+observations $\mathbf{y}$ is a Gaussian distribution, characterized by
+its mean vector and its covariance matrix that can be computed by
+using the same Kriging equations as for the previous cases.
 
 
 - **The `predict` method** will provide the conditional expectation
@@ -48,22 +48,15 @@ be computed by using the same Kriging equations.
    be called Kriging standard deviation or Kriging covariance.
 
 - **The `simulate` method** generates partial observations from paths
-   of the process $\eta(\mathbf{x})$ - or $y(\mathbf{x})$ in the non noisy-cases-
-   conditional on the known observations. More precisely, the method
-   returns the values $y^{[k]}(\mathbf{x}_i^\star)$ at the new design
-   points for $n_{\texttt{sim}}$ independent drawings of the process
-   conditional on the observations $y_i$ for $i=1$, $\dots$, $n$. So if
+   of the process $\eta(\mathbf{x})$ - or $y(\mathbf{x})$ in the non
+   noisy-cases- conditional on the known observations. More precisely,
+   the method returns the values $y^{[k]}(\mathbf{x}_i^\star)$ at the
+   new design points for $n_{\texttt{sim}}$ independent drawings
+   $k=1$, $\dots$, $n_{\texttt{sim}}$ of the process conditional on
+   the observations $y_i$ for $i=1$, $\dots$, $n$. So if
    $n_{\texttt{sim}}$ is large the average $n_{\texttt{sim}}^{-1}\,
    \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\mathbf{x}^\star)$ should be
    close to the conditional expectation given by the `predict` method.
-   
-Consistently with the non-parametric regression framework $y =
-h(\mathbf{x}) + \varepsilon$ where $h$ is a function that must be
-estimated, we can speak of a *confidence interval* on the unknown mean
-at a "new" $\mathbf{x}^\star$. It must be understood that the
-confidence interval is on the smooth part "*trend* $+$ *GP*"
-$\mu(\mathbf{x}) + \zeta(\mathbf{x})$ of the stochastic process
-regarded as an unknown deterministic quantity.
 
 In order to give more details on the prediction, the following
 notations will be used.
@@ -156,64 +149,54 @@ $$
 
 ### Noisy case ` NoiseKriging` 
 
-In the noisy case  we compute the expectation and
-covariance of $\boldsymbol{\eta}^\star$ conditional on the
-observations in $\mathbf{y}$. The formulas are identical to those used
-for $\mathbf{y}^\star$ above. The matrices $\mathbf{C}^\star$ and
-$\mathbf{C}^{\star\star}$ relate to the covariance kernel of the GP $\eta(\mathbf{x})$
-yet for the matrix $\mathbf{C}$, the provided noise variances $\sigma^2_i$ must 
-be added to the corresponding diagonal terms.
+In the noisy case we compute the expectation and covariance of
+$\boldsymbol{\eta}^\star$ conditional on the observations in
+$\mathbf{y}$. The formulas are identical to those used for
+$\mathbf{y}^\star$ above. The matrices $\mathbf{C}^\star$ and
+$\mathbf{C}^{\star\star}$ relate to the covariance kernel of the GP
+$\eta(\mathbf{x})$ yet for the matrix $\mathbf{C}$, the provided noise
+variances $\sigma^2_i$ must be added to the corresponding diagonal
+terms.
 
-## Unknown covariance parameters
+## Plugging the covariance parameters into the prediction
 
 In **libKriging** the prediction is computed by plugging the
 correlation parameters $\boldsymbol{\theta}$ i.e., by replacing these
 by their estimate obtained by optimizing the chosen objective:
-*log-likelihood*, *Leave-One-Out Sum of Squared Errors*, or 
-*marginal posterior density*. So the *ranges $\theta_\ell$ are regarded as
-perfectly known*. However, the uncertainty on the GP variance
-$\sigma^2$ and on the nugget variance $\tau^2$ can be taken into
-account as follows.
+*log-likelihood*, *Leave-One-Out Sum of Squared Errors*, or *marginal
+posterior density*. So the *ranges $\theta_\ell$ are regarded as
+perfectly known*. Similarly the GP variance $\sigma^2$ and and the
+nugget variance $\tau^2$ are replaced by their estimates.
 
-### Class `"Kriging"`
+**Note** Mind that the expression *predictive distribution* used in
+  {cite:t}`GuEtAl_RobusGaSp` is potentially misleading since the
+  correlation parameters are simply plugged into the prediction
+  instead of being marginalized out of the distribution of 
+  $\mathbf{y}^\star$ conditional on $\mathbf{y}$.
 
-In the `Kriging` case where no nugget or noise is used, the
-impact of the unknown GP variance $\sigma^2$ on the prediction can be
-assessed. We can replace $\sigma^2$ by the Restricted Maximum
-Likelihood estimate
-$\widehat{\sigma}_{\texttt{REML}}^2 := S^2/(n -p)$, which is
-unbiased. We know that $\widehat{\sigma}_{\texttt{REML}}^2/\sigma^2$
-follows a Student distribution with $n-p$ degrees of freedom. This
-allows the derivation of a confidence interval on the mean in the
-frequentist case, and of a credible interval in the Bayesian case.
+## Confidence interval on the Kriging mean
+   
+Consistently with the non-parametric regression framework $y =
+h(\mathbf{x}) + \varepsilon$ where $h$ is a function that must be
+estimated, we can speak of a *confidence interval* on the unknown mean
+at a "new" input point $\mathbf{x}^\star$. It must be understood that
+the confidence interval is on the smooth part "*trend* $+$ *smooth
+GP*" $h(\mathbf{x}^\star) = \mu(\mathbf{x}^\star) +
+\zeta(\mathbf{x}^\star)$ of the stochastic process regarded as an
+unknown deterministic quantity. The "trend $+$ smooth GP" model
+provides a prior for the unknown function $h$ and the posterior
+distribution for $h(\mathbf{x}^\star)$ is the Gaussian distribution
+provided by the Kriging prediction.
 
-**Note**   See :cite:t:`GuEtAl_RobusGaSp`.  Mind that the expression
-  *predictive distribution* used in :cite:t:`GuEtAl_RobusGaSp`
-  is potentially misleading since the correlation parameters are
-  simply plugged into the prediction instead of being marginalized out
-  of it.
-
-**Note**   Remind that when the profile likelihood is used the unbiased
-  estimate $\widehat{\sigma}_{\texttt{REML}}^2$ relates to the ML
-  estimate according to
-  $\widehat{\sigma}_{\texttt{REML}}^2 =
-  \widehat{\sigma}_{\texttt{ML}}^2 \times n/ (n-p)$.
-
-### Class `"NuggetKriging"`
-
-In the `"NuggetKriging"` case, estimates are obtained for
-the variance $\nu^2 := \sigma^2 + \tau^2$ and for the ratio
-$\alpha := \sigma^2 / (\sigma^2 + \tau^2)$. From these, the ML
-estimate of $\sigma^2$ results as $\widehat{\sigma}^2 = \widehat{\alpha}
-\, \widehat{\nu}^2$. Using the same bias correction as in the
-`"Kriging"` case, a confidence interval on the mean can be given,
-involving the quantiles of the Student distribution with $n - p$
-degrees of freedom.
-
-### Class `"NoiseKriging"`
-
-XXX
-
+Some variants of the confidence interval can easily be implemented. In
+the ` Kriging` case here no nugget or noise is used, the maximum
+likelihood estimate of $\sigma^2$ is biased but the *restricted
+maximum-likelihood estimate* $\widehat{\sigma}_{\texttt{REML}}^2 =
+\widehat{\sigma}_{\texttt{ML}}^2 \times n/ (n-p)$ is unbiased. Also
+the quantiles of the Student distribution with $n-p$ degree of freedom
+can be used in place of those of the normal distribution to account
+for the uncertainty on $\sigma^2$. The same ideas can be used for the
+` "NuggetKriging"` and ` "NoiseKriging"` cases.
 
 ## Derivative w.r.t. the input
 

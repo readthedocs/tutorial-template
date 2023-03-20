@@ -29,7 +29,7 @@ $\widehat{\boldsymbol{\beta}}$ of the trend coefficient vector can be
 computed by GLS as exposed in Section [](SecGLS). Moreover the GLS
 step can provide an estimate of the variance for the non-trend part
 component i.e., the difference between the response and the trend
-part. See :cite:t:`RoustantEtAl_DiceKriging` .
+part. See {cite:t}`RoustantEtAl_DiceKriging`.
 
 This allows the maximization of a *profile likelihood* function
 $L_{\texttt{prof}}$ depending on a smaller number of parameters. In
@@ -43,7 +43,8 @@ $\widehat{\boldsymbol{\beta}}$ in the sum of squares used in the
 log-likelihood, we get a quadratic form of $\mathbf{y}$
 
 $$
- \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right]^\top \mathbf{C}^{-1}
+ \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right]^\top 
+ \mathbf{C}^{-1}
  \left[\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}} \right] = 
   \mathbf{y}^\top \mathbf{B} \mathbf{y}
 $$
@@ -51,16 +52,15 @@ where $\mathbf{B}$ is the [Bending Energy Matrix](SecBending) (BEM).
 
 ### `"Kriging"`
 
-In the `"Kriging"` case where
-$\mathbf{C} = \sigma^2 \, \mathbf{R}(\boldsymbol{\theta})$, both the ML estimates
-$\widehat{\boldsymbol{\beta}}$ and $\widehat{\boldsymbol{\sigma}}^2$ are provided by
-GLS. So these parameters are "concentrated out of the likelihood"
-and we can use the profile likelihood function depending on
-$\boldsymbol{\theta}$ only
-$L_{\texttt{prof}}(\boldsymbol{\theta}) := L(\boldsymbol{\theta}, \,
-\widehat{\sigma}^2,\, \widehat{\boldsymbol{\beta}})$ where both
-$\widehat{\sigma}^2$ and $\widehat{\boldsymbol{\beta}}$ depend on
-$\boldsymbol{\theta}$.
+In the `"Kriging"` case where $\mathbf{C} = \sigma^2 \,
+\mathbf{R}(\boldsymbol{\theta})$, both the ML estimates
+$\widehat{\boldsymbol{\beta}}$ and $\widehat{\boldsymbol{\sigma}}^2$
+are provided by GLS. So these parameters are "concentrated out of the
+likelihood" and we can use the profile likelihood function depending
+on $\boldsymbol{\theta}$ only $L_{\texttt{prof}}(\boldsymbol{\theta})
+:= L(\boldsymbol{\theta}, \, \widehat{\sigma}^2,\,
+\widehat{\boldsymbol{\beta}})$ where both $\widehat{\sigma}^2$ and
+$\widehat{\boldsymbol{\beta}}$ depend on $\boldsymbol{\theta}$.
 
 
 ### `"NuggetKriging"`

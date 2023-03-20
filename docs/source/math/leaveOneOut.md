@@ -31,6 +31,19 @@ and $\mathbf{D}_{\mathbf{B}}$ is the diagonal matrix with the same
 diagonal as $\mathbf{B}$.
 
 By minimizing $\texttt{SSE}_{\texttt{LOO}}$ with respect to the
-covariance parameters we get estimates of these. Note that
-the LOO MSE does not depend on the trend parameters $\boldsymbol{\beta}$.
+covariance parameters we get estimates of these. Note that similarly
+to the profile likelihood, the LOO MSE does not depend on the trend
+parameters $\boldsymbol{\beta}$. 
 
+An estimate of the GP variance $\sigma^2$ is given by
+
+$$
+   \widehat{\sigma}^2_{\texttt{LOO}} = 
+   \frac{1}{n} \, \mathbf{y}^\top \mathring{\mathbf{B}} 
+   \mathbf{D}_{\mathring{\mathbf{B}}}^{-1} 
+   \mathring{\mathbf{B}} \mathbf{y}
+$$
+
+where $\mathring{\mathbf{B}}:= \sigma^2 \mathbf{B}$ does not depend on
+$\sigma^2$ and $\mathbf{D}_{\mathring{\mathbf{B}}}$ is the diagonal
+matrix having the same diagonal as $\mathring{\mathbf{B}}$.
