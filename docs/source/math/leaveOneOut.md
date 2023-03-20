@@ -1,10 +1,12 @@
 (SecLOO)=
 # Leave-one-out
 
-For $i=1$, $\dots$, $n$ let $\widehat{y}_{i|-i}$ be the prediction of
-$y_i$ based on the vector $\mathbf{y}_{-i}$ obtained by omitting the
-observation $i$ in $\mathbf{y}$. The vector of *leave-one-out* (LOO)
-predictions is defined by
+Consider $b$ observations $y_i$ from a Kriging model corresponding to
+the "`Kriging`" case with no nugget or noise.  For $i=1$, $\dots$, $n$
+let $\widehat{y}_{i|-i}$ be the prediction of $y_i$ based on the
+vector $\mathbf{y}_{-i}$ obtained by omitting the observation $i$ in
+$\mathbf{y}$. The vector of *leave-one-out* (LOO) predictions is
+defined by
 
 $$
   \widehat{\mathbf{y}}_{\mathtt{LOO}} :=
@@ -31,9 +33,9 @@ and $\mathbf{D}_{\mathbf{B}}$ is the diagonal matrix with the same
 diagonal as $\mathbf{B}$.
 
 By minimizing $\texttt{SSE}_{\texttt{LOO}}$ with respect to the
-covariance parameters we get estimates of these. Note that similarly
-to the profile likelihood, the LOO MSE does not depend on the trend
-parameters $\boldsymbol{\beta}$. 
+covariance parameters $\theta_\ell$ we get estimates of these. Note
+that similarly to the profile likelihood, the LOO MSE does not depend
+on the vector $\boldsymbol{\beta}$ of trend parameters.
 
 An estimate of the GP variance $\sigma^2$ is given by
 
