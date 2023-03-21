@@ -225,8 +225,10 @@ $$
   \begin{bmatrix}
     \mathbf{y}\\
     \mathbf{0}
-  \end{bmatrix}.
+  \end{bmatrix},
 $$
+
+see {cite:t}`MardiaEtAl_KrigingSplines`.
 
 It turns out that the trend part of the solution is then identical
 to the GLS estimate $\widehat{\boldsymbol{\beta}}$.
