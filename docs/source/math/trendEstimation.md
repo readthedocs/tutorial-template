@@ -129,7 +129,7 @@ where the $n \times n$ matrix $\mathbf{B}$ called the *Bending Energy
   Matrix* (BEM) is given by
   
 $$
-  \mathbf{B} = \mathbf{C}^{-1} - \mathbf{C}^{-1}\mathbf{F} \left[\mathbf{F} \mathbf{C}^{-1} \mathbf{F}^\top \right]^{-1}
+  \mathbf{B} = \mathbf{C}^{-1} - \mathbf{C}^{-1}\mathbf{F} \left[\mathbf{F}^\top \mathbf{C}^{-1} \mathbf{F} \right]^{-1}
   \mathbf{F}^\top\mathbf{C}^{-1}.
 $$
 

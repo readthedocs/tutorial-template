@@ -49,3 +49,8 @@ $$
 where $\mathring{\mathbf{B}}:= \sigma^2 \mathbf{B}$ does not depend on
 $\sigma^2$ and $\mathbf{D}_{\mathring{\mathbf{B}}}$ is the diagonal
 matrix having the same diagonal as $\mathring{\mathbf{B}}$.
+
+The LOO estimation can be preferable to the maximum-likelihood
+estimation when the covariance kernel is mispecified, see
+{cite:t}`Bachoc_ParametricCov` who provides many details on the
+criterion $\texttt{SSE}_{\texttt{LOO}}$, including its derivatives.

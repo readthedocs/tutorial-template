@@ -50,12 +50,12 @@ using the same Kriging equations as for the previous cases.
 - **The `simulate` method** generates partial observations from paths
    of the process $\eta(\mathbf{x})$ - or $y(\mathbf{x})$ in the non
    noisy-cases- conditional on the known observations. More precisely,
-   the method returns the values $y^{[k]}(\mathbf{x}_i^\star)$ at the
+   the method returns the values $y^{[k]}(\mathbf{x}_j^\star)$ at the
    new design points for $n_{\texttt{sim}}$ independent drawings
    $k=1$, $\dots$, $n_{\texttt{sim}}$ of the process conditional on
    the observations $y_i$ for $i=1$, $\dots$, $n$. So if
    $n_{\texttt{sim}}$ is large the average $n_{\texttt{sim}}^{-1}\,
-   \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\mathbf{x}^\star)$ should be
+   \sum_{k=1}^{n_{\text{sim}}} y^{[k]}(\mathbf{x}^\star_j)$ should be
    close to the conditional expectation given by the `predict` method.
 
 In order to give more details on the prediction, the following
@@ -75,7 +75,7 @@ We will assume that the design matrix $\mathbf{F}$ used in the first
 step has rank $p$, implying that $n \geqslant p$ observations are
 used.
 
-## Known covariance parameters
+## The Kriging prediction
 
 ### Non-noisy cases ` Kriging` and `NuggetKriging` 
 
@@ -86,35 +86,40 @@ $$
   \underset{\text{trend}}
   {\underbrace{\mathbf{F}^\star\widehat{\boldsymbol{\beta}}}}  +
   \underset{\text{GP}}
-  {\underbrace{\mathbf{C}^\star\mathbf{C}^{-1} [\mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}]}},
+  {\underbrace{\mathbf{C}^\star\mathbf{C}^{-1} [\mathbf{y} - 
+  \mathbf{F}\widehat{\boldsymbol{\beta}}]}},
 $$
 
-where $\widehat{\boldsymbol{\beta}}$ stands for the GLS estimate of $\boldsymbol{\beta}$.  At
-the right-hand side the first term is the prediction of the trend and
-the second term is the simple Kriging prediction for the GP part
-$\boldsymbol{\zeta}^\star$ where the estimation
-$\widehat{\boldsymbol{\zeta}} = \mathbf{y} - \mathbf{F}\widehat{\boldsymbol{\beta}}$ is used as
-if it was containing the unknown observations $\boldsymbol{\zeta}$. The Kriging
+where $\widehat{\boldsymbol{\beta}}$ stands for the GLS estimate of
+$\boldsymbol{\beta}$.  At the right-hand side the first term is the
+prediction of the trend and the second term is the simple Kriging
+prediction for the GP part $\boldsymbol{\zeta}^\star$ where the
+estimation $\widehat{\boldsymbol{\zeta}} = \mathbf{y} -
+\mathbf{F}\widehat{\boldsymbol{\beta}}$ is used as if it was
+containing the unknown observations $\boldsymbol{\zeta}$. The Kriging
 covariance is given by
 
 $$
   \textsf{Cov}[\mathbf{y}^\star \, \vert \,\mathbf{y} ] =
   \underset{\text{trend}}
-  {\underbrace{[\mathbf{F}^\star - \widehat{\mathbf{F}}^\star] \,\textsf{Cov}(\widehat{\boldsymbol{\beta}})\,
+  {\underbrace{[\mathbf{F}^\star - 
+  \widehat{\mathbf{F}}^\star] \,\textsf{Cov}(\widehat{\boldsymbol{\beta}})\,
       [\mathbf{F}^\star - \widehat{\mathbf{F}}^\star]^\top}} +
   \underset{\text{GP}}
   {\underbrace{
-      \mathbf{C}^{\star\star} - \mathbf{C}^\star \mathbf{C}^{-1} \mathbf{C}^{\star\top}}},
+      \mathbf{C}^{\star\star} - 
+	  \mathbf{C}^\star \mathbf{C}^{-1} \mathbf{C}^{\star\top}}},
 $$
 
-where $\widehat{\mathbf{F}}^\star := \mathbf{C}^\star \mathbf{C}^{-1}\mathbf{F}$ is the
-simple Kriging prediction of the trend matrix. At the right-hand
-side, the first term accounts for the uncertainty due to the trend. It
-disappears if the estimation of $\boldsymbol{\beta}$ is perfect or if the
-trend functions are perfectly predicted by Kriging. The second and
-third terms are the unconditional covariance of the GP part and the
-(co)variance reduction due to to the correlation of the GP between the
-observations and the new inputs.
+where $\widehat{\mathbf{F}}^\star := \mathbf{C}^\star
+\mathbf{C}^{-1}\mathbf{F}$ is the simple Kriging prediction of the
+trend matrix. At the right-hand side, the first term accounts for the
+uncertainty due to the trend. It disappears if the estimation of
+$\boldsymbol{\beta}$ is perfect or if the trend functions are
+perfectly predicted by Kriging. The second and third terms are the
+unconditional covariance of the GP part and the (co)variance reduction
+due to to the correlation of the GP between the observations and the
+new inputs.
 
 **Note**   The conditional covariance can be expressed as
 
