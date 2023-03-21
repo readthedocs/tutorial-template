@@ -19,7 +19,7 @@ $$
 where $\kappa(h)$ is a stationary correlation kernel on $\mathbb{R}$
 and $\boldsymbol{\theta}$ is a vector of $d$ parameters $\theta_\ell>
 0$ called *correlation ranges*. See {cite:t}`Stein_Kriging` for a
-description of the tensor product.
+discussion on the tensor product kernel a.k.a. *separable* kernel.
 
 A further constraint used in **libKriging** is that $\kappa(h)$ takes only
 positive values: $\gamma(h) >0$ for all $h$.  With
