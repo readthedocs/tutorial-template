@@ -10,9 +10,9 @@ poor predictions. Although finite positive bounds can be imposed in
 the optimization to address this issue, the bounds are quite
 arbitrary. {cite:authors}`BergerAtAl_ObjectiveBayesSpatial` have shown
 that one can instead replace the ML estimates by the marginal
-posterior mode (MAP) in a Bayesian analysis. Provided that suitable
-priors are used, it can be shown that the estimated ranges will be
-both finite and positive: $0 < \widehat{\theta}_k < \infty$.
+posterior mode in a Bayesian analysis. Provided that suitable priors
+are used, it can be shown that the estimated ranges will be both
+finite and positive: $0 < \widehat{\theta}_k < \infty$.
 
 **Note**  In **libKriging** the Bayesian approach will be used only to provide
   alternatives to the ML estimation of the range or correlation
@@ -72,7 +72,7 @@ vector $\boldsymbol{\beta}$ out of the likelihood according to
 
 $$
   L_{\texttt{marg}}(\boldsymbol{\theta};\,\mathbf{y}) := 
-  p(\boldsymbol{\theta} \, \vert \, \mathbf{y}) \propto \int
+  p(\mathbf{y} \, \vert \, \boldsymbol{\theta}) \propto \int
   p(\mathbf{y} \, \vert \,\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
   \frac{1}{\sigma^{2a}} \,
   \text{d}\sigma^2\,
@@ -238,9 +238,9 @@ for details.
 
 The prior described in the previous section suffers from its high
 computational cost. In order to get the value of the prior density,
-one needs the derivatives of the correlation matrix $\mathbf{R}$ and in
-order to use the derivatives of the prior to find the MAP, the second
-order derivatives of $\mathbf{R}$ are required.
+one needs the derivatives of the correlation matrix $\mathbf{R}$ and
+in order to use the derivatives of the prior to find the posterior
+mode, the second order derivatives of $\mathbf{R}$ are required.
 
 {cite:t}`Gu_JointlyRobust` defines an easily computed prior called the
 *Jointly Robust* (JR) prior. This prior is implemented in the R
