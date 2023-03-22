@@ -77,12 +77,17 @@ $$
   \mathbf{F}^\dagger = \mathbf{Q}_{\mathbf{F}^\dagger} \mathbf{R}_{\mathbf{F}^\dagger} 
 $$
 
-where $\mathbf{Q}_{\mathbf{F}^\dagger}$ is
-$n \times p$ and $\mathbf{R}_{\mathbf{F}^\dagger}$ is a $p \times p$ upper
-triangular matrix. The estimate comes by solving the triangular system
-$\mathbf{R}_{\mathbf{F}^\dagger}\boldsymbol{\beta} = \mathbf{Q}_{\mathbf{F}^\dagger}^\top
-\mathbf{y}^\dagger$, and the covariance of the estimate is
-$\textsf{Cov}(\widehat{\boldsymbol{\beta}}) = \mathbf{R}_{\mathbf{F}^\dagger}^{-1}
+where $\mathbf{Q}_{\mathbf{F}^\dagger}$ is a $n \times p$ orthogonal matrix and
+$\mathbf{R}_{\mathbf{F}^\dagger}$ is a $p \times
+p$ upper triangular matrix. The orthogonality means that 
+$\mathbf{Q}_{\mathbf{F}^{\dagger}}^\top\mathbf{Q}_{\mathbf{F}^\dagger}= \mathbf{I}_p$.
+The estimate $\widehat{\boldsymbol{\beta}}$ 
+comes by solving the
+triangular system $\mathbf{R}_{\mathbf{F}^\dagger}\boldsymbol{\beta} =
+\mathbf{Q}_{\mathbf{F}^\dagger}^\top \mathbf{y}^\dagger$, and the
+covariance of the estimate is
+$\textsf{Cov}(\widehat{\boldsymbol{\beta}}) =
+\mathbf{R}_{\mathbf{F}^\dagger}^{-1}
 \mathbf{R}_{\mathbf{F}^\dagger}^{-\top}$
 
 Following a popular linear regression trick, one can further use the

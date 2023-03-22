@@ -30,7 +30,7 @@ For the models used with **libKriging**, both the trend functions and
 the covariance kernel have an impact. While a GP model for
 $\zeta(\mathbf{x})$ relates to a covariance kernel and to the
 corresponding Reproducing Kernel Hilbert Space (RKHS), a Kriging model
-as described in [](SecKrigingModels) relate to a *semi-RKHS*
+as described in [](SecKrigingModels) relates to a *semi-RKHS*
 {cite:t}`BerlinetThomasagnant_RKHS`.  This space $\mathcal{H}$ is a
 semi-Hilbert space of functions in which the trend functions $f_k$
 generate a finite-dimensional linear subspace $\mathcal{F}$ called the

@@ -211,19 +211,21 @@ $$
 $$
 
 By multiplying by $\sigma^2$ both the last row and the last column of
-$\mathbf{I}^\star(\boldsymbol{\theta}, \, \sigma^2)$ corresponding to $\sigma^2$,
-we get a new $(d+1) \times (d+1)$ matrix say
-$\mathbf{I}^\star(\boldsymbol{\theta})$ which no longer depends on $\sigma^2$, the
-notation $\mathbf{I}^\star(\boldsymbol{\theta})$ being consistent
-with {cite:t}`GuEtAl_RobusGaSp`. Then
-$\pi_{\texttt{ref}}(\boldsymbol{\theta}) = \left| \mathbf{I}^\star(\boldsymbol{\theta})
-\right|^{1/2}$.
+$\mathbf{I}^\star(\boldsymbol{\theta}, \, \sigma^2)$ corresponding to
+$\sigma^2$, we get a new $(d+1) \times (d+1)$ matrix say
+$\mathbf{I}^\star(\boldsymbol{\theta})$ which no longer depends on
+$\sigma^2$, the notation $\mathbf{I}^\star(\boldsymbol{\theta})$ being
+consistent with {cite:t}`GuEtAl_RobusGaSp`. Then
+$\pi_{\texttt{ref}}(\boldsymbol{\theta}) = \left|
+\mathbf{I}^\star(\boldsymbol{\theta}) \right|^{1/2}$.
 
-Note that
+Note that the determinant expresses as
 
 $$
-  \pi_{\texttt{ref}}(\boldsymbol{\theta}) = |\mathbf{H}| \times
-  \left|n -p  - \mathring{\mathbf{u}}^\top \mathbf{H}^{-1} \mathring{\mathbf{u}} \right| 
+  \left| \mathbf{I}^\star(\boldsymbol{\theta}) \right| 
+  = |\mathbf{H}| \times
+  \left|n -p  - \mathring{\mathbf{u}}^\top \mathbf{H}^{-1} 
+  \mathring{\mathbf{u}} \right| 
 $$
 
 where $\mathring{\mathbf{u}} := \sigma^2 \mathbf{u}$. See {cite:t}`Gu_Phd`
@@ -283,7 +285,7 @@ prior does not depend on the specific kernel chosen for the
 GP. However the integration w.r.t.  $\sigma^2$ and $\boldsymbol{\beta}$ is the
 same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
-to $a_{\texttt{ref}} = 1$.
+to using $a = 1$ in the prior (1) above.
 
 **Caution** The parameter $a_{\texttt{JR}}$ is denoted by $a$ in
 {cite:t}`Gu_JointlyRobust` and in the code of **libKriging**. It
