@@ -235,14 +235,15 @@ for details.
   "$\boldsymbol{\theta}$ *then* $\sigma^2$", while the opposite order is used
   in {cite:t}`Gu_Phd`.
 
+The reference prior suffers from its high computational cost. Indeed,
+in order to get the value of the prior density one needs the
+derivatives of the correlation matrix $\mathbf{R}$ and in order to use
+the derivatives of the prior to find the posterior mode, the second
+order derivatives of $\mathbf{R}$ are required. An alternative is
+the following so-called *Jointly robust* prior.
+
 (SecJointlyrobust)=
 ## The "Jointly Robust"  prior of Gu
-
-The prior described in the previous section suffers from its high
-computational cost. In order to get the value of the prior density,
-one needs the derivatives of the correlation matrix $\mathbf{R}$ and
-in order to use the derivatives of the prior to find the posterior
-mode, the second order derivatives of $\mathbf{R}$ are required.
 
 {cite:t}`Gu_JointlyRobust` defines an easily computed prior called the
 *Jointly Robust* (JR) prior. This prior is implemented in the R
@@ -255,8 +256,9 @@ $$
 $$
 
 where as above $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ so that the
-nugget variance ratio $\eta$ of {cite:t}`Gu_JointlyRobust` is
-$\eta = (1 - \alpha) / \alpha$. The JR prior corresponds to
+nugget variance ratio $\eta := \tau^2 / \sigma^2$ of
+{cite:t}`Gu_JointlyRobust` is $\eta = (1 - \alpha) / \alpha$. The JR
+prior corresponds to
 
 $$
   \pi_{\texttt{JR}}(\boldsymbol{\theta}, \, \alpha)  \propto t^{a_{\texttt{JR}}}
@@ -285,7 +287,7 @@ prior does not depend on the specific kernel chosen for the
 GP. However the integration w.r.t.  $\sigma^2$ and $\boldsymbol{\beta}$ is the
 same as for the reference prior, which means that the marginal
 likelihood is the same as for the reference prior above corresponding
-to using $a = 1$ in the prior (1) above.
+to $a = 1$ in the prior (1) above.
 
 **Caution** The parameter $a_{\texttt{JR}}$ is denoted by $a$ in
 {cite:t}`Gu_JointlyRobust` and in the code of **libKriging**. It
