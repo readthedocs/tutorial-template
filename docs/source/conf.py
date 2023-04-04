@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Nimbus'
+copyright = '2021, Cogniteam'
+author = 'Cogniteam'
 
 release = '0.1'
 version = '0.1.0'
