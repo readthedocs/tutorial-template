@@ -18,4 +18,4 @@ Contents
 .. toctree::
 
    usage
-   api
+   agent-cli
