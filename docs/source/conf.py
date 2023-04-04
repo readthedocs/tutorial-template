@@ -15,7 +15,7 @@ html_theme_options = {
     'logo_only': True,
     # ...
 }
-html_logo = "../img/logo.PNG"
+html_logo = "../img/nimbus-logo.png"
 
 extensions = [
     'sphinx.ext.duration',
