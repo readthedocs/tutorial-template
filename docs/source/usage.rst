@@ -6,6 +6,11 @@ Usage
 Installation
 ------------
 
-To use nimbus, first install an agent from the robot page
+To use nimbus, first install an agent from the `robot page https://app.cognimbus.com/robots`
 
+.. _first_steps:
 
+First Steps
+------------
+
+Coming soon!
