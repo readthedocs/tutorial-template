@@ -1,7 +1,10 @@
-The sample code below should give you these figures:
+Python/R/Matlab/Octave sample, predict, simulate 1D function
+=============
 
-<img src="img/predict.png" alt="predict" width="300px"/>
-<img src="img/simulate.png" alt="simulate" width="300px"/>
+Any sample code below should give you these figures:
+
+<img src="img/demo_basic-predict.png" alt="predict" width="300px"/>
+<img src="img/demo_basic-simulate.png" alt="simulate" width="300px"/>
 
 
 * Python: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/py-demo.ipynb)

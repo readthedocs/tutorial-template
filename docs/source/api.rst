@@ -3,10 +3,10 @@ API
 
 Following API doc supports:
 
-* __Python__ wrapper
-* __R__ wrapper
-* __Octave__ wrapper
-* __Matlab__ wrapper
+* Python wrapper
+* R wrapper
+* Octave wrapper
+* Matlab wrapper
 
 .. include:: pyrm-syntax.md
    :parser: myst_parser.sphinx_
