@@ -3,8 +3,8 @@
 
 ## Description
 
-Compute Log-Likelihood of Kriging Model for given $\theta$
-
+Compute the Profile Log-Likelihood of a `Kriging` Model Object for a
+given Vector $\boldsymbol{\theta}$ of Correlation Ranges
 
 ## Usage
 
@@ -29,16 +29,28 @@ Compute Log-Likelihood of Kriging Model for given $\theta$
 
 Argument      |Description
 ------------- |----------------
-`theta`     |     A numeric vector of (positive) range parameters at which the log-likelihood will be evaluated.
+`theta`     |     A numeric vector of (positive) range parameters at which the profile log-likelihood will be evaluated.
 `grad`     |     Logical. Should the function return the gradient?
 `hess`     |     Logical. Should the function return Hessian?
 
 
+## Details
+
+The profile log-likelihood $\ell_{\texttt{prof}}(\boldsymbol{\theta})$
+is obtained from the log-likelihood function
+$\ell(\boldsymbol{\theta},\, \sigma^2, \, \boldsymbol{\beta})$ by
+replacing the GP variance $\sigma^2$ and the vector
+$\boldsymbol{\beta}$ of trend coefficients by their ML estimates
+$\widehat{\sigma}^2$ and $\widehat{\boldsymbol{\beta}}$ which are
+obtained by Generalized Least Squares. See [here](SecMLProf) for more
+details.
+
+
 ## Value
 
-The log-Likelihood computed for given
-  $\theta$ .
-
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta})$ for the given vector
+$\boldsymbol{\theta}$ of correlation ranges.
 
 ## Examples
 

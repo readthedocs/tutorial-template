@@ -3,7 +3,7 @@
 
 ## Description
 
-Simulations from a `Kriging` model object.
+Simulate from a `Kriging` Model Object.
 
 
 ## Usage
@@ -36,16 +36,15 @@ Argument      |Description
 
 ## Details
 
-This method draws paths of the stochastic process at new input
- points conditional on the values at the input points used in the
- fit.
-
+This method draws $n_{\texttt{sim}}$ paths of the stochastic process
+$y(\mathbf{x})$ at the $n^\star$ given new input points
+$\mathbf{x}^\star_j$ conditional on the values $y(\mathbf{x}_i)$ at
+the input points used in the fit.
 
 ## Value
 
-a matrix with `length(x)` rows and `nsim` 
- columns containing the simulated paths at the inputs points
- given in `x` .
+A matrix with `length(x)` rows and `nsim` columns containing the
+simulated paths at the inputs points given in `x`.
 
 
 ## Examples

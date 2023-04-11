@@ -3,7 +3,7 @@
 
 ## Description
 
-Fit `Kriging` object on given data.
+Fit a `Kriging` Object using Given Observations
 
 
 ## Usage

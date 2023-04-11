@@ -40,4 +40,5 @@ Contents
    usage
    api
    math
+   references.rst
 

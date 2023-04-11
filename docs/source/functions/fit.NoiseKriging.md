@@ -3,7 +3,7 @@
 
 ## Description
 
-Fit `NoiseKriging` object on given data.
+Fit a `NoiseKriging` Model Object with given Observations
 
 
 ## Usage
@@ -57,10 +57,12 @@ Argument      |Description
 
 ## Details
 
-The hyper-parameters (variance and vector of correlation ranges)
- are estimated thanks to the optimization of a criterion given by
- `objective` , using the method given in `optim` .
-
+The hyper-parameters (variance and vector of correlation ranges) are
+ estimated thanks to the optimization of a criterion given by
+ `objective` , using the method given in `optim`. For now only the
+ maximum-likelihood estimation is allowed. See [this section](SecMLE)
+ for more details on the maximum-likelihood estimation.
+  
 
 ## Examples
 

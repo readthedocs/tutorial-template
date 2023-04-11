@@ -1,9 +1,10 @@
+(logLikelihood.NoiseKriging)=
 # `NoiseKriging::logLikelihood`
 
 
 ## Description
 
-Get logLikelihood of NoiseKriging Model
+Get the Maximized Log-Likelihood of a `NoiseKriging` Model Object
 
 
 ## Usage
@@ -23,12 +24,21 @@ Get logLikelihood of NoiseKriging Model
     % k = NoiseKriging(...)
     k.logLikelihood()
     ```
+	
+## Details
+ 
+See [`logLikelihoodFun.NoiseKriging`](logLikelihoodFun.NoiseKriging)
+for more details on the corresponding profile log-likelihood function.
 
 
 ## Value
 
-The logLikelihood computed for fitted
-  $\theta,\sigma^2$.
+The value of the maximized profile log-likelihood
+$\ell_{\texttt{prof}}(\widehat{\boldsymbol{\theta}},\,\widehat{\sigma}^2)$.
+This is also the maximized value
+$\ell(\widehat{\boldsymbol{\theta}},\, \widehat{\sigma}^2,\,
+\widehat{\boldsymbol{\beta}})$ of the log-likelihood.
+
 
 
 ## Examples
