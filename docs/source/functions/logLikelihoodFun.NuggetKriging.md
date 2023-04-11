@@ -3,7 +3,9 @@
 
 ## Description
 
-Compute Log-Likelihood of NuggetKriging Model for given $\theta,\frac{\sigma^2}{\sigma^2+nugget}$
+Compute the Profile Log-Likelihood of a NuggetKriging Model for given
+Vector $\boldsymbol{\theta}$ of Correlation Ranges and a given Ratio
+of Variances $\texttt{GP} / (\texttt{GP} + \texttt{nugget})$
 
 
 
@@ -33,11 +35,28 @@ Argument      |Description
 `theta_alpha`     |     A numeric vector of (positive) range parameters and variance over nugget + variance at which the log-likelihood will be evaluated.
 `grad`     |     Logical. Should the function return the gradient?
 
+## Details
+
+Consider the log-likelihood function $\ell(\boldsymbol{\theta}, \, \sigma^2, \,
+\tau^2, \,\boldsymbol{\beta})$ where $\sigma^2$ and $\tau^2$ are the
+variances of the GP and the nugget components. A re-parameterization
+can be used with the two variances replaced by $\nu^2 := \sigma^2 +
+\tau^2$ and $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$. The profile
+log-likelihood is then obtained by replacing the variance $\nu^2 :=
+\sigma^2 + \tau^2$ and the vector $\boldsymbol{\beta}$ of trend
+coefficients by their ML estimates $\widehat{\nu}^2$ and
+$\widehat{\boldsymbol{\beta}}$ which are obtained by Generalized Least
+Squares. See [here](SecMLProf) for more details.
 
 ## Value
 
-The log-Likelihood computed for given
-  $\theta,\frac{\sigma^2}{\sigma^2+nugget}$ .
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\alpha)$ for the given
+vector $\boldsymbol{\theta}$ of correlation ranges and the given
+variance ratio $\alpha := \sigma^2 / (\sigma^2 + \tau^2)$ where
+$\sigma^2$ and $\tau^2$ stand for the GP and the nugget variance. The
+parameters must be such that $\theta_k >0$ for $k=1$, $\dots$, $d$ and
+$0 < \alpha < 1$.
 
 
 ## Examples

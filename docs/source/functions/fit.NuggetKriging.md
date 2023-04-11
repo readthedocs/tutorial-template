@@ -3,7 +3,7 @@
 
 ## Description
 
-Fit `NuggetKriging` object on given data.
+Fit a `NuggetKriging` Model Object using given Observations
 
 
 ## Usage
