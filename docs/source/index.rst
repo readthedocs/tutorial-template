@@ -3,6 +3,7 @@ Welcome to Lumache's documentation!
 
 1. Here is a test
 1. Second push
+1. PR test
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
