@@ -1,7 +1,7 @@
 (SecLOO)=
 # Leave-one-out
 
-Consider $b$ observations $y_i$ from a Kriging model corresponding to
+Consider $n$ observations $y_i$ from a Kriging model corresponding to
 the "`Kriging`" case with no nugget or noise.  For $i=1$, $\dots$, $n$
 let $\widehat{y}_{i|-i}$ be the prediction of $y_i$ based on the
 vector $\mathbf{y}_{-i}$ obtained by omitting the observation $i$ in

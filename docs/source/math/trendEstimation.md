@@ -104,7 +104,7 @@ the vector of residuals $\widehat{\boldsymbol{\zeta}}^\dagger =
 \mathbf{y}^\dagger - \mathbf{F}^\dagger \widehat{\boldsymbol{\beta}}$
 in its first $p$ elements and the residual sum of squares is given by
 the square of the element $R_{\mathbf{F}^\dagger_+}[p + 1, p +1]$. See
-:cite:t:`Lange_Numerical`.
+{cite:t}`Lange_Numerical`.
 
 
 ### `"NuggetKriging"` and `"NoiseKriging"`
