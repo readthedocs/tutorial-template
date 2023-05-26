@@ -3,7 +3,7 @@
 
 ## Description
 
-Get Leave-One-Out of a Kriging Model
+Get the Minimized Leave-One-Out Sum of Squares of a `Kriging` Model
 
 
 ## Usage
@@ -27,7 +27,11 @@ Get Leave-One-Out of a Kriging Model
 
 ## Value
 
-The leaveOneOut computed for fitted range: $\theta$.
+The *minimized* Leave-One-Out (LOO) sum of squares
+$\texttt{SSE}_{\texttt{LOO}}$, corresponding to the estimated value
+$\widehat{\theta}$ of the vector of correlation ranges. See
+[`leaveOneOutFun.Kriging`](leaveOneOutFun.Kriging) for more details.
+
 
 
 ## Examples

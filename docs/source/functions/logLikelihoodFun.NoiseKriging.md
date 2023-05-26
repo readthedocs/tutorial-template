@@ -3,8 +3,9 @@
 
 ## Description
 
-Compute Log-Likelihood of NoiseKriging Model for given $\theta,\sigma^2$
-
+Compute the Profile Log-Likelihood of a ` NoiseKriging` Model for a
+given Vector $\boldsymbol{\theta}$ of Correlation Ranges and a given
+GP Variance $\sigma^2$
 
 
 ## Usage
@@ -30,14 +31,25 @@ Compute Log-Likelihood of NoiseKriging Model for given $\theta,\sigma^2$
 
 Argument      |Description
 ------------- |----------------
-`theta_sigma2`     |     A numeric vector of (positive) range parameters and variance at which the log-likelihood will be evaluated.
+`theta_sigma2` |  A numeric vector of (positive) range parameters and variance at which the log-likelihood will be evaluated.
 `grad`     |     Logical. Should the function return the gradient?
 
 
+## Details
+
+The profile log-likelihood is obtained from the log-likelihood
+function $\ell(\boldsymbol{\theta},\, \sigma^2, \,
+\boldsymbol{\beta})$ by replacing the vector $\boldsymbol{\beta}$ of
+trend coefficients by its ML estimate $\widehat{\boldsymbol{\beta}}$
+which is obtained by Generalized Least Squares. See [here](SecMLProf)
+for more details.
+
 ## Value
 
-The log-Likelihood computed for given
-  $\theta,\sigma^2$ .
+The value of the profile log-likelihood
+$\ell_{\texttt{prof}}(\boldsymbol{\theta},\,\sigma^2)$ for the given
+vector $\boldsymbol{\theta}$ of correlation ranges and the given GP
+variance $\sigma^2$.
 
 
 ## Examples

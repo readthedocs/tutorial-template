@@ -2,8 +2,9 @@
 
 ## Description
 
-Compute Leave-One-Out (LOO) error for an object
- `"Kriging"` representing a kriging model.
+Compute the Leave-One-Out (LOO) Sum of Squares of Errors
+ for a ` Kriging`  Object and a Vector $\boldsymbol{\theta}$
+ of Correlation Ranges
 
 
 ## Usage
@@ -29,21 +30,24 @@ Compute Leave-One-Out (LOO) error for an object
 
 Argument      |Description
 ------------- |----------------
-`theta`     |     A numeric vector of range parameters at which the LOO will be evaluated.
+`theta`     |     A numeric vector of range parameters at which the LOO sum of squares will be evaluated.
 `grad`     |     Logical. Should the gradient (w.r.t. `theta` ) be returned?
 
 
 ## Details
 
-The returned value is the sum of squares $\sum_{i=1}^n [y_i -$$\hat{y}_{i,(-i)}]^2$ where $\hat{y}_{i,(-i)}$ is the
- prediction of $y_i$ based on the the observations $y_j$ 
- with $j \neq i$ .
-
+The Leave-One-Out (LOO) sum of squares is defined by
+$\texttt{SS}_{\texttt{LOO}}(\boldsymbol{\theta}) := \sum_{i=1}^n
+\{y_i - \widehat{y}_{i\vert -i}\}^2$ where $\widehat{y}_{i\vert -i}$
+denotes the prediction of $y_i$ based on the observations $y_j$ with
+$j \neq i$. The vector $\widehat{\mathbf{y}}_{\texttt{LOO}}$ of LOO
+predictions is computed efficiently, see [here](SecLOO) for details.
 
 ## Value
 
-The leave-One-Out value computed for the given vector
-  $theta$ of correlation ranges.
+The value $\texttt{SSE}_{\texttt{LOO}}(\boldsymbol{\theta})$ of the
+Leave-One-Out Sum of Squares for the given vector
+$\boldsymbol{\theta}$ of correlation ranges.
 
 
 ## Examples
