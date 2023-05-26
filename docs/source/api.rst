@@ -21,12 +21,15 @@ Contructors
    functions/Kriging.md
    functions/update.Kriging.md
    functions/copy.Kriging.md
+   functions/saveload.Kriging.md
    functions/NuggetKriging.md
    functions/update.NuggetKriging.md
    functions/copy.NuggetKriging.md
+   functions/saveload.NuggetKriging.md
    functions/NoiseKriging.md
    functions/update.NoiseKriging.md
    functions/copy.NoiseKriging.md
+   functions/saveload.NoiseKriging.md
 
 Fit objective
 ---------
