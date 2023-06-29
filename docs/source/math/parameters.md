@@ -80,9 +80,9 @@ $$
 
 and Kriging indeeds find suitable vectors $\boldsymbol{\alpha}$ and
 $\boldsymbol{\beta}$. The representation of $h$ can be made unique by
-imposing orthogonality constraints, see [](SecBending).
-See {cite:t}`Wahba_Improper` for the use of an improper
-prior on the coefficients of the trend functions.
+imposing orthogonality constraints, see [](SecBending).  See
+{cite:t}`Wahba_Improper` and {cite:t}`OHagan_CurveFit` for the use of
+an improper prior on the coefficients of the trend functions.
 
 **Note** Allowing for a non-informative trend has an important
   implication in terms of implementation since *Universal Kriging*
