@@ -144,8 +144,8 @@ For the case when no nugget or noise is used,
 prior for $\boldsymbol{\theta}$ and $\sigma^2$ in relation to the
 integrated likelihood where only the trend parameter
 $\boldsymbol{\beta}$ is marginalized out, that is 
-$p(\boldsymbol{\theta}, \, \sigma^2) \, = \int
-p(\boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
+$p(\mathbf{y} \, \vert \, \boldsymbol{\theta}, \, \sigma^2) \, = \int
+p(\mathbf{y} \, \vert \, \boldsymbol{\theta}, \, \sigma^2, \, \boldsymbol{\beta}) \,
 \text{d}\boldsymbol{\beta}$ and they show that it has the form
 
 $$
