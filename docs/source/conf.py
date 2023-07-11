@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'avs1416-repository-template'
+copyright = '2023, Ard van Someren'
+author = 'Ard van Someren'
 
 release = '0.1'
-version = '0.1.0'
+version = '0.0.0'
 
 # -- General configuration
 
