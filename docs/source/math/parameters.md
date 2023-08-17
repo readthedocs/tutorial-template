@@ -22,7 +22,7 @@ Parameters used for the trend, the smooth GP
 and the noise or nugget parts. The column **Optim** is for
 the parameters used in the optimization. The other parameters are
 either known as $[\tau_i^2]$ or marginalized out, or replaced by
-their MLE $\boldsymbol{\beta}$.}
+their MLE e.g. for $\boldsymbol{\beta}$.
 
 ## Functional point of view
 
