@@ -1,9 +1,9 @@
-Template for the Read the Docs tutorial
+독을 읽는 템플릿
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+이 GitHub 템플릿에는 가상의 파이썬 라이브러리가 포함됩니다.
+기본적인 스핑크스 닥을 가지고 있습니다.
 
-Read the tutorial here:
+여기서 튜토리얼을 읽어보세요.
 
 https://docs.readthedocs.io/en/stable/tutorial/
