@@ -1,22 +1,21 @@
-Welcome to Lumache's documentation!
+GeoNode 4.1.3 SEMAD -GO
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Documentação de instalação do GeoNode versão 4.1.3 para SEMAD - GO.
+Por Túlio Henrique Alves dos Santos em 17/11/2023.
+Gerência de Tecnologia - GETEC
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
 
 .. note::
 
-   This project is under active development.
+   Este projeto está em desenvolvimento constante.
 
-Contents
+Conteúdo
 --------
 
 .. toctree::
 
-   usage
+   uso
    api
