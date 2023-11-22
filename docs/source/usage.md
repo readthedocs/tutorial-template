@@ -100,3 +100,8 @@ class KrigingEstimator(BaseEstimator):
       return self.kriging.logLikeliHoodFun(theta, eval_gradient)
 ```
 
+More examples
+----------
+
+* [![1D demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/demo1D.ipynb)
+* [![2D demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/libKriging/readthedocs/blob/master/examples/demo2D.ipynb)
