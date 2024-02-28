@@ -4,20 +4,10 @@ repo_url: https://github.com/SugarLam1207/Proton-docs-template
 
 nav:
 - Home: index.md
-- 'Breaking Changes': breaking-changes.md
-- History: history.md
-- 'Philosophy Behind DbUp': philosophy-behind-dbup.md
-- Usage: usage.md
-- 'Supported Databases': supported-databases.md
+- 'Getting started': gettingstarted.md
+- 'What's New': history.md
 - FAQ: faq.md
-- Contributing: contributing.md
-- 'DBOps Powershell Module': dbops.md
 
 - 'More Info':
-  - 'Schema Downgrading': more-info/schema-downgrading.md
-  - 'Script Providers': more-info/script-providers.md
-  - Transactions: more-info/transactions.md
-  - Pre-Processors: more-info/preprocessors.md
-  - Logging: more-info/logging.md
-  - Journaling: more-info/journaling.md
-  - 'Variable Substitution': more-info/variable-substitution.md
+  - 'Contact Us': more-info/schema-downgrading.md
+  - 'Supporting': more-info/script-providers.md
