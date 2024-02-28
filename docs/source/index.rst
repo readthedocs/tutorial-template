@@ -6,10 +6,22 @@ This manual will guide you on how to configure and use our comprehensive orderin
 Please read the following content carefully to fully leverage our system.
 
 
-Contents
---------
-
 .. toctree::
+   :maxdepth: 3
 
-   Getting Started
-   
+   getting-started/index.rst
+   whats-new/index.rst
+   register/index.rst
+   resolve/index.rst
+   lifetime/index.rst
+   configuration/index.rst
+   integration/index.rst
+   best-practices/index.rst
+   advanced/index.rst
+   troubleshooting/index.rst
+   examples/index.rst
+   faq/index.rst
+   glossary.rst
+   contributors.rst
+   support.rst
+   owners.rst
