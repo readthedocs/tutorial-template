@@ -1,24 +1,15 @@
-Welcome to Lumache's documentation!
+Welcome to POS System User Manual
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Welcome to the POS system! 
+This manual will guide you on how to configure and use our comprehensive ordering and payment solution. 
+Please read the following content carefully to fully leverage our system.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
-
-Lumache has its documentation hosted on Read the Docs.
+   Getting Started
+   
