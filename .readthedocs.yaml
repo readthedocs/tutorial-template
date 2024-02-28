@@ -11,3 +11,6 @@ python:
 
 sphinx:
   configuration: docs/source/conf.py
+
+mkdocs:
+  configuration: mkdocs.yml
