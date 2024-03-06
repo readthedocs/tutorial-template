@@ -6,11 +6,11 @@ nav:
 - Home:
  - Index:index.md
 - 'Hardware Guide':
- - 'Hardware Checklist'
- - 'Hardware Installation'
- - 'Network Environment Setup'
- - 'Server Deployment'
- - 'One-click Deployment'
+ - 'Hardware Checklist':
+ - 'Hardware Installation':
+ - 'Network Environment Setup':
+ - 'Server Deployment':
+ - 'One click Deployment':
 - 'System Guide':
  - 'Quick start':quickstart.md
  - 'Employee Management and Permissions':
