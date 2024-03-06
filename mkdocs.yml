@@ -3,12 +3,28 @@ theme: readthedocs
 repo_url: https://github.com/SugarLam1207/Proton-docs-template
 
 nav:
-- Home: index.md
-- 'Getting started': gettingstarted.md
-- 'Quick start': quickstart.md
-- 'Version History': history.md
-- FAQ: faq.md
-
-- 'More Info':
-  - 'Contact Us': more-info/schema-downgrading.md
-  - Supporting: more-info/script-providers.md
+- Home:
+ - Index:index.md
+- 'Hardware Guide':
+ - 'Hardware Checklist'
+ - 'Hardware Installation'
+ - 'Network Environment Setup'
+ - 'Server Deployment'
+ - 'One-click Deployment'
+- 'System Guide':
+ - 'Quick start':quickstart.md
+ - 'Employee Management and Permissions':
+ - 'Order Management':
+ - 'Payment Function':
+ - 'Other Order Types':
+ - 'Third-party Orders':
+ - 'Report Center':
+ - 'Offline Mode':
+- Advanced:
+ - 'Flexible Menu':
+- FAQ:
+ - 'Common Issues':
+ - Troubleshooting:
+- 'Contact Us':
+ - 'Technical Support':
+ - Feedback:
