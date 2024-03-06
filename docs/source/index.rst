@@ -10,6 +10,7 @@ Please read the following content carefully to fully leverage our system.
    :maxdepth: 3
 
    getting-started/index.rst
+   quickstart/inex.rst
    whats-new/index.rst
    register/index.rst
    resolve/index.rst
