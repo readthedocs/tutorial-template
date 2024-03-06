@@ -5,6 +5,7 @@ repo_url: https://github.com/SugarLam1207/Proton-docs-template
 nav:
 - Home: index.md
 - 'Getting started': gettingstarted.md
+- 'Quick start': quickstart.md
 - 'Version History': history.md
 - FAQ: faq.md
 
