@@ -1,109 +1,109 @@
-# POS系統快速入門指南
+# POS System Quick Start Guide
 
-歡迎使用我們的POS系統！本指南將幫助您快速了解如何使用本系統進行日常操作。
+Welcome to our POS system! This guide will help you quickly understand how to use this system for daily operations.
 
-## 登錄系統
+## Logging into the System
 
-在開始使用之前，請確保您已經創建了用戶賬號。登錄系統時，請使用您的用戶名和密碼。
+Before you begin, please ensure that you have created a user account. To log into the system, use your username and password.
 
-## 店鋪信息配置
+## Shop Information Configuration
 
-在主界面，您可以編輯店鋪的基本信息，包括店鋪名稱、地址、聯繫電話和營業時間。
+On the main interface, you can edit the basic information of your shop, including the shop name, address, contact phone number, and business hours.
 
-## 員工管理
+## Employee Management
 
-您可以管理員工賬號，分配不同的權限，並設置員工的登錄信息。
+You can manage employee accounts, assign different permissions, and set employee login information.
 
-## 菜單管理
+## Menu Management
 
-### 新增/編輯菜單
-您可以添加新的菜品，編輯現有菜品的信息，包括價格和規格。
+### Adding/Editing Menu Items
+You can add new dishes, and edit existing ones, including their prices and specifications.
 
-### 分類管理
-您可以創建不同的菜品分類，以便於顧客瀏覽和點餐。
+### Category Management
+You can create different categories for dishes to facilitate customer browsing and ordering.
 
-### 菜品管理
-在這裡，您可以對單個菜品進行管理，包括新增、刪除和修改。
+### Dish Management
+Here, you can manage individual dishes, including adding, deleting, and modifying them.
 
-## 訂單管理
+## Order Management
 
-### 堂食點餐
-顧客在店內用餐時，您可以通過系統為他們點餐。
+### In-Store Dining
+When customers dine in, you can take their orders through the system.
 
-### 修改訂單
-如果顧客需要更改訂單，您可以在系統中進行修改。
+### Modifying Orders
+If customers need to change their orders, you can make modifications in the system.
 
-### 刪除訂單
-如果訂單不再需要，您可以將其刪除。
+### Deleting Orders
+If an order is no longer needed, you can delete it.
 
-### 查看訂單
-您可以查看所有訂單的狀態，包括已完成和進行中的訂單。
+### Viewing Orders
+You can view the status of all orders, including completed and ongoing ones.
 
-## 支付功能
+## Payment Features
 
-### 現金支付
-支持現金支付方式。
+### Cash Payment
+Support for cash payment methods.
 
-### 信用卡/數字支付
-系統支持多種信用卡和數字支付方式。
+### Credit Card/Digital Payment
+The system supports various credit cards and digital payment methods.
 
-## 報告中心
+## Report Center
 
-### 銷售報告
-您可以生成銷售報告，了解店鋪的營業情況。
+### Sales Report
+You can generate sales reports to understand the business situation of your shop.
 
-### 員工報告
-查看員工的工作表現和銷售業績。
+### Employee Report
+View employee performance and sales achievements.
 
-### 訂單與商品報告
-分析訂單和商品的銷售情況。
+### Order and Product Report
+Analyze the sales situation of orders and products.
 
-## 系統設置
+## System Settings
 
-### 訂單類型設置
-您可以設置不同的訂單類型，如堂食、外送等。
+### Order Type Settings
+You can set different order types, such as dine-in, delivery, etc.
 
-### 打印機配置
-配置廚房打印機，確保訂單能夠正確打印。
+### Printer Configuration
+Configure kitchen printers to ensure orders are printed correctly.
 
-### 稅率管理
-設置銷售稅的相關信息。
+### Tax Rate Management
+Set up information related to sales tax.
 
-## 硬件管理
+## Hardware Management
 
-### 打印機管理
-添加、刪除、更新和搜索打印機設備。
+### Printer Management
+Add, delete, update, and search for printer devices.
 
-### 收銀機管理
-管理收銀機設備，確保其正常工作。
+### Cash Register Management
+Manage cash register devices to ensure they are working properly.
 
-## 業務設置
+## Business Settings
 
-### 店鋪基本信息
-編輯店鋪的基本信息。
+### Basic Shop Information
+Edit the basic information of your shop.
 
-### 銷售稅設置
-配置銷售稅的計算方式。
+### Sales Tax Settings
+Configure the calculation method for sales tax.
 
-### 支付類型
-自定義支付類型，如現金、信用卡等。
+### Payment Types
+Customize payment types, such as cash, credit cards, etc.
 
-## 權限管理
+## Permission Management
 
-### 角色和權限
-創建不同的角色，並為每個角色分配相應的權限。
+### Roles and Permissions
+Create different roles and assign appropriate permissions to each role.
 
-## 報告
+## Reports
 
-### 總報告
-查看店鋪的總報告，包括銷售、客流量等數據。
+### General Report
+View the overall report of the shop, including sales, customer flow, and other data.
 
-## 常見問題與故障排除
+## Common Issues and Troubleshooting
 
-如果您在使用過程中遇到任何問題，請參閱我們的常見問題解答或故障排除指南。
+If you encounter any issues during use, please refer to our FAQ or troubleshooting guide.
 
-## 聯繫我們
+## Contact Us
 
-如果您需要技術支援或有任何建議，請隨時聯繫我們。
+If you need technical support or have any suggestions, please feel free to contact us.
 
-祝您使用愉快！
+Enjoy your use!
