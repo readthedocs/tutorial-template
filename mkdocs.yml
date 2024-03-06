@@ -6,25 +6,25 @@ nav:
   - Home:
     - Index: index.md
   - Hardware Guide:
-    - Hardware Checklist
-    - Hardware Installation
-    - Network Environment Setup
-    - Server Deployment
-    - One click Deployment
+    - Hardware Checklist: hardwarelist.md
+    - Hardware Installation: hardwareinstallation.md
+    - Network Environment Setup: networkenvsetup.md
+    - Server Deployment: serverdeployment.md
+    - One click Deployment: oneclickdeployment.md
   - System Guide:
     - Quick start: quickstart.md
-    - Employee Management and Permissions
-    - Order Management
-    - Payment Function
-    - Other Order Types
-    - Third-party Orders
-    - Report Center
-    - Offline Mode
+    - Employee Management and Permissions: employeemanagement.md
+    - Order Management: ordermanagement.md
+    - Payment Function: paymentfunction.md
+    - Other Order Types: otherordertypes.md
+    - Third-party Orders: thirdpartyorders.md
+    - Report Center: reportcenter.md
+    - Offline Mode: offlinemode.md
   - Advanced:
-    - Flexible Menu
+    - Flexible Menu: flexiblemenu.md
   - FAQ:
-    - Common Issues
-    - Troubleshooting
+    - Common Issues: commonissues.md
+    - Troubleshooting: troubleshooting.md
   - Contact Us:
-    - Technical Support
-    - Feedback
+    - Technical Support: technicalsupport.md
+    - Feedback: feedback.md
