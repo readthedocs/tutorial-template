@@ -7,7 +7,7 @@ nav:
     - Index: index.md
   - Hardware Guide:
     - Hardware Checklist: hardwarelist.md
-    - Hardware Installation: hardwareinstallation.md
+    - Server Setup: serversetup.md
     - Network Environment Setup: networkenvsetup.md
     - Server Deployment: serverdeployment.md
     - One click Deployment: oneclickdeployment.md
