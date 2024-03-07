@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'EasyPOS'
+copyright = '2024, Proton'
+author = 'IS Admin'
 
 release = '0.1'
 version = '0.1.0'
@@ -33,3 +33,9 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# multi-language docs
+language = 'en'
+locale_dirs = ['../locales/']   # path is example but recommended.
+gettext_compact = False  # optional.
+gettext_uuid = True  # optional.
