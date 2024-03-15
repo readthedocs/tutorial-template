@@ -8,20 +8,17 @@ nav:
   - Hardware Guide:
     - Hardware Checklist: hardwarelist.md
     - Server Setup: serversetup.md
-    - Network Environment Setup: networkenvsetup.md
-    - Server Deployment: serverdeployment.md
+    - Tentacle Setup: networkenvsetup.md
     - One click Deployment: oneclickdeployment.md
+    - Verify: oneclickdeployment.md
   - System Guide:
     - Quick start: quickstart.md
-    - Employee Management and Permissions: employeemanagement.md
     - Order Management: ordermanagement.md
-    - Payment Function: paymentfunction.md
     - Other Order Types: otherordertypes.md
+    - Payment Function: paymentfunction.md
     - Third-party Orders: thirdpartyorders.md
     - Report Center: reportcenter.md
     - Offline Mode: offlinemode.md
-  - Advanced:
-    - Flexible Menu: flexiblemenu.md
   - FAQ:
     - Common Issues: commonissues.md
     - Troubleshooting: troubleshooting.md
