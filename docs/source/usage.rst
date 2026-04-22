@@ -31,4 +31,19 @@ For example:
 >>> import lumache
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
+-----------------------------------------------------
+Document the core features from your README:
 
+Microsoft sign-in / OneDrive integration
+
+tasks + weighting
+
+calendar
+
+chat
+
+project board
+
+notifications
+
+contribution tracking

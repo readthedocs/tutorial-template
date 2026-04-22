@@ -1,22 +1,60 @@
-Welcome to Lumache's documentation!
-===================================
+Group Coursework Management System (GCMS) Documentation
+========================================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+**GCMS** is a web application to help students manage their group coursework projects.
 
 .. note::
-
    This project is under active development.
 
-Contents
---------
+.. toctree::
+   :maxdepth: 2
+   :caption: Table of Contents
+
+   getting-started/index
+   architecture/index
+   database-schema/index
+   api-reference/index
+   external-integrations/index
+   troubleshooting
+   contributing
+   architecture/folder-structure
+   architecture/event-bus
+
+Database Schema <database-schema/index>
+--------------------------------------
 
 .. toctree::
+   :maxdepth: 1
+   :hidden:
 
-   usage
-   api
+   database-schema/entity-reference
+   database-schema/er-diagram
+
+API Reference <api-reference/index>
+----------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   api-reference/auth-routes
+   api-reference/project-routes
+   api-reference/task-routes
+   api-reference/other-routes
+
+External Integrations <external-integrations/index>
+---------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   external-integrations/microsoft-graph
+   external-integrations/openai
+   external-integrations/emailjs
+
+Troubleshooting <troubleshooting>
+-------------------------------
+
+Contributing <contributing>
+--------------------------

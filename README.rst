@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
+'Read The Docs' Documentation for Group Course Management System (GCMS)
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
+'Read The Docs' tutorial here:
 https://docs.readthedocs.io/en/stable/tutorial/
