@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+Welcome to Little Guy Project!
 ===================================
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
