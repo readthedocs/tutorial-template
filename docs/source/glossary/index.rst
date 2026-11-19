@@ -15,9 +15,10 @@ Shortened to "PAT", this is a string that is used with a user's email address
 to authenticate without needing access to a web browser. This method of
 authenticating would typically be used in a CI environment.
 
-A user can only have one PAT at a time. Authenticating with a PAT typically
-results in a full authorization token, although some CLI tools may request a
-reduced token.
+A user can hold up to 15 unexpired PATs. Each PAT has a unique name and
+expires no more than 12 months after it is created, and can optionally be
+restricted to one subscription and/or one service. The token value is shown
+only once, when the PAT is created.
 
 RESOURCE
 --------
